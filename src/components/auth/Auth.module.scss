@@ -1,0 +1,115 @@
+.auth {
+	height: 1025px;
+	width: 1440px;
+	padding-top: 345px;
+
+	.wrapper {
+		background: #fff;
+		border-radius: 8px;
+		display: flex;
+		align-items: center;
+		flex-direction: column;
+		margin: 0 auto;
+		padding-top: 30px;
+		width: 404px;
+		min-height: 352px;
+		.title {
+			position: relative;
+			color: #000;
+			font-size: 30px;
+			font-weight: 700;
+			line-height: 38px; /* 126.667% */
+			letter-spacing: -0.15px;
+			padding-bottom: 8px;
+		}
+		form {
+			display: flex;
+			flex-direction: column;
+			padding-top: 40px;
+			.input {
+				padding-left: 40px;
+				margin: 0;
+				margin-bottom: 8px;
+				width: 264px;
+				height: 36px;
+				border: none;
+				border-radius: 8px;
+				background: var(--Light-light-blue, rgba(206, 223, 236, 0.5));
+			}
+			.login {
+				position: relative;
+				&::after {
+					content: '';
+					position: absolute;
+					top: 10px;
+					left: -117px;
+					height: 16px;
+					width: 16px;
+				}
+			}
+			.password__wrapper {
+				position: relative;
+				.password {
+					position: relative;
+					&::after {
+						content: '';
+						position: absolute;
+						top: -14px;
+						left: 16px;
+						height: 16px;
+						width: 16px;
+					}
+				}
+				i {
+					position: absolute;
+					top: 5px;
+					right: 16px;
+				}
+				i:hover {
+					color: #00fcb6;
+					cursor: pointer;
+				}
+			}
+
+			button {
+				font-size: 16px;
+				border: none;
+				background: #0c5da1;
+				border-radius: 30px;
+				cursor: pointer;
+			}
+			.pwd_setting {
+				display: flex;
+				display: inline;
+				width: 264px;
+				padding-top: 4px;
+				padding-bottom: 20px;
+				div {
+					display: inline-block;
+					color: #000;
+					font-size: 14px;
+					font-weight: 400;
+					line-height: 18px; /* 128.571% */
+					letter-spacing: -0.07px;
+					a {
+						margin-left: 0px;
+						color: #0c5da1;
+						font-size: 14px;
+						font-weight: 400;
+						line-height: 125%; /* 17.5px */
+						letter-spacing: -0.07px;
+						text-decoration: none;
+					}
+				}
+				.remember {
+					margin-left: 14px;
+					padding-left: 10px;
+					color: #0c5da1;
+				}
+				.link_pwd {
+					margin-left: 50px;
+				}
+			}
+		}
+	}
+}

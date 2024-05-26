@@ -1,0 +1,31 @@
+@import 'variables';
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	//font
+	font-family: Inter, sans-serif;
+	font-weight: 400;
+	font-size: 16px;
+	line-height: normal;
+}
+html,
+body {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	min-height: 100vh; /* Высота 100% от высоты окна браузера */
+	margin: 0; /* Убирает отступы */
+	padding: 0; /* Убирает отступы */
+	box-sizing: border-box; /* Включает padding и border в размеры элемента */
+}
+body {
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	-webkit-tap-highlight-color: transparent; //убираем дефолтную синюю подсветку
+}
+.container {
+	width: 1200px;
+}

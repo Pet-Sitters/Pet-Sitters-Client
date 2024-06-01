@@ -1,78 +1,62 @@
-// import axios from 'axios'
+import axios from 'axios'
 import { useEffect, useRef, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import styles from './Auth.module.scss'
-import { useDispatch, useSelector } from 'react-redux'
-import { authRequest } from '../../core/store/auth/thunk'
-import { authState, setUser } from '../../core/store/auth/slice'
-import { Status } from '../../core/constants/status'
 
 export function Auth() {
-	const dispatch = useDispatch();
-	const {status,errorMessage,user}= useSelector(authState)
-
-
 	const userRef = useRef()
 	const errRef = useRef()
 	const navigate = useNavigate()
-
-	// const [username, setUser] = useState('')
+	const [username, setUser] = useState('')
 	const [password, setPwd] = useState('')
 	const [errMsg, setErrMsg] = useState('')
 
-	// const [loading, setLoading] = useState(false)
+	const [loading, setLoading] = useState(false)
 
-	// const LOGIN_URL = `https://api.users.skroy.ru/user/check_password`
+	const LOGIN_URL = `https://api.users.skroy.ru/user/check_password`
 	useEffect(() => {
 		userRef.current.focus()
 	}, [])
 
 	useEffect(() => {
-		// setErrMsg('')
-		if(status===Status.Resolved){
-		navigate(`/profile`)
-		}else if(status===Status.Rejected){
-			setErrMsg(errorMessage)
-		}
-	}, [status])
+		setErrMsg('')
+	}, [username])
 
-	const handleSubmit = (e) => {
+	const handleSubmit = async (e) => {
 		e.preventDefault()
-		dispatch(authRequest.login({username:user, password:password}))
-
-		// setLoading(true)
-		// try {
-			// const response = await axios.post(
-			// 	`${LOGIN_URL}?user_id=${username}`,
-			// 	`${password}`,
-			// 	{
-			// 		headers: {
-			// 			'Content-Type': 'application/json',
-			// 		},
-			// 	}
-			// )
-		// 	console.log(response.data)
-		// 	if (response.data === true) {
-		// 		setUser('')
-		// 		setPwd('')
-		// 		navigate(`/profile`)
-		// 	} else {
-		// 		throw new Error('Authentication failed')
-		// 	}
-		// } catch (err) {
-		// 	if (!err?.response) {
-		// 		setErrMsg('No server response')
-		// 	} else if (err.response?.status === 400) {
-		// 		setErrMsg('Не верный логин или пароль')
-		// 	} else if (err.response?.status === 401) {
-		// 		setErrMsg('Unauthorized')
-		// 	} else {
-		// 		setErrMsg('Login Failed')
-		// 	}
-		// 	errRef.current.focus()
-		// } finally {
-		// 	setLoading(false)
-		// }
+		setLoading(true)
+		try {
+			const response = await axios.post(
+				`${LOGIN_URL}?user_id=${username}`,
+				`${password}`,
+				{
+					headers: {
+						'Content-Type': 'application/json',
+					},
+				}
+			)
+			console.log(response.data)
+			if (response.data === true) {
+				setUser('')
+				setPwd('')
+				navigate(`/profile`)
+			} else {
+				throw new Error('Authentication failed')
+			}
+		} catch (err) {
+			if (!err?.response) {
+				setErrMsg('No server response')
+			} else if (err.response?.status === 400) {
+				setErrMsg('Не верный логин или пароль')
+			} else if (err.response?.status === 401) {
+				setErrMsg('Unauthorized')
+			} else {
+				setErrMsg('Login Failed')
+			}
+			errRef.current.focus()
+		} finally {
+			setLoading(false)
+		}
 	}
 
 	return (
@@ -96,8 +80,8 @@ export function Auth() {
 							id='username'
 							ref={userRef}
 							autoComplete='on'
-							onChange={(e) => dispatch(setUser(e.target.value))}
-							value={user}
+							onChange={(e) => setUser(e.target.value)}
+							value={username}
 							required
 						/>
 						<div className={styles.password__wrapper}>
@@ -111,8 +95,8 @@ export function Auth() {
 								placeholder='Пароль'
 							/>
 						</div>
-						<button type='submit' disabled={status===Status.Loading}>
-							{status===Status.Loading ? 'Loading...' : 'Вход'}
+						<button type='submit' disabled={loading}>
+							{loading ? 'Loading...' : 'Вход'}
 						</button>
 					</form>
 				</div>

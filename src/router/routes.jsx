@@ -1,23 +1,40 @@
-import {createBrowserRouter} from "react-router-dom";
-import {Auth} from "../components/auth/Auth";
-import ErrorPage from "../pages/error-pages";
-import {Profile} from "../components/profile/Profile";
-import CalculatorPage from "../pages/CalculatorPage.jsx";
+import { createBrowserRouter } from 'react-router-dom'
+
+import { Layout } from '../Layout/layout'
+import Login from '../components/auth/login/login'
+import Registration from '../components/auth/registration/registration'
+import CalculatorPage from '../pages/CalculatorPage.jsx'
+import ErrorPage from '../pages/error-pages'
+import { PromoPage } from '../pages/promoPage/promoPage'
 
 export const router = createBrowserRouter([
-    {
-        path: '/',
-        element: <Auth />,
-        errorElement: <ErrorPage />,
-    },
-    {
-        path: 'profile',
-        element: <Profile />,
-        errorElement: <ErrorPage />,
-    },
-    {
-        path: 'calc',
-        element: <CalculatorPage/>,
-        errorElement: <ErrorPage />,
-    }
+	{
+		path: '/',
+		element: <Layout />,
+		errorElement: <ErrorPage />,
+		children: [
+			,
+			{
+				path: '',
+				element: <PromoPage />,
+				errorElement: <ErrorPage />,
+			},
+			{
+				path: 'registration',
+				element: <Registration />,
+				errorElement: <ErrorPage />,
+			},
+			{
+				path: 'login',
+				element: <Login />,
+				errorElement: <ErrorPage />,
+			},
+
+			{
+				path: 'calc',
+				element: <CalculatorPage />,
+				errorElement: <ErrorPage />,
+			},
+		],
+	},
 ])

@@ -1,47 +1,63 @@
-import { createSlice } from '@reduxjs/toolkit';
-import { authRequest } from './thunk';
-import { Status } from '../../constants/status';
+import { createSlice } from '@reduxjs/toolkit'
+import { getCurrentUser, login, logout, register } from './thunk'
+
+// const initialState = {
+//   status: null,
+//   errorMessage: null,
+//   accessToken: localStorage.AuthorizationAccessToken,
+
+// 	user:''
+// };
 
 const initialState = {
-  status: null,
-  errorMessage: null,
-  accessToken: localStorage.AuthorizationAccessToken,
+	currentUser: undefined,
+	isLoading: false,
+}
 
-	user:''
-};
-
-export const authorizationSlice = createSlice({
-  name: 'authorization',
-  initialState,
-  reducers: {
-    setUser: (state,action) => {
-			state.user = action.payload
-    },
-  },
-  extraReducers: (builder) => {
-    builder
-      .addCase(authRequest.login.pending, (state) => {
-        state.status = Status.Loading;
-        state.errorMessage = null;
-      })
-      .addCase(authRequest.login.fulfilled, (state, action) => {
-        state.status = Status.Resolved;
-        state.accessToken = action.payload;
-      })
-      .addCase(authRequest.login.rejected, (state, action) => {
-        state.status = Status.Rejected;
-        state.errorMessage = action.payload.message;
-      })
-  },
-});
-
-export const { setUser } = authorizationSlice.actions;
-
-/**
- *
- * @param {*} state
- * @returns {initialState}
- */
-export const authState = (state) => state.authorization;
-
-export default authorizationSlice.reducer;
+const authSlice = createSlice({
+	name: 'auth',
+	initialState,
+	extraReducers: (builder) => {
+		builder
+			//register
+			.addCase(register.pending, (state) => {
+				state.isLoading = true
+			})
+			.addCase(register.fulfilled, (state, action) => {
+				state.isLoading = false
+				state.currentUser = action.payload
+			})
+			.addCase(register.rejected, (state) => {
+				state.isLoading = false
+			})
+			//logIn
+			.addCase(login.pending, (state) => {
+				state.isLoading = true
+			})
+			.addCase(login.fulfilled, (state, action) => {
+				state.isLoading = false
+				state.currentUser = action.payload
+			})
+			.addCase(login.rejected, (state) => {
+				state.isLoading = false
+			})
+			//getCurrentUser
+			.addCase(getCurrentUser.pending, (state) => {
+				state.isLoading = true
+			})
+			.addCase(getCurrentUser.fulfilled, (state, action) => {
+				state.isLoading = false
+				state.currentUser = action.payload
+			})
+			.addCase(getCurrentUser.rejected, (state) => {
+				state.isLoading = false
+				state.currentUser = null
+			})
+			//logOut
+			.addCase(logout.fulfilled, (state) => {
+				state.isLoading = false
+				state.currentUser = null
+			})
+	},
+})
+export default authSlice.reducer

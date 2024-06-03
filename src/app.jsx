@@ -6,6 +6,7 @@ import { getCurrentUser } from './core/store/auth/thunk'
 import { router } from './router/routes'
 
 export function App() {
+	
 	const dispatch = useDispatch()
 	useEffect(() => {
 		dispatch(getCurrentUser())

@@ -1,13 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit'
 import { getCurrentUser, login, logout, register } from './thunk'
 
-// const initialState = {
-//   status: null,
-//   errorMessage: null,
-//   accessToken: localStorage.AuthorizationAccessToken,
 
-// 	user:''
-// };
 
 const initialState = {
 	currentUser: undefined,

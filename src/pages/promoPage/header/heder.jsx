@@ -6,7 +6,7 @@ import s from './header.module.scss'
 export function Header() {
 	const dispatch = useDispatch()
 	const auth = useSelector((state) => state.authSlice)
-	console.log(auth)
+	// console.log(auth)
 	return (
 		<div className={s.header}>
 			<div className={s.logo}>logo</div>

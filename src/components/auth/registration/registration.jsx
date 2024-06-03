@@ -43,7 +43,8 @@ const Registration = () => {
 	const onFinish = (values) => {
 		console.log('Received values of form: ', values)
 		dispatch(register(values)).then((action) => {
-			localStorage.setItem('accessToken', action.payload.user.token)
+			// localStorage.setItem('accessToken', action.payload.id)
+			// токена нет
 		})
 		navigate('/')
 	}
@@ -75,6 +76,20 @@ const Registration = () => {
 			}}
 			scrollToFirstError
 		>
+			<Form.Item
+				name='username'
+				label='Имя пользователя'
+				tooltip='Как вы хотите, чтобы вас называли?'
+				rules={[
+					{
+						required: true,
+						message: 'Пожалуйста, введите свое имя пользователя!',
+						whitespace: true,
+					},
+				]}
+			>
+				<Input />
+			</Form.Item>
 			<Form.Item
 				name='email'
 				label='E-mail'
@@ -129,21 +144,6 @@ const Registration = () => {
 				]}
 			>
 				<Input.Password />
-			</Form.Item>
-
-			<Form.Item
-				name='username'
-				label='Имя пользователя'
-				tooltip='Как вы хотите, чтобы вас называли?'
-				rules={[
-					{
-						required: true,
-						message: 'Пожалуйста, введите свое имя пользователя!',
-						whitespace: true,
-					},
-				]}
-			>
-				<Input />
 			</Form.Item>
 
 			<Form.Item

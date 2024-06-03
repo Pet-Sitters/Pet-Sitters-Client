@@ -11,7 +11,7 @@ const Login = () => {
 	const onFinish = (values) => {
 		console.log('Received values of form: ', values)
 		dispatch(login(values)).then((action) => {
-			localStorage.setItem('accessToken', action.payload.user.token)
+			localStorage.setItem('accessToken', action.payload.auth_token)
 		})
 		navigate('/')
 	}
@@ -38,7 +38,7 @@ const Login = () => {
 					placeholder='Username'
 				/>
 			</Form.Item>
-			<Form.Item
+			{/* <Form.Item
 				name='email'
 				rules={[
 					{
@@ -51,7 +51,7 @@ const Login = () => {
 					prefix={<UserOutlined className='site-form-item-icon' />}
 					placeholder='Email'
 				/>
-			</Form.Item>
+			</Form.Item> */}
 			<Form.Item
 				name='password'
 				rules={[

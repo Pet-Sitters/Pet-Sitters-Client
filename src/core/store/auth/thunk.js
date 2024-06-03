@@ -6,7 +6,7 @@ export const register = createAsyncThunk(
 	async (payload, thunkAPI) => {
 		try {
 			const response = await api.post('/app/auth/users/', payload)
-			return response.data.user // TODO: уточнить user нужно или нет
+			return response.data // TODO: уточнить user нужно или нет
 		} catch (err) {
 			return thunkAPI.rejectWithValue(err.response.data.errors)
 		}
@@ -32,12 +32,13 @@ export const getCurrentUser = createAsyncThunk(
 	async (_, thunkAPI) => {
 		try {
 			const token = localStorage.getItem('accessToken') ?? ''
+
 			const response = await api.get('/app/auth/users/', {
 				headers: {
 					Authorization: `Token ${token}`,
 				},
 			})
-			return response.data.user_id
+			return response.data
 		} catch (err) {
 			return thunkAPI.rejectWithValue(err.response.data.errors)
 		}

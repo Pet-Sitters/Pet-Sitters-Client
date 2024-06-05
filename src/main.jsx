@@ -7,6 +7,8 @@ import {ConfigProvider} from "antd";
 
 const MAIN_COLOR = '#C896FF';
 const HOVER_COLOR = '#ceb5ec';
+const BUTTON_COLOR = "#320064";
+const BUTTON_HOVER_COLOR = "#C8A5FC"
 
 ReactDOM.createRoot(document.getElementById('root')).render(
 	<Provider store={store}>
@@ -22,8 +24,8 @@ ReactDOM.createRoot(document.getElementById('root')).render(
 						trackHoverBg: MAIN_COLOR,
 					},
 					Button: {
-						colorPrimary: MAIN_COLOR,
-						colorPrimaryHover: HOVER_COLOR,
+						colorPrimary: BUTTON_COLOR,
+						colorPrimaryHover: BUTTON_HOVER_COLOR,
 					},
 					InputNumber: {
 						colorPrimary: MAIN_COLOR,

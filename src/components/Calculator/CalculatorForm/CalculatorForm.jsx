@@ -2,9 +2,9 @@ import {Button, Form, InputNumber, Radio, Slider, Switch} from "antd";
 import {MinusOutlined, PlusOutlined} from "@ant-design/icons";
 import React, {useEffect, useState} from "react";
 
-import styles from "./CalculatorLogic.module.scss";
+import styles from "./CalculatorForm.module.scss";
 
-const CalculatorLogic = ({marks, prices, dogsCount, showWalks, info, initialValues}) => {
+const CalculatorForm = ({marks, prices, dogsCount, showWalks, info, initialValues}) => {
     const { DAY_PRICE, ONE_WALK_PRICE, ONE_ANIMAL_PRICE, FIRST_MEETING_PRICE,
         WITHOUT_OTHER_ANIMALS_PRICE } = prices;
 
@@ -233,4 +233,4 @@ const CalculatorLogic = ({marks, prices, dogsCount, showWalks, info, initialValu
     );
 };
 
-export default CalculatorLogic;
+export default CalculatorForm;

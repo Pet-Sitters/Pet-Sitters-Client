@@ -40,13 +40,6 @@ export const router = createBrowserRouter([
 				path: 'Profile',
 				element: <ProfilePage />,
 				errorElement: <ErrorPage />,
-				children: [
-					{
-						path: '1',
-						element: <CalculatorPage />,
-						errorElement: <ErrorPage />,
-					}
-				]
 			},
 
 		],

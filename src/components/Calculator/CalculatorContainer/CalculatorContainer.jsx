@@ -3,7 +3,7 @@ import { Radio } from 'antd';
 
 import styles from './CalculatorContainer.module.scss';
 
-import CalculatorLogic from "../CalculatorLogic/CalculatorLogic.jsx";
+import CalculatorForm from "../CalculatorForm/CalculatorForm.jsx";
 
 // Slider marks
 const marks = {
@@ -71,11 +71,11 @@ const CalculatorContainer = () => {
                 optionType="button"
                 className={styles.radioGroup}
             />
-            <CalculatorLogic marks = {marks}
-                             prices = {selectedCalc === 'dog' ? prices.dog : prices.cat}
-                             dogsCount = {selectedCalc === 'dog' ? dogs : []}
-                             showWalks = {selectedCalc === 'dog' ? true : undefined}
-                             info = {info}
+            <CalculatorForm marks = {marks}
+                            prices = {selectedCalc === 'dog' ? prices.dog : prices.cat}
+                            dogsCount = {selectedCalc === 'dog' ? dogs : []}
+                            showWalks = {selectedCalc === 'dog' ? true : undefined}
+                            info = {info}
             />
         </div>
     );

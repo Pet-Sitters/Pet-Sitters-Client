@@ -1,0 +1,8 @@
+.myPets_container {
+	display: grid;
+	grid-template-rows: repeat(2, 300px);
+	grid-template-columns: repeat(3, 250px);
+	gap: 20px;
+	width: 790px;
+	height: 620px;
+}

@@ -1,7 +1,9 @@
-import { OrderButton } from '../Buttons/OrderButton/OrderButton'
-import s from './OrderSittingCard.module.scss'
-export function OrderSittingCard() {
-	const img = <true></true>
+import { Link } from 'react-router-dom'
+import { OrderButton } from '../OrderButton/OrderButton'
+import s from './AddPetCard.module.scss'
+
+export function AddPetCard() {
+	const img = false
 	return (
 		<div className={s.card}>
 			{img ? (
@@ -11,7 +13,7 @@ export function OrderSittingCard() {
 					className={s.img}
 				/>
 			) : (
-				<button className={s.photoContainer}></button>
+				<Link to={'/account/add-pets'} className={s.photoContainer}></Link>
 			)}
 
 			<h3 className={s.title}>Кличка</h3>

@@ -1,8 +1,9 @@
 import { useDispatch, useSelector } from 'react-redux'
 import { Link } from 'react-router-dom'
-import { selectCurrentUser } from '../../../core/store/auth/slice'
-import { logout } from '../../../core/store/auth/thunk'
-import s from './header.module.scss'
+import { selectCurrentUser } from '../../core/store/auth/slice'
+
+import { logout } from '../../core/store/auth/thunk'
+import s from './Header.module.scss'
 
 export function Header() {
 	const dispatch = useDispatch()
@@ -10,10 +11,10 @@ export function Header() {
 	// console.log(auth)
 	return (
 		<div className={s.header}>
-			<div className={s.logo}>logo</div>
-			<Link to={'/calc'} className={s.calc}>
-				Калькулятор
-			</Link>
+			<div className={s.logo}>
+				<img src='/assets/images/logo.png' alt='logo' />
+			</div>
+
 			<nav className={s.navigation}>
 				<ul className={s.list}>
 					<li className={s.listItem}>
@@ -44,6 +45,9 @@ export function Header() {
 								className={s.link}
 							>
 								Выйти
+							</Link>
+							<Link to={'/account/personal'} className={s.link}>
+								Личный кабинет
 							</Link>
 						</li>
 					)}

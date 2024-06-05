@@ -16,6 +16,7 @@ body {
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	background-color: $bg-color;
 	min-height: 100vh; /* Высота 100% от высоты окна браузера */
 	margin: 0; /* Убирает отступы */
 	padding: 0; /* Убирает отступы */

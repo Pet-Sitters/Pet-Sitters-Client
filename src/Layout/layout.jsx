@@ -1,5 +1,5 @@
 import { Outlet } from 'react-router-dom'
-import { Header } from '../pages/promoPage/header/heder'
+import { Header } from './Header/Heder'
 import s from './layout.module.scss'
 
 export function Layout() {
@@ -7,7 +7,7 @@ export function Layout() {
 		<div className={s.container}>
 			<Header />
 			<main className={s.section}>
-				<Outlet></Outlet>
+				<Outlet />
 			</main>
 		</div>
 	)

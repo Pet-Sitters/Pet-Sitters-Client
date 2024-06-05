@@ -1,13 +1,13 @@
 import { Button, Checkbox, Form, Input, Select } from 'antd'
 import React from 'react'
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import { useNavigate } from 'react-router'
 import {
 	selectAuthError,
 	selectAuthErrorMessage,
 } from '../../../core/store/auth/slice'
 import { register } from '../../../core/store/auth/thunk'
-
+import s from './registration.module.scss'
 const { Option } = Select
 
 const formItemLayout = {
@@ -70,7 +70,7 @@ const Registration = () => {
 	)
 
 	return (
-		<div>
+		<div className={s.registration_container}>
 			{
 				<Form
 					{...formItemLayout}

@@ -22,7 +22,7 @@ const Login = () => {
 			.then((action) => {
 				if (action.payload && action.payload.auth_token) {
 					localStorage.setItem('accessToken', action.payload.auth_token)
-					navigate('/calc')
+					navigate('/')
 				} else {
 					console.error('Authentication failed')
 				}

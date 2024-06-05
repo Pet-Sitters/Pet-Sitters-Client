@@ -1,0 +1,50 @@
+.profileSidebar {
+	position: relative;
+	background-color: #c896ff;
+	height: 470px;
+	width: 100%;
+	padding-top: 148px;
+	padding-left: 50px;
+	padding-right: 50px;
+	border-radius: 10px;
+	text-align: center;
+	.profilePicture {
+		position: absolute;
+		top: -140px;
+		left: 80px;
+		width: 280px;
+		height: 280px;
+		margin: 0 auto;
+		border-radius: 50%;
+		overflow: hidden;
+		img {
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+		}
+	}
+	.profileName {
+		font-size: 36px;
+		font-weight: bold;
+	}
+
+	.profileMenu {
+		display: flex;
+		margin-top: 24px;
+		text-align: left;
+		flex-direction: column;
+		list-style-type: none;
+		padding: 0;
+
+		.link {
+			font-size: 24px;
+			margin: 7px 0;
+			cursor: pointer;
+			text-decoration: none;
+		}
+
+		.active {
+			font-weight: bold;
+		}
+	}
+}

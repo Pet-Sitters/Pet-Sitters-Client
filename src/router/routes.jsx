@@ -6,6 +6,7 @@ import Registration from '../components/auth/registration/registration'
 import CalculatorPage from '../pages/CalculatorPage.jsx'
 import ErrorPage from '../pages/error-pages'
 import { PromoPage } from '../pages/promoPage/promoPage'
+import ProfilePage from "../pages/ProfilePage.jsx";
 
 export const router = createBrowserRouter([
 	{
@@ -35,6 +36,12 @@ export const router = createBrowserRouter([
 				element: <CalculatorPage />,
 				errorElement: <ErrorPage />,
 			},
+			{
+				path: 'Profile',
+				element: <ProfilePage />,
+				errorElement: <ErrorPage />,
+			},
+
 		],
 	},
 ])

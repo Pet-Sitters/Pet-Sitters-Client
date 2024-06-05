@@ -1,13 +1,9 @@
 import React, { useState } from 'react';
-import {ConfigProvider, Radio} from 'antd';
+import { Radio } from 'antd';
 
-import DogCalculator from "../DogCalculator/DogCalculator.jsx";
-import CatCalculator from "../CatCalculator/CatCalculator.jsx";
+import styles from './CalculatorContainer.module.scss';
 
-import styles from "./CalculatorContainer.module.scss";
-
-const MAIN_COLOR = '#C896FF';
-const HOVER_COLOR = '#ceb5ec';
+import CalculatorLogic from "../CalculatorLogic/CalculatorLogic.jsx";
 
 // Slider marks
 const marks = {
@@ -20,10 +16,44 @@ const marks = {
     60: '60',
 };
 
+// cat or dog calculator
 const options = [
     { label: 'Собаки', value: 'dog' },
     { label: 'Кошки', value: 'cat' },
 ]
+
+// Dogs count
+const dogs = [
+    { label: '1', value: 1 },
+    { label: '2', value: 2 },
+    { label: '3', value: 3 },
+    { label: '4', value: 4 },
+];
+
+// prices for dogs and cats
+const prices = {
+    dog: {
+        DAY_PRICE: 890,
+        ONE_WALK_PRICE: 200,
+        ONE_ANIMAL_PRICE: 400,
+        FIRST_MEETING_PRICE: 300,
+        WITHOUT_OTHER_ANIMALS_PRICE: 250
+    },
+    cat: {
+        DAY_PRICE: 1200,
+        ONE_WALK_PRICE: 0,
+        ONE_ANIMAL_PRICE: 200,
+        FIRST_MEETING_PRICE: 300,
+        WITHOUT_OTHER_ANIMALS_PRICE: 250
+    }
+}
+
+let info = {
+    name: "walksPerDay",
+    label: "Количество выгулов в сутки",
+    min: 0,
+    max: 30
+};
 
 const CalculatorContainer = () => {
     const [selectedCalc, setSelectedCalc] = useState('dog');
@@ -33,37 +63,6 @@ const CalculatorContainer = () => {
     }
 
     return (
-        <ConfigProvider
-            theme={{
-                components: {
-                    Slider: {
-                        handleColor: MAIN_COLOR,
-                        handleActiveColor: MAIN_COLOR,
-                        dotBorderColor: MAIN_COLOR,
-                        dotActiveBorderColor: MAIN_COLOR,
-                        trackBg: MAIN_COLOR,
-                        trackHoverBg: MAIN_COLOR,
-                    },
-                    Button: {
-                        colorPrimary: MAIN_COLOR,
-                        colorPrimaryHover: HOVER_COLOR,
-                    },
-                    InputNumber: {
-                        colorPrimary: MAIN_COLOR,
-                        colorPrimaryHover: MAIN_COLOR,
-                    },
-                    Switch: {
-                        colorPrimary: MAIN_COLOR,
-                        colorPrimaryHover: HOVER_COLOR,
-                    },
-                    Radio: {
-                        colorPrimary: MAIN_COLOR,
-                        colorPrimaryHover: HOVER_COLOR,
-                        colorPrimaryActive: MAIN_COLOR,
-                    },
-                },
-            }}
-        >
         <div className={styles.container}>
             <Radio.Group
                 defaultValue={selectedCalc}
@@ -72,9 +71,13 @@ const CalculatorContainer = () => {
                 optionType="button"
                 className={styles.radioGroup}
             />
-            {selectedCalc === 'dog' ? <DogCalculator marks = {marks}/> : <CatCalculator marks = {marks}/>}
+            <CalculatorLogic marks = {marks}
+                             prices = {selectedCalc === 'dog' ? prices.dog : prices.cat}
+                             dogsCount = {selectedCalc === 'dog' ? dogs : []}
+                             showWalks = {selectedCalc === 'dog' ? true : undefined}
+                             info = {info}
+            />
         </div>
-        </ConfigProvider>
     );
 };
 

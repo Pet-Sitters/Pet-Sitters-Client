@@ -1,0 +1,54 @@
+
+.calc {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 10px;
+  align-items: center;
+
+  .title {
+    position: relative;
+    font-size: 30px;
+    font-weight: 700;
+    line-height: 38px;
+    letter-spacing: -0.15px;
+    padding-bottom: 8px;
+  }
+
+  .sliderContainer {
+    width: 100%;
+
+    .slider {
+      margin: 50px 0;
+    }
+  }
+
+  .counts {
+    display: grid;
+    width: 100%;
+    grid-template-columns: 1fr 1fr;
+
+    .inputGroup{
+      .inputButton {
+        margin: 0 5px;
+      }
+    }
+  }
+
+  .swithces{
+    display: flex;
+    gap: 10px;
+  }
+
+  .summaryContainer{
+    .summaryValue{
+      color: #C896FF;
+      font-size: 20px;
+      font-weight: bold;
+    }
+  }
+}
+
+.linkButton {
+  text-transform: uppercase;
+}

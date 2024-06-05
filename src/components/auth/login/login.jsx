@@ -9,11 +9,19 @@ const Login = () => {
 	const navigate = useNavigate()
 	const dispatch = useDispatch()
 	const onFinish = (values) => {
-		console.log('Received values of form: ', values)
-		dispatch(login(values)).then((action) => {
-			localStorage.setItem('accessToken', action.payload.auth_token)
-		})
-		navigate('/')
+		// console.log('Received values of form: ', values)
+		dispatch(login(values))
+			.then((action) => {
+				if (action.payload.auth_token) {
+					localStorage.setItem('accessToken', action.payload.auth_token)
+					navigate('/calc')
+				} else {
+					console.error('Authentication failed')
+				}
+			})
+			.catch((error) => {
+				console.error('Error during authentication:', error)
+			})
 	}
 	return (
 		<Form

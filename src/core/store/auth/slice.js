@@ -1,8 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit'
 import { getCurrentUser, login, logout, register } from './thunk'
 
-
-
 const initialState = {
 	currentUser: undefined,
 	isLoading: false,
@@ -54,4 +52,8 @@ const authSlice = createSlice({
 			})
 	},
 })
+export const selectCurrentUser = (state) => state.auth.currentUser
+export const selectIsLoading = (state) => state.auth.isLoading
+export const selectAuthError = (state) => state.auth.error
+
 export default authSlice.reducer

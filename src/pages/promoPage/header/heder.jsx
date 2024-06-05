@@ -37,9 +37,13 @@ export function Header() {
 
 					{auth.currentUser && (
 						<li className={s.listItem}>
-							<span onClick={() => dispatch(logout())} className={s.link}>
+							<Link
+								to={'/'}
+								onClick={() => dispatch(logout())}
+								className={s.link}
+							>
 								Выйти
-							</span>
+							</Link>
 						</li>
 					)}
 				</ul>

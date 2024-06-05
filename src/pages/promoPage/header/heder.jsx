@@ -1,11 +1,12 @@
 import { useDispatch, useSelector } from 'react-redux'
 import { Link } from 'react-router-dom'
+import { selectCurrentUser } from '../../../core/store/auth/slice'
 import { logout } from '../../../core/store/auth/thunk'
 import s from './header.module.scss'
 
 export function Header() {
 	const dispatch = useDispatch()
-	const auth = useSelector((state) => state.authSlice)
+	const auth = useSelector(selectCurrentUser)
 	// console.log(auth)
 	return (
 		<div className={s.header}>
@@ -20,7 +21,7 @@ export function Header() {
 							Домой
 						</Link>
 					</li>
-					{auth.currentUser === null && (
+					{auth === null && (
 						<>
 							<li className={s.listItem}>
 								<Link to={'/registration'} className={s.link}>
@@ -35,7 +36,7 @@ export function Header() {
 						</>
 					)}
 
-					{auth.currentUser && (
+					{auth && (
 						<li className={s.listItem}>
 							<Link
 								to={'/'}

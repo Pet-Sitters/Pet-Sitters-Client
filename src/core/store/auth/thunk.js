@@ -19,7 +19,9 @@ export const login = createAsyncThunk(
 			const response = await api.post('/app/auth/token/login/', payload)
 			return response.data
 		} catch (err) {
-			return thunkAPI.rejectWithValue(err.response.data.errors)
+			return thunkAPI.rejectWithValue(
+				err.response.data.errors || 'Login failed'
+			)
 		}
 	}
 )

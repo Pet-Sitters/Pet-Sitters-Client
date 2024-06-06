@@ -1,0 +1,13 @@
+.account_container {
+	width: 100%;
+
+	display: flex;
+	gap: 50px;
+	padding: 0 80px;
+	.sidebar {
+		width: 490px;
+	}
+	.outlet {
+		width: 740px;
+	}
+}

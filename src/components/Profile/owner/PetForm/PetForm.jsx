@@ -1,9 +1,9 @@
 import React from 'react';
 import {Button, Form, Upload} from 'antd';
 import styles from "./PetForm.module.scss"
-import FormButton from "../../../UI/FormButton/FormButton.jsx";
-import FormInput from "../../../UI/FormInput/FormInput.jsx";
-import FormRadio from "../../../UI/FormRadio/FormRadio.jsx";
+import FormButton from "../../../../UI/FormButton/FormButton.jsx";
+import FormInput from "../../../../UI/FormInput/FormInput.jsx";
+import FormRadio from "../../../../UI/FormRadio/FormRadio.jsx";
 
 import {animalTypes, formInputs, formRadioGroups} from "./formFields.js";
 import {UploadOutlined} from "@ant-design/icons";

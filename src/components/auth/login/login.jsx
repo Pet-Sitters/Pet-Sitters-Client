@@ -9,6 +9,8 @@ import {
 } from '../../../core/store/auth/slice'
 import { login } from '../../../core/store/auth/thunk'
 
+import s from "./login.module.scss"
+
 const Login = () => {
 	const navigate = useNavigate()
 	const dispatch = useDispatch()
@@ -32,7 +34,7 @@ const Login = () => {
 			})
 	}
 	return (
-		<div>
+		<div className={s.authForm}>
 			{
 				<Form
 					name='normal_login'
@@ -54,7 +56,6 @@ const Login = () => {
 						<Input
 							prefix={<UserOutlined className='site-form-item-icon' />}
 							placeholder='Username'
-							autoComplete="username"
 						/>
 					</Form.Item>
 					{/* <Form.Item
@@ -84,7 +85,6 @@ const Login = () => {
 							prefix={<LockOutlined className='site-form-item-icon' />}
 							type='password'
 							placeholder='Password'
-							autoComplete="current-password"
 						/>
 					</Form.Item>
 					<Form.Item>

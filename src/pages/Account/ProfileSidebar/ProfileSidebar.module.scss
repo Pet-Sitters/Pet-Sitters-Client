@@ -1,17 +1,23 @@
 .profileSidebar {
 	position: relative;
+	padding-bottom: 22px;
+	//padding-left: 50px;
+	display: flex;
+	align-items: center;
+	justify-content: end;
+	flex-direction: column;
 	background-color: #c896ff;
-	height: 470px;
+	min-height: 470px;
 	width: 100%;
-	padding-top: 148px;
-	padding-left: 50px;
-	padding-right: 50px;
+	min-width: 330px;
+	//width: auto;
 	border-radius: 10px;
-	text-align: center;
+	align-self: start;
+
 	.profilePicture {
 		position: absolute;
 		top: -140px;
-		left: 80px;
+		//left: 80px;
 		width: 280px;
 		height: 280px;
 		margin: 0 auto;

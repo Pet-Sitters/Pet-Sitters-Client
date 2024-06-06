@@ -1,13 +1,15 @@
 .account_container {
-	width: 100%;
-
-	display: flex;
+	display: grid;
+	grid-template-columns: 35% 65%;
 	gap: 50px;
-	padding: 0 80px;
+	width: 100%;
+	margin-top: 290px;
+
 	.sidebar {
-		width: 490px;
+		display: flex;
+		justify-content: center;
 	}
 	.outlet {
-		width: 740px;
+		//width: 740px;
 	}
 }

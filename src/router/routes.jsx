@@ -6,7 +6,7 @@ import Login from '../components/auth/login/login'
 import Registration from '../components/auth/registration/registration'
 import { MyPets } from '../pages/Account/MyPets/MyPets'
 import { Orders } from '../pages/Account/Orders/Orders'
-import { PersonalData } from '../pages/Account/PersonalData/PersonalData'
+import PersonalData from "../pages/Account/PersonalData/PersonalData.jsx";
 import PetForm from '../pages/Account/PetForm/PetForm'
 import { Settings } from '../pages/Account/Settings/Settings'
 import { Sitters } from '../pages/Account/Sitters/Sitters'

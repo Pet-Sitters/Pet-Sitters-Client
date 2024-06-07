@@ -1,6 +1,8 @@
 import React from 'react';
 import {ConfigProvider, Form, Input} from "antd";
 
+import styles from "./FormInput.module.scss";
+
 const HOVER_INPUT_COLOR = '#8422E6';
 
 const FormInput = ({type, placeholder, ...props}) => {
@@ -18,7 +20,7 @@ const FormInput = ({type, placeholder, ...props}) => {
                 },
             }}
         >
-            <Form.Item {...props}>
+            <Form.Item className={styles.input} {...props}>
                 <Input type={type} placeholder={placeholder}/>
             </Form.Item>
         </ConfigProvider>

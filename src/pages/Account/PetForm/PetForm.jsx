@@ -50,6 +50,16 @@ const PetForm = () => {
 				/>
 			))}
 
+			<Form.Item  shouldUpdate={(prevValues, curValues) => prevValues.isObserved !== curValues.isObserved}>
+				{({ getFieldValue }) =>
+					getFieldValue('isObserved') === 'yes' ?
+						<FormInput
+							name="clinicInfo"
+							placeholder="Введите информацию о клинике"
+							rules={[{ required: true, message: 'Введите информацию о клинике' }]}
+						/> : null
+				}
+			</Form.Item>
 
 			<Form.Item
 				label='Другие важные особенности вашего питомца'

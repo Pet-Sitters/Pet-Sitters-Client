@@ -12,12 +12,18 @@ export const formInputs = [
     {
         placeholder: 'E-mail*',
         name: 'email',
-        rules: [{ required: true, message: 'Введите E-mail' }],
+        rules: [
+            { required: true, message: 'Введите E-mail' },
+            { type: 'email', message: 'Введите действительный E-mail'}
+        ],
     },
     {
         placeholder: 'Номер телефона*',
         name: 'phoneNumber',
-        rules: [{ required: true, message: 'Введите номер телефона' }],
+        rules: [
+            { required: true, message: 'Введите номер телефона' },
+            { pattern: /^(?:\+7|8)?\s?\(?\d{3}\)?\s?\d{3}[-\s]?\d{2}[-\s]?\d{2}$/, message: 'Введите действительный номер телефона' }
+        ],
     },
     {
         placeholder: 'Ник в Telegram*',

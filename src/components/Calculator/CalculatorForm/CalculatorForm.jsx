@@ -1,8 +1,11 @@
-import {Button, Form, InputNumber, Radio, Slider, Switch} from "antd";
+import {Button, ConfigProvider, Form, InputNumber, Radio, Slider, Switch} from "antd";
 import {MinusOutlined, PlusOutlined} from "@ant-design/icons";
 import React, {useEffect, useState} from "react";
 
 import styles from "./CalculatorForm.module.scss";
+import FormButton from "../../UI/FormButton/FormButton.jsx";
+
+const MAIN_COLOR = '#C896FF';
 
 const CalculatorForm = ({marks, prices, dogsCount, showWalks, info, initialValues}) => {
     const { DAY_PRICE, ONE_WALK_PRICE, ONE_ANIMAL_PRICE, FIRST_MEETING_PRICE,
@@ -147,15 +150,30 @@ const CalculatorForm = ({marks, prices, dogsCount, showWalks, info, initialValue
                 label="Количество суток передержки"
                 className={styles.sliderContainer}
             >
-                <Slider
-                    className={styles.slider}
-                    min={1}
-                    max={60}
-                    marks={marks}
-                    step={1}
-                    tooltip={{ open: true, color: '#C896FF' }}
-                    onChange={handleSliderChange}
-                />
+                <ConfigProvider
+                    theme={{
+                        components: {
+                            Slider: {
+                                handleColor: MAIN_COLOR,
+                                handleActiveColor: MAIN_COLOR,
+                                dotBorderColor: MAIN_COLOR,
+                                dotActiveBorderColor: MAIN_COLOR,
+                                trackBg: MAIN_COLOR,
+                                trackHoverBg: MAIN_COLOR,
+                            },
+                        },
+                    }}
+                >
+                    <Slider
+                        className={styles.slider}
+                        min={1}
+                        max={60}
+                        marks={marks}
+                        step={1}
+                        tooltip={{ open: true, color: '#C896FF' }}
+                        onChange={handleSliderChange}
+                    />
+                </ConfigProvider>
             </Form.Item>
 
             <div className={styles.calc}>
@@ -224,11 +242,14 @@ const CalculatorForm = ({marks, prices, dogsCount, showWalks, info, initialValue
                 </p>
             </div>
 
-            <Form.Item>
-                <Button type='primary' htmlType='submit' className={styles.linkButton}>
-                    узнать точную цену
-                </Button>
-            </Form.Item>
+            <FormButton
+                className={styles.linkButton}
+                type='primary'
+                htmlType='submit'
+            >
+                Сохранить данные
+            </FormButton>
+
         </Form>
     );
 };

@@ -1,11 +1,27 @@
 import React from 'react';
-import {Form, Input} from "antd";
+import {ConfigProvider, Form, Input} from "antd";
+
+const HOVER_INPUT_COLOR = '#8422E6';
 
 const FormInput = ({type, placeholder, ...props}) => {
     return (
-        <Form.Item {...props}>
-            <Input type={type} placeholder={placeholder}/>
-        </Form.Item>
+        <ConfigProvider
+            theme={{
+                components: {
+                    Input: {
+                        activeBorderColor: HOVER_INPUT_COLOR,
+                        borderRadius: 24,
+                        fontSize: 20,
+                        lineWidth: 2,
+                        controlHeight: 74
+                    },
+                },
+            }}
+        >
+            <Form.Item {...props}>
+                <Input type={type} placeholder={placeholder}/>
+            </Form.Item>
+        </ConfigProvider>
     );
 };
 

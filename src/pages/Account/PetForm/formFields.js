@@ -84,7 +84,15 @@ export const formRadioGroups = [
         ]
     },
     {
-        label: "Наблюдается ли у питомца в конкретной ветеринарной клинике/у конкретного ветеринарного врача?",
+        label: "Дружелюбен ли питомец к другим собакам/кошкам?",
+        name: "isFriendly",
+        options: [
+            { label: "Да", value: "yes" },
+            { label: "Нет", value: "no" }
+        ]
+    },
+    {
+        label: "Наблюдается ли питомeц в конкретной ветеринарной клинике/у конкретного ветеринарного врача?",
         name: "isObserved",
         options: [
             { label: "Да", value: "yes" },
@@ -92,13 +100,4 @@ export const formRadioGroups = [
             { label: "Не знаю точно", value: "unknown" }
         ]
     },
-    {
-        label: "Дружелюбен ли питомец к другим собакам/кошкам?",
-        name: "isFriendly",
-        options: [
-            { label: "Да", value: "yes" },
-            { label: "Нет", value: "no" }
-        ]
-    }
-
 ]

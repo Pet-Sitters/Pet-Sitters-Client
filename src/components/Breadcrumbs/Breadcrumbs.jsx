@@ -17,18 +17,22 @@ const Breadcrumbs = () => {
         '/account/settings': 'Настройки',
         '/account/calc': 'Калькулятор',
     };
+    const items = [
+        {
+            title: <Link to="/">Главная</Link>,
+            key: '/',
+        },
+        ...pathnames.map((value, index) => {
+            const to = `/${pathnames.slice(0, index + 1).join('/')}`;
+            return {
+                title: <Link to={to}>{breadcrumbNameMap[to] || value}</Link>,
+                key: to,
+            };
+        }),
+    ];
 
     return (
-        <Breadcrumb>
-            {pathnames.map((value, index) =>{
-                const to = `/${pathnames.slice(0, index + 1).join('/')}`;
-                return (
-                    <Breadcrumb.Item key={to}>
-                        <Link to={to}>{breadcrumbNameMap[to] || value}</Link>
-                    </Breadcrumb.Item>
-                )
-            })}
-        </Breadcrumb>
+        <Breadcrumb items={items} />
     );
 };
 

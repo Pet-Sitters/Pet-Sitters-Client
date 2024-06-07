@@ -1,4 +1,4 @@
-import { Button, Form, Upload } from 'antd'
+import {Button, Form, Upload} from 'antd'
 import React from 'react'
 import FormButton from '../../../components/UI/FormButton/FormButton'
 import FormInput from '../../../components/UI/FormInput/FormInput.jsx'
@@ -49,6 +49,7 @@ const PetForm = () => {
 					rules={[{ required: true, message: 'Введите один из вариантов' }]}
 				/>
 			))}
+
 
 			<Form.Item
 				label='Другие важные особенности вашего питомца'

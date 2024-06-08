@@ -6,7 +6,7 @@ export const register = createAsyncThunk(
 	async (payload, thunkAPI) => {
 		try {
 			const response = await api.post('/auth/users/', payload)
-			return response.data // TODO: уточнить user нужно или нет
+			return response.data
 		} catch (err) {
 			return thunkAPI.rejectWithValue(err.response.data.errors)
 		}

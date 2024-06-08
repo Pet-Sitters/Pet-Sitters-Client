@@ -6,13 +6,13 @@ import Login from '../components/auth/login/login'
 import Registration from '../components/auth/registration/registration'
 import { MyPets } from '../pages/Account/MyPets/MyPets'
 import { Orders } from '../pages/Account/Orders/Orders'
-import PersonalData from "../pages/Account/PersonalData/PersonalData.jsx";
+import PersonalData from '../pages/Account/PersonalData/PersonalData.jsx'
 import PetForm from '../pages/Account/PetForm/PetForm'
 import { Settings } from '../pages/Account/Settings/Settings'
 import { Sitters } from '../pages/Account/Sitters/Sitters'
 import CalculatorPage from '../pages/CalculatorPage.jsx'
+import { Home } from '../pages/Home/Home'
 import ErrorPage from '../pages/error-pages'
-import { PromoPage } from '../pages/promoPage/promoPage'
 
 export const router = createBrowserRouter([
 	{
@@ -23,7 +23,7 @@ export const router = createBrowserRouter([
 			,
 			{
 				path: '',
-				element: <PromoPage />,
+				element: <Home />,
 				errorElement: <ErrorPage />,
 			},
 			{

@@ -1,37 +1,35 @@
 import { LockOutlined, UserOutlined } from '@ant-design/icons'
-import { Button, Checkbox, Form, Input } from 'antd'
+import { Button, Checkbox, Form, Input, message } from 'antd'
 import React from 'react'
-import { useDispatch, useSelector } from 'react-redux'
+import { useDispatch } from 'react-redux'
 import { useNavigate } from 'react-router'
-import {
-	selectAuthError,
-	selectAuthErrorMessage,
-} from '../../../core/store/auth/slice'
 import { login } from '../../../core/store/auth/thunk'
 
-import s from "./login.module.scss"
+import s from './login.module.scss'
 
 const Login = () => {
 	const navigate = useNavigate()
 	const dispatch = useDispatch()
-	const isError = useSelector(selectAuthError)
-	console.log(isError)
-	const errorMessage = useSelector(selectAuthErrorMessage)
-	console.log(errorMessage)
-	const onFinish = (values) => {
-		// console.log('Received values of form: ', values)
-		dispatch(login(values))
-			.then((action) => {
-				if (action.payload && action.payload.auth_token) {
-					localStorage.setItem('accessToken', action.payload.auth_token)
-					navigate('/')
-				} else {
-					console.error('Authentication failed')
-				}
-			})
-			.catch((error) => {
-				console.error('Error during authentication:', error)
-			})
+
+	message.config({
+		top: 400, // отступ от верхней части экрана (в пикселях)
+		duration: 3, // время показа уведомления (в секундах)
+		maxCount: 3, // максимальное количество одновременно отображаемых уведомлений
+	})
+
+	const onFinish = async (values) => {
+		try {
+			const action = await dispatch(login(values))
+			if (login.fulfilled.match(action)) {
+				message.success('Вход выполнен успешно!')
+				localStorage.setItem('accessToken', action.payload.auth_token)
+				navigate('/')
+			} else {
+				throw new Error(action.payload.detail || 'Ошибка входа')
+			}
+		} catch (error) {
+			message.error(error.message)
+		}
 	}
 	return (
 		<div className={s.authForm}>
@@ -109,7 +107,6 @@ const Login = () => {
 					</Form.Item>
 				</Form>
 			}
-			{isError && <div className={s.error}>{errorMessage}</div>}
 		</div>
 	)
 }

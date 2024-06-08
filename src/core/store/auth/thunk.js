@@ -5,7 +5,7 @@ export const register = createAsyncThunk(
 	'auth/register',
 	async (payload, thunkAPI) => {
 		try {
-			const response = await api.post('/app/auth/users/', payload)
+			const response = await api.post('/auth/users/', payload)
 			return response.data // TODO: уточнить user нужно или нет
 		} catch (err) {
 			return thunkAPI.rejectWithValue(err.response.data.errors)
@@ -16,7 +16,7 @@ export const login = createAsyncThunk(
 	'auth/login',
 	async (payload, thunkAPI) => {
 		try {
-			const response = await api.post('/app/auth/token/login/', payload)
+			const response = await api.post('/auth/token/login/', payload)
 			return response.data
 		} catch (err) {
 			return thunkAPI.rejectWithValue(
@@ -25,7 +25,7 @@ export const login = createAsyncThunk(
 		}
 	}
 )
-export const logout = createAsyncThunk('auth/logout', async () => {
+export const logout = createAsyncThunk('auth/token/logout', async () => {
 	localStorage.removeItem('accessToken')
 })
 
@@ -35,7 +35,7 @@ export const getCurrentUser = createAsyncThunk(
 		try {
 			const token = localStorage.getItem('accessToken') ?? ''
 
-			const response = await api.get('/app/auth/users/', {
+			const response = await api.get('/auth/users/', {
 				headers: {
 					Authorization: `Token ${token}`,
 				},

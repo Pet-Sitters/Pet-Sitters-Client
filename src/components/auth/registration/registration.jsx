@@ -1,11 +1,7 @@
-import { Button, Checkbox, Form, Input, Select } from 'antd'
+import { Button, Checkbox, Form, Input, Select, message } from 'antd'
 import React from 'react'
-import { useDispatch, useSelector } from 'react-redux'
+import { useDispatch } from 'react-redux'
 import { useNavigate } from 'react-router'
-import {
-	selectAuthError,
-	selectAuthErrorMessage,
-} from '../../../core/store/auth/slice'
 import { register } from '../../../core/store/auth/thunk'
 import s from './registration.module.scss'
 const { Option } = Select
@@ -44,17 +40,19 @@ const Registration = () => {
 	const navigate = useNavigate()
 	const dispatch = useDispatch()
 	const [form] = Form.useForm()
-	const isError = useSelector(selectAuthError) //TODO: ошибки не отображаются
-	console.log(isError)
-	const errorMessage = useSelector(selectAuthErrorMessage)
-	console.log(errorMessage)
-	const onFinish = (values) => {
-		// console.log('Received values of form: ', values)
-		dispatch(register(values)).then((action) => {
-			// localStorage.setItem('accessToken', action.payload.id)
-			// токена нет
-		})
-		navigate('/')
+
+	const onFinish = async (values) => {
+		try {
+			const action = await dispatch(register(values))
+			if (register.fulfilled.match(action)) {
+				message.success('Регистрация прошла успешно!')
+				navigate('/')
+			} else {
+				throw new Error(action.payload.detail || 'Ошибка регистрации')
+			}
+		} catch (error) {
+			message.error(error.message)
+		}
 	}
 	const prefixSelector = (
 		<Form.Item name='prefix' noStyle>
@@ -182,7 +180,6 @@ const Registration = () => {
 					</Form.Item>
 				</Form>
 			}
-			{isError && <div className={s.error}>{errorMessage}</div>}
 		</div>
 	)
 }

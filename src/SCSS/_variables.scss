@@ -1,11 +1,24 @@
 //radius
-$border-radius-button: 18px;
+$border-radius-button: 30px;
 
 //colors
-$main-dark: #320064;
-$main-light: #c896ff;
-$bg-color: #f4eff6;
-$font-color-light: #ffffff;
+$black: #000000;
+$white: #ffffff;
+$main-dark: #47156c;
+$main-light: #6f1ea9;
+$main-veryLight: #c896ff;
+$light-green: #dbef98;
+$yellow: #f1a800;
+$bg-color: #fff9d6;
+$font-color-light: #faf9f7;
 
 //transition
 $transition: linear 0.3s;
+
+//fonts
+$font-family-primary: 'TT Norms', sans-serif;
+$font-family-secondary: 'Comfortaa', cursive;
+$font-weight-normal: normal;
+$font-weight-bold: bold;
+$font-style-normal: normal;
+$font-style-italic: italic;

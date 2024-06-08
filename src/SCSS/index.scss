@@ -6,9 +6,11 @@
 	padding: 0;
 	box-sizing: border-box;
 	//font
-	font-family: Comfortaa, sans-serif;
+	font-family: $font-family-primary;
+	font-weight: $font-weight-normal;
+	font-style: $font-style-normal;
 	font-weight: 400;
-	font-size: 16px;
+	font-size: 24px;
 	line-height: normal;
 }
 html,
@@ -27,4 +29,12 @@ body {
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 	-webkit-tap-highlight-color: transparent; //убираем дефолтную синюю подсветку
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-family: $font-family-secondary;
 }

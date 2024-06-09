@@ -1,6 +1,6 @@
-import {Button, Form, Upload} from 'antd'
+import { Button, Form, Upload } from 'antd'
 import React from 'react'
-import FormButton from '../../../components/UI/FormButton/FormButton'
+import FormButton from '../../../components/UI/Buttons/FormButton/FormButton'
 import FormInput from '../../../components/UI/FormInput/FormInput.jsx'
 import FormRadio from '../../../components/UI/FormRadio/FormRadio.jsx'
 import styles from './PetForm.module.scss'
@@ -50,14 +50,21 @@ const PetForm = () => {
 				/>
 			))}
 
-			<Form.Item  shouldUpdate={(prevValues, curValues) => prevValues.isObserved !== curValues.isObserved}>
+			<Form.Item
+				shouldUpdate={(prevValues, curValues) =>
+					prevValues.isObserved !== curValues.isObserved
+				}
+			>
 				{({ getFieldValue }) =>
-					getFieldValue('isObserved') === 'yes' ?
+					getFieldValue('isObserved') === 'yes' ? (
 						<FormInput
-							name="clinicInfo"
-							placeholder="Введите информацию о клинике"
-							rules={[{ required: true, message: 'Введите информацию о клинике' }]}
-						/> : null
+							name='clinicInfo'
+							placeholder='Введите информацию о клинике'
+							rules={[
+								{ required: true, message: 'Введите информацию о клинике' },
+							]}
+						/>
+					) : null
 				}
 			</Form.Item>
 

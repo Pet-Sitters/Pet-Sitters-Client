@@ -1,6 +1,7 @@
-@import './../../../SCSS/index.scss';
+@import './../../../../SCSS/index.scss';
 .submitButton {
 	width: 290px;
 	height: 60px;
+	font-weight: 500 !important;
 	border-radius: $border-radius-button;
 }

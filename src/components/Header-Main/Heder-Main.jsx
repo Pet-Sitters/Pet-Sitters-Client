@@ -5,7 +5,7 @@ import { selectCurrentUser } from '../../core/store/auth/slice'
 import { useEffect, useState } from 'react'
 import s from './Header-Main.module.scss'
 
-export function Header_Main() {
+export function HeaderMain() {
 	const dispatch = useDispatch()
 	const auth = useSelector(selectCurrentUser)
 	// console.log(auth)

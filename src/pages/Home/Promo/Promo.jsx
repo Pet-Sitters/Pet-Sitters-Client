@@ -1,4 +1,4 @@
-import { OrderButton } from '../../../components/UI/OrderButton/OrderButton'
+import FormButton from '../../../components/UI/Buttons/FormButton/FormButton'
 import s from './Promo.module.scss'
 export function Promo() {
 	return (
@@ -15,9 +15,9 @@ export function Promo() {
 					отдохнуть
 				</div>
 				<p className={s.subtitle}>Поможет Petsitter</p>
-				<div className={s.buttonContainer}>
-					<OrderButton textButton={'Оформить заказ'} />
-				</div>
+				<FormButton type='primary' htmlType='submit'>
+					Оформить заказ
+				</FormButton>
 			</div>
 
 			<img src='/assets/images/Home/promo_right.png' alt='imagePromo' />

@@ -3,7 +3,7 @@ import s from './AboutPetSitter.module.scss'
 
 export function AboutPetSitter() {
 	return (
-		<section className={s.aboutPetSitter}>
+		<article className={s.aboutPetSitter}>
 			<div className={s.overexposure}>
 				<div className={s.overexposureDog}>
 					<img
@@ -38,15 +38,7 @@ export function AboutPetSitter() {
 					alt='frame'
 					className={s.frame}
 				/>
-				<img src='/assets/icons/Home/face.png' alt='face' className={s.face} />
-				<img src='/assets/icons/Home/dog.png' alt='dog' className={s.dog} />
-				<img src='/assets/icons/Home/cat.png' alt='cat' className={s.cat} />
-				<img
-					src='/assets/icons/Home/togever.png'
-					alt='frame'
-					className={s.together}
-				/>
 			</div>
-		</section>
+		</article>
 	)
 }

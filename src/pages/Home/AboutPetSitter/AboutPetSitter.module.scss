@@ -80,36 +80,12 @@
 		}
 	}
 	.wrapperFrame {
-		position: relative;
 		display: flex;
 		justify-content: center;
 		margin-bottom: 141px;
 		.frame {
 			width: 971px;
 			height: 456.75px;
-		}
-		.face {
-			position: absolute;
-			top: 0;
-			left: 322px;
-		}
-		.dog {
-			position: absolute;
-			top: 271px;
-			left: 458px;
-		}
-		.cat {
-			width: 135.53px;
-			height: 98.04px;
-
-			position: absolute;
-			top: 266px;
-			left: 877px;
-		}
-		.together {
-			position: absolute;
-			top: 340px;
-			left: 1030px;
 		}
 	}
 }

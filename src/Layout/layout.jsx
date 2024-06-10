@@ -1,12 +1,17 @@
 import { Outlet } from 'react-router-dom'
-import { Header } from './Header/Heder'
+import { Header_Main } from '../components/Header-Main/Heder-Main'
+import { Header_Top } from '../components/Header-Top/Header-Top'
 import s from './layout.module.scss'
 
 export function Layout() {
 	return (
 		<div className={s.container}>
-			<Header />
-			<main className={s.section}>
+			<header className={s.header_container}>
+				<Header_Top />
+				<Header_Main />
+			</header>
+
+			<main className={s.mainContainer}>
 				<Outlet />
 			</main>
 		</div>

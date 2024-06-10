@@ -1,10 +1,10 @@
-import { Form} from 'antd'
+import { Form } from 'antd'
 import React from 'react'
-import FormButton from '../../../components/UI/FormButton/FormButton'
+import FormButton from '../../../components/UI/Buttons/FormButton/FormButton.jsx'
 import FormInput from '../../../components/UI/FormInput/FormInput.jsx'
 import styles from './PersonalData.module.scss'
 
-import {formInputs} from './formFields.js'
+import { formInputs } from './formFields.js'
 
 const PersonalData = () => {
 	const [form] = Form.useForm()
@@ -24,7 +24,6 @@ const PersonalData = () => {
 			onFinishFailed={onFinishFailed}
 			onFinish={handleFinish}
 		>
-
 			{formInputs.map((input) => (
 				<FormInput
 					key={input.name}

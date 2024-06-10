@@ -17,18 +17,15 @@ html,
 body {
 	display: flex;
 	flex-direction: column;
-	//justify-content: center;
-	//align-items: center;
-	background-color: $bg-color;
-	//min-height: 100vh; /* Высота 100% от высоты окна браузера */
-	margin: 0; /* Убирает отступы */
-	padding: 0; /* Убирает отступы */
-	box-sizing: border-box; /* Включает padding и border в размеры элемента */
+	justify-content: center;
+	margin: 0 auto;
+	padding: 0;
+	box-sizing: border-box;
 }
 body {
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
-	-webkit-tap-highlight-color: transparent; //убираем дефолтную синюю подсветку
+	-webkit-tap-highlight-color: transparent;
 }
 h1,
 h2,

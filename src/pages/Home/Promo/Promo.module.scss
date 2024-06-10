@@ -1,0 +1,54 @@
+@import './../../../SCSS/index.scss';
+.promo {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin-top: 104px;
+	width: 100%;
+	min-height: 659px;
+	background-color: #fdf7e7;
+	.centralContent {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		gap: 24px;
+		width: 691px;
+		.title {
+			font-size: 64px;
+			font-weight: 700;
+			line-height: 70px;
+			letter-spacing: -0.04em;
+			text-align: center;
+
+			.accent {
+				font-size: 72px;
+				font-style: italic;
+				color: $yellow;
+				font-weight: 700;
+				line-height: 70px;
+				letter-spacing: -0.04em;
+				text-align: center;
+			}
+		}
+		.text {
+			width: 661px;
+			font-size: 24px;
+			line-height: 28px;
+			letter-spacing: -0.02em;
+			text-align: center;
+		}
+		.subtitle {
+			color: $main-veryLight;
+			font-size: 24px;
+			font-style: italic;
+			font-weight: 700;
+			line-height: 28.32px;
+			text-align: center;
+		}
+		.buttonContainer {
+			width: 290px;
+			height: 60px;
+		}
+	}
+}

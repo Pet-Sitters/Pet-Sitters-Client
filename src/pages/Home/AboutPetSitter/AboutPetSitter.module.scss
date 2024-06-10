@@ -19,7 +19,7 @@
 				left: 0;
 			}
 			.title {
-				font-family: 'TT Norms', sans-serif;
+				font-family: $font-family-primary;
 				font-size: 40px;
 				font-style: italic;
 				font-weight: 500;
@@ -53,7 +53,7 @@
 				right: 0;
 			}
 			.title {
-				font-family: 'TT Norms', sans-serif;
+				font-family: $font-family-primary;
 				font-size: 40px;
 				font-style: italic;
 				font-weight: 500;
@@ -70,7 +70,6 @@
 			}
 			.accent {
 				line-height: 48px;
-
 				font-style: italic;
 				font-size: 24px;
 				font-weight: bold;

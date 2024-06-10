@@ -20,19 +20,18 @@ export const router = createBrowserRouter([
 		element: <Layout />,
 		errorElement: <ErrorPage />,
 		children: [
-			,
 			{
 				path: '',
 				element: <Home />,
 				errorElement: <ErrorPage />,
 			},
 			{
-				path: 'registration',
+				path: 'registration/',
 				element: <Registration />,
 				errorElement: <ErrorPage />,
 			},
 			{
-				path: 'login',
+				path: 'login/',
 				element: <Login />,
 				errorElement: <ErrorPage />,
 			},
@@ -43,38 +42,38 @@ export const router = createBrowserRouter([
 				errorElement: <ErrorPage />,
 				children: [
 					{
-						path: 'personal',
+						path: 'personal/',
 						element: <PersonalData />,
 						errorElement: <ErrorPage />,
 					},
 
 					{
-						path: 'my-pets',
+						path: 'my-pets/',
 						element: <MyPets />,
 						errorElement: <ErrorPage />,
 					},
 					{
-						path: 'add-pets',
+						path: 'add-pets/',
 						element: <PetForm />,
 						errorElement: <ErrorPage />,
 					},
 					{
-						path: 'my-order',
+						path: 'my-order/',
 						element: <Orders />,
 						errorElement: <ErrorPage />,
 					},
 					{
-						path: 'my-sitter',
+						path: 'my-sitter/',
 						element: <Sitters />,
 						errorElement: <ErrorPage />,
 					},
 					{
-						path: 'settings',
+						path: 'settings/',
 						element: <Settings />,
 						errorElement: <ErrorPage />,
 					},
 					{
-						path: 'calc',
+						path: 'calc/',
 						element: <CalculatorPage />,
 						errorElement: <ErrorPage />,
 					},

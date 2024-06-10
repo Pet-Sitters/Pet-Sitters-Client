@@ -36,7 +36,6 @@ const PersonalData = () => {
 			))}
 
 			<FormButton
-				className={styles.submitButton}
 				type='primary'
 				htmlType='submit'
 			>

@@ -11,6 +11,8 @@ export function Header() {
 	// console.log(auth)
 	return (
 		<div className={s.header}>
+
+
 			<div className={s.logo}>
 				<img src='/assets/images/logo.png' alt='logo' />
 			</div>

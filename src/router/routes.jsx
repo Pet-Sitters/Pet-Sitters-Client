@@ -13,6 +13,7 @@ import { Sitters } from '../pages/Account/Sitters/Sitters'
 import CalculatorPage from '../pages/CalculatorPage.jsx'
 import ErrorPage from '../pages/error-pages'
 import { PromoPage } from '../pages/promoPage/promoPage'
+import SwiperPage from "../pages/SwiperPage/SwiperPage.jsx";
 
 export const router = createBrowserRouter([
 	{
@@ -20,10 +21,14 @@ export const router = createBrowserRouter([
 		element: <Layout />,
 		errorElement: <ErrorPage />,
 		children: [
-			,
 			{
 				path: '',
 				element: <PromoPage />,
+				errorElement: <ErrorPage />,
+			},
+			{
+				path: 'swiper',
+				element: <SwiperPage />,
 				errorElement: <ErrorPage />,
 			},
 			{

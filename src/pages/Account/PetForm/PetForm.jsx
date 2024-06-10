@@ -75,7 +75,7 @@ const PetForm = () => {
 			</Form.Item>
 
 			<FormButton
-				className={styles.submitButton}
+				clName={styles.submitButton}
 				type='primary'
 				htmlType='submit'
 			>

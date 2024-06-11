@@ -1,0 +1,28 @@
+@import '../../../SCSS/index';
+
+.container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 546px;
+  margin: 120px 90px;
+
+  .title{
+    font-size: 48px;
+    font-weight: 500;
+  }
+
+  .content {
+    display: flex;
+    gap: 24px;
+    color: $main-veryLight;
+    margin-bottom: 40px;
+
+    .accent{
+      font-style: italic;
+      font-size: 48px;
+      font-weight: 700;
+      line-height: 57px;
+    }
+  }
+}

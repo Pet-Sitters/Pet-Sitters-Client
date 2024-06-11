@@ -1,5 +1,4 @@
 import FormButton from '../../../components/UI/Buttons/FormButton/FormButton'
-import SittersButton from '../../../components/UI/Buttons/SittersButton/SittersButton'
 import s from './Game.module.scss'
 
 export function Game() {
@@ -27,10 +26,22 @@ export function Game() {
 					подсветит что необходимо изучить
 				</p>
 				<div className={s.buttons}>
-					<SittersButton type='primary' htmlType='submit'>
+					<FormButton
+						buttonColor='#DBEF98'
+						buttonHoverColor='#C896FF'
+						textColor='#47156C'
+						textHoverColor='#47156C'
+						type='primary'
+					>
 						НАЧАТЬ ИГРУ
-					</SittersButton>
-					<FormButton type='primary' htmlType='submit'>
+					</FormButton>
+					<FormButton
+						buttonColor='#47156C'
+						buttonHoverColor='#C896FF'
+						textColor='#FFFFFF'
+						textHoverColor='#47156C'
+						type='primary'
+					>
 						Стать ситтером
 					</FormButton>
 				</div>

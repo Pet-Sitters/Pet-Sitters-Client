@@ -23,53 +23,58 @@
 	border-radius: 20px 20px 0px 0px;
 	margin-bottom: 60px;
 }
+.wrapDog {
+	margin-left: 77px;
+	position: relative;
+}
+.wrapCat {
+	margin-left: 113px;
+	position: relative;
+}
 .title {
 	width: 271px;
 	height: 94px;
-	margin-left: 73px;
-	margin-bottom: 55px;
-	font-size: 40px;
-	font-style: italic;
-	font-weight: 500;
-	line-height: 47.21px;
-	letter-spacing: -0.02em;
-	text-align: left;
+	margin-bottom: 60px;
+	@include title40px-500-italic-primary;
+
 	.accent {
 		&_dog {
 			color: $main-light;
-			font-size: 40px;
-			font-style: italic;
-			font-weight: 700;
-			line-height: 47.21px;
-			letter-spacing: -0.02em;
-			text-align: left;
+			@include title40px-700-italic-primary;
 		}
 		&_cat {
 			color: $yellow;
-			font-size: 40px;
-			font-style: italic;
-			font-weight: 700;
-			line-height: 47.21px;
-			letter-spacing: -0.02em;
-			text-align: left;
+			@include title40px-700-italic-primary;
 		}
 	}
 }
 .itemText {
 	width: 386px;
-	font-size: 24px;
-	font-weight: 400;
-	line-height: 28.32px;
-	letter-spacing: -0.02em;
-	text-align: left;
+	@include mainText24-400-primary;
 	margin-bottom: 30px;
-	margin-left: 77px;
+
 	.accentSkill {
-		font-size: 24px;
-		font-style: italic;
-		font-weight: 700;
-		line-height: 28.32px;
-		letter-spacing: -0.02em;
-		text-align: left;
+		@include accentText24-700-italic-primary;
 	}
+}
+.arrowPink {
+	position: absolute;
+	top: -37px;
+	right: 5px;
+	height: 325px;
+	width: 244px;
+}
+.arrowOrange {
+	position: absolute;
+	top: 50px;
+	left: -135px;
+	height: 155px;
+	width: 155px;
+}
+.arrowOrangefly {
+	position: absolute;
+	top: 179px;
+	left: -115px;
+	height: 80px;
+	width: 95px;
 }

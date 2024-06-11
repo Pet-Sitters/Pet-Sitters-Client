@@ -1,4 +1,3 @@
-import BeSitterButton from '../../../components/UI/Buttons/BeSitterButton/BeSitterButton'
 import FormButton from '../../../components/UI/Buttons/FormButton/FormButton'
 import s from './HowWork.module.scss'
 
@@ -95,16 +94,25 @@ export function HowWork() {
 						</div>
 					</div>
 					<div className={s.buttons}>
-						<FormButton className={s.order} type='primary' htmlType='submit'>
+						<FormButton
+							buttonColor='#47156C'
+							buttonHoverColor='#C896FF'
+							textColor='#FFFFFF'
+							textHoverColor='#47156C'
+							type='primary'
+						>
 							Оформить заказ
 						</FormButton>
-						<BeSitterButton
-							className={s.sitter}
+
+						<FormButton
+							buttonColor='#C896FF'
+							buttonHoverColor='#DBEF98'
+							textColor='#47156C'
+							textHoverColor='#47156C'
 							type='primary'
-							htmlType='submit'
 						>
 							Стать ситтером
-						</BeSitterButton>
+						</FormButton>
 					</div>
 				</div>
 			</div>

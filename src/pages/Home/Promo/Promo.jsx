@@ -15,7 +15,14 @@ export function Promo() {
 					<br /> навестить родителей, съездить в командировку или отдохнуть
 				</div>
 				<p className={s.subtitle}>Поможет Petsitter</p>
-				<FormButton type='primary' htmlType='submit'>
+
+				<FormButton
+					buttonColor='#47156C'
+					buttonHoverColor='#C896FF'
+					textColor='#FFFFFF'
+					textHoverColor='#47156C'
+					type='primary'
+				>
 					Оформить заказ
 				</FormButton>
 			</div>

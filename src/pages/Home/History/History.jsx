@@ -21,8 +21,13 @@ export function History() {
 					<span className={s.accent}>Решили сделать сами</span> <br /> Такой
 					сервис, которому могли доверить нашу любимую кошку
 				</p>
-
-				<FormButton className={s.order} type='primary' htmlType='submit'>
+				<FormButton
+					buttonColor='#47156C'
+					buttonHoverColor='#C896FF'
+					textColor='#FFFFFF'
+					textHoverColor='#47156C'
+					type='primary'
+				>
 					Оформить заказ
 				</FormButton>
 			</div>

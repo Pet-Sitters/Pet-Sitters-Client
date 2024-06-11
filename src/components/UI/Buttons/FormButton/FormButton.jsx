@@ -1,30 +1,40 @@
 import { Button, ConfigProvider, Form } from 'antd'
-import React from 'react'
 import styles from './FormButton.module.scss'
+const FormButton = ({
+	children,
+	buttonColor,
+	buttonHoverColor,
+	textColor,
+	textHoverColor,
+	...props
+}) => {
+	const customStyles = {
+		'--button-color': buttonColor || '#47156C',
+		'--button-hover-color': buttonHoverColor || '#C896FF',
+		'--text-color': textColor || '#FFFFFF',
+		'--text-hover-color': textHoverColor || '#47156C',
+	}
 
-const BUTTON_COLOR = '#47156C'
-const BUTTON_HOVER_COLOR = '#C896FF'
-
-const FormButton = ({ children, ...props }) => {
 	return (
 		<ConfigProvider
 			theme={{
 				components: {
 					Button: {
-						colorPrimary: BUTTON_COLOR,
-						colorPrimaryHover: BUTTON_HOVER_COLOR,
-						colorPrimaryActive: BUTTON_HOVER_COLOR,
+						colorPrimary: 'var(--button-color)',
+						colorPrimaryHover: 'var(--button-hover-color)',
+						colorPrimaryActive: 'var(--button-hover-color)',
+						colorText: 'var(--text-color)',
+						colorTextHover: 'var(--text-hover-color)',
 					},
 				},
 			}}
 		>
 			<Form.Item>
-				<Button {...props} className={styles.submitButton}>
+				<Button {...props} style={customStyles} className={styles.submitButton}>
 					{children}
 				</Button>
 			</Form.Item>
 		</ConfigProvider>
 	)
 }
-
 export default FormButton

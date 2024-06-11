@@ -14,7 +14,13 @@ export function AboutPetSitter() {
 					<h3 className={s.title}>Передержка собак</h3>
 					<span className={s.accent}>Догситтер</span>
 					<p className={s.text}>заберет вашего питомца к себе домой</p>
-					<FormButton type='primary' htmlType='submit'>
+					<FormButton
+						buttonColor='#47156C'
+						buttonHoverColor='#C896FF'
+						textColor='#FFFFFF'
+						textHoverColor='#47156C'
+						type='primary'
+					>
 						Оформить заказ
 					</FormButton>
 				</div>
@@ -27,7 +33,13 @@ export function AboutPetSitter() {
 					<h3 className={s.title}>Передержка кошек</h3>
 					<span className={s.accent}>Кетситтер</span>
 					<p className={s.text}>обеспечит комплексный уход за вашим питомцем</p>
-					<FormButton type='primary' htmlType='submit'>
+					<FormButton
+						buttonColor='#47156C'
+						buttonHoverColor='#C896FF'
+						textColor='#FFFFFF'
+						textHoverColor='#47156C'
+						type='primary'
+					>
 						Оформить заказ
 					</FormButton>
 				</div>

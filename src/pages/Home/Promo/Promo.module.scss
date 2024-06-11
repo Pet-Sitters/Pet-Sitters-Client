@@ -33,17 +33,12 @@
 		}
 		.text {
 			width: 661px;
-			font-size: 24px;
-			line-height: 28px;
-			letter-spacing: -0.02em;
+			@include mainText24-400-primary;
 			text-align: center;
 		}
 		.subtitle {
 			color: $main-veryLight;
-			font-size: 24px;
-			font-style: italic;
-			font-weight: 700;
-			line-height: 28.32px;
+			@include accentText24-700-italic-primary;
 			text-align: center;
 		}
 		.buttonContainer {

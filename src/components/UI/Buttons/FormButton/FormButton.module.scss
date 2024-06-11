@@ -4,5 +4,18 @@
 	height: 60px;
 	font-weight: 500 !important;
 	border-radius: $border-radius-button;
-}
 
+	--button-color: #47156c;
+	--button-hover-color: #c896ff;
+	--text-color: #ffffff;
+	--text-hover-color: #47156c;
+
+	background-color: var(--button-color);
+	border: none;
+	color: var(--text-color);
+
+	&:hover {
+		background-color: var(--button-hover-color);
+		color: var(--text-hover-color);
+	}
+}

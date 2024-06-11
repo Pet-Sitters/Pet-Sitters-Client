@@ -1,21 +1,27 @@
-import BeSitterButton from '../../../components/UI/Buttons/BeSitterButton/BeSitterButton'
 import FormButton from '../../../components/UI/Buttons/FormButton/FormButton'
 import s from './HowWork.module.scss'
 
 export function HowWork() {
 	return (
-		<div className={s.howWork}>
+		<article className={s.howWork}>
 			<div className={s.content}>
 				<div className={s.header}>
-					<h3 className={s.title}></h3>
-					<p className={s.text}></p>
+					<h3 className={s.title}>
+						Как работает <span>Petsitters</span>
+					</h3>
+					<p className={s.text}>
+						Даже если ваш питомец шалит.{' '}
+						<span>Petsitter придет на помощь!</span> <br />
+						Мы найдем для него ситтера. У нас профессиональные догситтеры и
+						кетситтеры
+					</p>
 				</div>
 				<div className={s.wrapper}>
 					<div className={s.cards}>
 						<div className={s.item}>
 							<div className={s.circle}>
 								<img
-									src='/assets/icons/Home/bottle.gif'
+									src='/assets/icons/Home/bottle.svg'
 									alt='bottle'
 									className={s.bottle}
 								/>
@@ -27,7 +33,7 @@ export function HowWork() {
 						<div className={s.item}>
 							<div className={s.circle}>
 								<img
-									src='/assets/icons/Home/face.gif'
+									src='/assets/icons/Home/face.svg'
 									alt='face'
 									className={s.face}
 								/>
@@ -39,7 +45,7 @@ export function HowWork() {
 						<div className={s.item}>
 							<div className={s.circle}>
 								<img
-									src='/assets/icons/Home/phone.gif'
+									src='/assets/icons/Home/phone.svg'
 									alt='phone'
 									className={s.phone}
 								/>
@@ -51,7 +57,7 @@ export function HowWork() {
 						<div className={s.item}>
 							<div className={s.circle}>
 								<img
-									src='/assets/icons/Home/dog.gif'
+									src='/assets/icons/Home/dog.svg'
 									alt='dog'
 									className={s.dog}
 								/>
@@ -64,7 +70,7 @@ export function HowWork() {
 						<div className={s.item}>
 							<div className={s.circle}>
 								<img
-									src='/assets/icons/Home/cat.gif'
+									src='/assets/icons/Home/cat.svg'
 									alt='cat'
 									className={s.cat}
 								/>
@@ -76,7 +82,7 @@ export function HowWork() {
 						<div className={s.item}>
 							<div className={s.circle}>
 								<img
-									src='/assets/icons/Home/together.gif'
+									src='/assets/icons/Home/together.svg'
 									alt='together'
 									className={s.together}
 								/>
@@ -88,19 +94,28 @@ export function HowWork() {
 						</div>
 					</div>
 					<div className={s.buttons}>
-						<FormButton className={s.order} type='primary' htmlType='submit'>
+						<FormButton
+							buttonColor='#47156C'
+							buttonHoverColor='#C896FF'
+							textColor='#FFFFFF'
+							textHoverColor='#47156C'
+							type='primary'
+						>
 							Оформить заказ
 						</FormButton>
-						<BeSitterButton
-							className={s.sitter}
+
+						<FormButton
+							buttonColor='#C896FF'
+							buttonHoverColor='#DBEF98'
+							textColor='#47156C'
+							textHoverColor='#47156C'
 							type='primary'
-							htmlType='submit'
 						>
 							Стать ситтером
-						</BeSitterButton>
+						</FormButton>
 					</div>
 				</div>
 			</div>
-		</div>
+		</article>
 	)
 }

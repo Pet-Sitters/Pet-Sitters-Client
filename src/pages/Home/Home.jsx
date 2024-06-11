@@ -4,6 +4,7 @@ import s from './Home.module.scss'
 import { HowWork } from './HowWork/HowWork'
 import { Promo } from './Promo/Promo'
 import SwiperArea from "./SwiperArea/SwiperArea.jsx";
+import FaqArea from "./FAQ Area/FaqArea.jsx";
 
 export function Home() {
 	return (
@@ -13,6 +14,7 @@ export function Home() {
 			<AboutPetSitter />
 			<HowWork />
 			<SwiperArea />
+			<FaqArea />
 		</section>
 	)
 }

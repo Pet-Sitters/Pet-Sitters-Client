@@ -20,6 +20,8 @@ const FormButton = ({clName, children, ...props}) => {
 					Button: {
 						colorPrimary: BUTTON_COLOR,
 						colorPrimaryHover: BUTTON_HOVER_COLOR,
+						colorTextBase: BUTTON_HOVER_COLOR,
+
 					},
 				},
 			}}

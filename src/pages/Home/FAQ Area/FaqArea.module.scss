@@ -1,0 +1,73 @@
+@import '../../../SCSS/index';
+
+.ant-collapse-header {
+  border-top: 2px solid #FFD700;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  h1 {
+    font-size: 48px;
+    margin: 80px 0 44px 0;
+    font-weight: 500;
+    line-height: 54px;
+  }
+
+  .collapse {
+    max-width: 900px;
+
+    .expandIcon {
+      width: 16px;
+      height: 16px;
+      transition: transform 0.3s;
+    }
+
+    .expandIcon.active {
+      transform: rotate(180deg);
+    }
+
+    .faqHeader {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+
+      &::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: -10px;
+        width: 100%;
+        height: 2px;
+        background-color: #F1A800;
+      }
+
+      span{
+        font-size: 26px;
+        font-weight: 500;
+        line-height: 30px;
+      }
+    }
+
+    p {
+      margin-top: 40px;
+      box-shadow: 0 4px 4px rgba(0, 0, 0, 0.08);
+      border-radius: 20px;
+      padding: 70px 33px;
+      color: $font-color-dark;
+      font-size: 24px;
+      font-weight: 400;
+      line-height: 34px;
+    }
+
+    strong{
+      font-style: italic;
+      font-size: 24px;
+      font-weight: 500;
+      line-height: 34px;
+    }
+  }
+}

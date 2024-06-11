@@ -1,0 +1,61 @@
+@mixin title40px-500-italic-primary {
+	font-family: $font-family-primary;
+	font-size: 40px;
+	font-style: italic;
+	font-weight: 500;
+	line-height: 54px;
+	letter-spacing: -0.02em;
+}
+@mixin title40px-500-italic-secondary {
+	font-family: $font-family-secondary;
+	font-size: 40px;
+	font-style: italic;
+	font-weight: 500;
+	line-height: 54px;
+	letter-spacing: -0.02em;
+}
+@mixin title48px-500-secondary {
+	font-family: $font-family-secondary;
+	font-size: 48px;
+	font-weight: 500;
+	line-height: 54px;
+	letter-spacing: -0.02em;
+}
+@mixin title48px-700-italic-primary {
+	font-family: $font-family-primary;
+	font-size: 48px;
+	font-weight: 700;
+	font-style: italic;
+	line-height: 54px;
+	letter-spacing: -0.02em;
+}
+@mixin mainText24-400-primary {
+	font-family: $font-family-primary;
+	font-size: 24px;
+	font-weight: 400;
+	line-height: 28px;
+	letter-spacing: -0.02em;
+}
+@mixin mainText24-400-italic-primary {
+	font-family: $font-family-primary;
+	font-size: 24px;
+	font-weight: 400;
+	line-height: 28px;
+	font-style: italic;
+	letter-spacing: -0.02em;
+}
+@mixin mainText24-500-primary {
+	font-family: $font-family-primary;
+	font-size: 24px;
+	font-weight: 500;
+	line-height: 30px;
+	letter-spacing: -0.02em;
+}
+@mixin accentText24-700-italic-primary {
+	font-family: $font-family-primary;
+	font-size: 24px;
+	font-style: italic;
+	font-weight: 700;
+	line-height: 28.32px;
+	letter-spacing: -0.02em;
+}

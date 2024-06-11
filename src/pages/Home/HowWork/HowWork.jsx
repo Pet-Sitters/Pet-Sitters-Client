@@ -12,8 +12,9 @@ export function HowWork() {
 					</h3>
 					<p className={s.text}>
 						Даже если ваш питомец шалит.{' '}
-						<span>Petsitter придет на помощь!</span> Мы найдем для него ситтера.
-						У нас профессиональные догситтеры и кетситтеры
+						<span>Petsitter придет на помощь!</span> <br />
+						Мы найдем для него ситтера. У нас профессиональные догситтеры и
+						кетситтеры
 					</p>
 				</div>
 				<div className={s.wrapper}>
@@ -23,9 +24,6 @@ export function HowWork() {
 								<img
 									src='/assets/icons/Home/bottle.svg'
 									alt='bottle'
-									autoPlay
-									playsInline
-									// loop
 									className={s.bottle}
 								/>
 							</div>

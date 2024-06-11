@@ -19,33 +19,21 @@
 				left: 0;
 			}
 			.title {
-				font-family: $font-family-primary;
-				font-size: 40px;
-				font-style: italic;
-				font-weight: 500;
-				line-height: 47.21px;
-
-				text-align: left;
+				@include title40px-500-italic-primary;
 			}
 			.accent {
+				@include accentText24-700-italic-primary;
 				line-height: 48px;
-				font-style: italic;
-				font-size: 24px;
-				font-weight: bold;
 				color: $main-light;
-				text-align: left;
 			}
 			.text {
-				font-size: 24px;
-				font-style: italic;
-				font-weight: 400;
-				text-align: left;
+				@include mainText24-400-italic-primary;
 				margin-bottom: 24px;
 			}
 		}
 		.overexposureCat {
 			padding: 120px 210px 172px 40px;
-			background-color: #f6f4f9;
+			background-color: $bg-color_third;
 			border-radius: 20px;
 			.imageCat {
 				position: absolute;
@@ -53,28 +41,16 @@
 				right: 0;
 			}
 			.title {
-				font-family: $font-family-primary;
-				font-size: 40px;
-				font-style: italic;
-				font-weight: 500;
-				line-height: 47.21px;
-				letter-spacing: -0.02em;
-				text-align: left;
+				@include title40px-500-italic-primary;
 			}
 			.text {
-				font-size: 24px;
-				font-style: italic;
-				font-weight: 400;
-				text-align: left;
+				@include mainText24-400-italic-primary;
 				margin-bottom: 24px;
 			}
 			.accent {
+				@include accentText24-700-italic-primary;
 				line-height: 48px;
-				font-style: italic;
-				font-size: 24px;
-				font-weight: bold;
 				color: $yellow;
-				text-align: left;
 			}
 		}
 	}

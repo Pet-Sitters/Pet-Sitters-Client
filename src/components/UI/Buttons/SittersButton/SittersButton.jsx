@@ -1,10 +1,10 @@
 import { Button, ConfigProvider, Form } from 'antd'
-import styles from './BeSitterButton.module.scss'
+import styles from './SittersButton.module.scss'
 
-const BUTTON_COLOR = '#C896FF'
-const BUTTON_HOVER_COLOR = '#DBEF98'
+const BUTTON_COLOR = '#DBEF98'
+const BUTTON_HOVER_COLOR = '#C896FF'
 
-const BeSitterButton = ({ children, ...props }) => {
+const SittersButton = ({ children, ...props }) => {
 	return (
 		<ConfigProvider
 			theme={{
@@ -27,4 +27,4 @@ const BeSitterButton = ({ children, ...props }) => {
 	)
 }
 
-export default BeSitterButton
+export default SittersButton

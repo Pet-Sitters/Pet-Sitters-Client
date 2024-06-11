@@ -24,22 +24,11 @@
 	left: 90px;
 }
 .title {
-	font-family: $font-family-secondary;
-	font-size: 48px;
-	font-weight: 500;
-	line-height: 53.52px;
-	letter-spacing: -0.02em;
-	text-align: left;
+	@include title48px-500-secondary;
 	margin-bottom: 40px;
 }
 .accent {
-	font-family: $font-family-primary;
-	font-size: 48px;
-	font-style: italic;
-	font-weight: 700;
-	line-height: 56.65px;
-	letter-spacing: -0.02em;
-	text-align: left;
+	@include title48px-700-italic-primary;
 }
 .descriptionStart {
 	margin-bottom: 40px;
@@ -47,4 +36,12 @@
 .accentDescr {
 	font-style: italic;
 	font-weight: 700;
+}
+.descriptionEnd {
+	margin-bottom: 40px;
+}
+.buttons {
+	display: flex;
+	justify-content: space-between;
+	width: 600px;
 }

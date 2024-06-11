@@ -1,5 +1,6 @@
 import { AboutPetSitter } from './AboutPetSitter/AboutPetSitter'
 import CalculatorPage from './Calculator/CalculatorPage'
+import { Game } from './Game/Game'
 import { History } from './History/History'
 import s from './Home.module.scss'
 import { HowWork } from './HowWork/HowWork'
@@ -15,6 +16,7 @@ export function Home() {
 			<HowWork />
 			<History />
 			<Skills />
+			<Game />
 		</section>
 	)
 }

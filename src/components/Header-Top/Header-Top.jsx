@@ -1,11 +1,9 @@
 import { Link } from 'react-router-dom'
 import s from './Header-Top.module.scss'
 
-<<<<<<< HEAD
+
 export function Header_Top() {
-=======
-export function HeaderTop() {
->>>>>>> ef49565705e1e28a50c058edea7f9a3d74c1ebba
+
 	return (
 		<div className={s.headerTop_container}>
 			<div className={s.leftBlock}>

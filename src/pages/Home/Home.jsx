@@ -19,14 +19,12 @@ export function Home() {
 			<CalculatorPage />
 			<AboutPetSitter />
 			<HowWork />
-
-			<SwiperArea />
-			<FaqArea />
-
 			<History />
+			<SwiperArea />
 			<Skills />
 			<Game />
 			<Map />
+			<FaqArea />
 		</section>
 	)
 }

@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import s from './HeaderGrid.module.scss'
 
-export function HeaderMain() {
+export function Header_Main() {
 	const [scrolled, setScrolled] = useState(false)
 	const [menuOpen, setMenuOpen] = useState(false)
 	useEffect(() => {

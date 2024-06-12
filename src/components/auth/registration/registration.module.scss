@@ -1,6 +1,68 @@
-.error {
-	color: red;
+@import './../../../SCSS/index.scss';
+.wrapper {
+	position: fixed;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 100%;
+	top: 0;
+	right: 0;
+	left: 0;
+	bottom: 0;
+	background-color: rgba(0, 0, 0, 0.4);
 }
-.registration_container {
-	align-self: center;
+.modal {
+	position: relative;
+	background-color: white;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	width: 531px;
+	height: 629px;
+	padding-top: 40px;
+	padding-left: 60px;
+	padding-right: 60px;
+	border-radius: 27px;
+}
+.title {
+	@include title48px-500-secondary;
+	margin-bottom: 20px;
+}
+.button {
+	position: absolute;
+	top: -14px;
+	right: -9px;
+	background-color: inherit;
+	border: none;
+	border-radius: 100%;
+	width: 40px;
+	height: 40px;
+	cursor: pointer;
+}
+.buttonImg {
+	width: 40px;
+	height: 40px;
+}
+.linkContainer {
+	font-size: 18px;
+	font-weight: 400;
+	line-height: 21.24px;
+	letter-spacing: -0.02em;
+	text-align: left;
+	color: #b0b0b0;
+}
+.link {
+	font-size: 18px;
+	font-weight: 400;
+	line-height: 21.24px;
+	letter-spacing: -0.02em;
+	text-align: left;
+	color: #ceadff;
+	cursor: pointer;
+}
+.catContainer {
+	position: absolute;
+	bottom: 0;
+	left: 50%;
+	transform: translateX(-50%);
 }

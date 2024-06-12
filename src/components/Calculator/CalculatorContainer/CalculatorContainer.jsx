@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { Radio } from 'antd';
+import React, {useState} from 'react';
+import {ConfigProvider, Radio} from 'antd';
 
 import styles from './CalculatorContainer.module.scss';
 
@@ -18,16 +18,16 @@ const marks = {
 
 // cat or dog calculator
 const options = [
-    { label: 'Собаки', value: 'dog' },
-    { label: 'Кошки', value: 'cat' },
+    {label: 'Собаки', value: 'dog'},
+    {label: 'Кошки', value: 'cat'},
 ]
 
 // Dogs count
 const dogs = [
-    { label: '1', value: 1 },
-    { label: '2', value: 2 },
-    { label: '3', value: 3 },
-    { label: '4', value: 4 },
+    {label: '1', value: 1},
+    {label: '2', value: 2},
+    {label: '3', value: 3},
+    {label: '4', value: 4},
 ];
 
 // prices for dogs and cats
@@ -64,18 +64,42 @@ const CalculatorContainer = () => {
 
     return (
         <div className={styles.container}>
-            <Radio.Group
-                defaultValue={selectedCalc}
-                options={options}
-                onChange={handleCalculatorChange}
-                optionType="button"
-                className={styles.radioGroup}
-            />
-            <CalculatorForm marks = {marks}
-                            prices = {selectedCalc === 'dog' ? prices.dog : prices.cat}
-                            dogsCount = {selectedCalc === 'dog' ? dogs : []}
-                            showWalks = {selectedCalc === 'dog' ? true : undefined}
-                            info = {info}
+            <div className={styles.calcHeader}>
+                <ConfigProvider
+                    theme={{
+                        components: {
+                            Radio: {
+                                controlHeight: 50,
+                            },
+                        },
+                    }}
+                >
+                    <Radio.Group
+                        defaultValue={selectedCalc}
+                        // options={options}
+                        onChange={handleCalculatorChange}
+                        optionType="button"
+                        className={styles.radioGroup}
+                    >
+                        <Radio className={`${styles.radio} ${styles.firstRadio}`} value={options[0].value}>
+                            {options[0].label}
+                        </Radio>
+                        <Radio className={`${styles.radio} ${styles.secondRadio}`} value={options[1].value}>
+                            {options[1].label}
+                        </Radio>
+                    </Radio.Group>
+                </ConfigProvider>
+                <p>
+                    В стоимость одного дня передержки включено: кормление по расписанию,
+                    отчеты хозяину в чат, игры
+                </p>
+            </div>
+
+            <CalculatorForm marks={marks}
+                            prices={selectedCalc === 'dog' ? prices.dog : prices.cat}
+                            dogsCount={selectedCalc === 'dog' ? dogs : []}
+                            showWalks={selectedCalc === 'dog' ? true : undefined}
+                            info={info}
             />
         </div>
     );

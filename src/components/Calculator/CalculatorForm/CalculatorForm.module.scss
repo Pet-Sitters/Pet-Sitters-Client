@@ -1,3 +1,4 @@
+@import '../../../SCSS/index';
 
 .calc {
   display: flex;
@@ -6,49 +7,103 @@
   gap: 10px;
   align-items: center;
 
-  .title {
-    position: relative;
-    font-size: 30px;
-    font-weight: 700;
-    line-height: 38px;
-    letter-spacing: -0.15px;
-    padding-bottom: 8px;
+  .pLabel {
+    color: #000000;
+    font-style: italic;
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 30px;
   }
 
   .sliderContainer {
     width: 100%;
+
+    margin-top: 20px;
+
+    .ant-tooltip-inner {
+      color: #000000;
+    }
+
+    label {
+      font-style: italic;
+      font-size: 24px;
+      font-weight: 500;
+      line-height: 30px;
+    }
 
     .slider {
       margin: 50px 0;
     }
   }
 
-  .counts {
-    display: grid;
-    width: 100%;
-    grid-template-columns: 1fr 1fr;
+  .inputsAndSwitches {
+    display: flex;
 
-    .inputGroup{
-      .inputButton {
-        margin: 0 5px;
+    .counts {
+      display: grid;
+      width: 100%;
+      grid-template-columns: 1fr 1fr;
+
+      .dogsCount {
+
+      }
+
+      label {
+        font-style: italic;
+        font-size: 24px;
+        font-weight: 500;
+        line-height: 30px;
+      }
+
+      .inputGroup {
+        .inputButton {
+          margin: 0 5px;
+        }
+      }
+    }
+
+    .swithces {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+
+      .switchContainer {
+        display: flex;
+        gap: 20px;
+      }
+
+      .switchInfo {
+        color: $main-veryLight;
       }
     }
   }
 
-  .swithces{
+  .summary {
     display: flex;
-    gap: 10px;
-  }
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
 
-  .summaryContainer{
-    .summaryValue{
-      color: #C896FF;
-      font-size: 20px;
-      font-weight: bold;
+    .summaryContainer {
+      .summaryValue {
+        font-style: italic;
+        color: $yellow;
+        font-size: 48px;
+        font-weight: 700;
+        line-height: 54px;
+      }
+    }
+
+    .buttons {
+      display: flex;
+      gap: 20px;
+      padding-top: 25px;
+
+      .linkButton {
+        text-transform: uppercase;
+      }
     }
   }
 }
 
-.linkButton {
-  text-transform: uppercase;
-}
+

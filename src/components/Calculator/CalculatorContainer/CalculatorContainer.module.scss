@@ -1,5 +1,25 @@
-.container{
-  .radioGroup{
-    margin: 20px 0;
+.container {
+  .calcHeader {
+    display: grid;
+    grid-template-columns: 30% 70%;
+
+    .radioGroup {
+      .radio {
+        border: none;
+      }
+
+      .secondRadio::after {
+        content: '';
+        position: absolute;
+        width: 2px;
+        height: 100%;
+        left: 0;
+        background-color: black;
+      }
+
+      .secondRadio::before {
+        display: none;
+      }
+    }
   }
 }

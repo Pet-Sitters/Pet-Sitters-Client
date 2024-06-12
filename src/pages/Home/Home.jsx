@@ -1,8 +1,8 @@
 import { AboutPetSitter } from './AboutPetSitter/AboutPetSitter'
-import CalculatorPage from './Calculator/CalculatorPage'
+import CalculatorArea from './CalculatorArea/CalculatorArea.jsx'
 
 import SwiperArea from "./SwiperArea/SwiperArea.jsx";
-import FaqArea from "./FAQ Area/FaqArea.jsx";
+import FaqArea from "./FAQArea/FaqArea.jsx";
 
 import { Game } from './Game/Game'
 import { History } from './History/History'
@@ -16,7 +16,7 @@ export function Home() {
 	return (
 		<section className={s.home}>
 			<Promo />
-			<CalculatorPage />
+			<CalculatorArea />
 			<AboutPetSitter />
 			<HowWork />
 			<History />

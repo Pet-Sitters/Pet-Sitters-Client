@@ -9,7 +9,7 @@ const SwiperCard = ({ icon, title, subtitle, description, number }) => {
             </div>
             <div className={styles.content}>
                 <h1 className={styles.title}>{title}</h1>
-                <span className={styles.subtitle}>{subtitle}</span>
+                <p className={styles.subtitle} dangerouslySetInnerHTML={{ __html: subtitle }} />
                 <div className={styles.description}>{description}</div>
             </div>
             <div><h1 className={styles.number}>{number}</h1></div>

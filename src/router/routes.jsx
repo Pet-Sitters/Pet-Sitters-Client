@@ -2,8 +2,6 @@ import { createBrowserRouter } from 'react-router-dom'
 
 import { Account } from '../Layout/Account/Account'
 import { Layout } from '../Layout/layout'
-import Login from '../components/auth/login/login'
-import Registration from '../components/auth/registration/registration'
 import { MyPets } from '../pages/Account/MyPets/MyPets'
 import { Orders } from '../pages/Account/Orders/Orders'
 import PersonalData from '../pages/Account/PersonalData/PersonalData.jsx'
@@ -23,16 +21,6 @@ export const router = createBrowserRouter([
 			{
 				path: '',
 				element: <Home />,
-				errorElement: <ErrorPage />,
-			},
-			{
-				path: 'registration/',
-				element: <Registration />,
-				errorElement: <ErrorPage />,
-			},
-			{
-				path: 'login/',
-				element: <Login />,
 				errorElement: <ErrorPage />,
 			},
 

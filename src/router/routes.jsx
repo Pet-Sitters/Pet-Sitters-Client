@@ -8,7 +8,6 @@ import PersonalData from '../pages/Account/PersonalData/PersonalData.jsx'
 import PetForm from '../pages/Account/PetForm/PetForm'
 import { Settings } from '../pages/Account/Settings/Settings'
 import { Sitters } from '../pages/Account/Sitters/Sitters'
-import CalculatorPage from '../pages/Home/CalculatorArea/CalculatorArea.jsx'
 import { Home } from '../pages/Home/Home'
 import ErrorPage from '../pages/error-pages'
 

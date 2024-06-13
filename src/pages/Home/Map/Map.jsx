@@ -1,5 +1,8 @@
 import FormButton from '../../../components/UI/Buttons/FormButton/FormButton'
 import s from './Map.module.scss'
+import LinkButton from "../../../components/UI/Buttons/LinkButton/LinkButton.jsx";
+import links from "../../../router/links.js";
+import React from "react";
 export function Map() {
 	return (
 		<article className={s.map}>
@@ -9,24 +12,12 @@ export function Map() {
 				<img src='/assets/images/Home/map.png' alt='map' />
 			</div>
 			<div className={s.buttons}>
-				<FormButton
-					buttonColor='#DBEF98'
-					buttonHoverColor='#C896FF'
-					textColor='#47156C'
-					textHoverColor='#47156C'
-					type='primary'
-				>
-					СИТТЕРЫ
-				</FormButton>
-				<FormButton
-					buttonColor='#47156C'
-					buttonHoverColor='#C896FF'
-					textColor='#FFFFFF'
-					textHoverColor='#47156C'
-					type='primary'
-				>
+				<LinkButton buttonType="green" to={links.account.myOrders}>
+					Ситтеры
+				</LinkButton>
+				<LinkButton buttonType="main" to={links.account.myOrders}>
 					Оформить заказ
-				</FormButton>
+				</LinkButton>
 			</div>
 		</article>
 	)

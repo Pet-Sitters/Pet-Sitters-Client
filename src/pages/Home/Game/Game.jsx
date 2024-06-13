@@ -1,5 +1,6 @@
-import FormButton from '../../../components/UI/Buttons/FormButton/FormButton'
 import s from './Game.module.scss'
+import LinkButton from "../../../components/UI/Buttons/LinkButton/LinkButton.jsx";
+import links from "../../../router/links.js";
 
 export function Game() {
 	return (
@@ -26,24 +27,13 @@ export function Game() {
 					подсветит что необходимо изучить
 				</p>
 				<div className={s.buttons}>
-					<FormButton
-						buttonColor='#DBEF98'
-						buttonHoverColor='#C896FF'
-						textColor='#47156C'
-						textHoverColor='#47156C'
-						type='primary'
-					>
+					<LinkButton buttonType="green" to={links.account.myOrders}>
 						НАЧАТЬ ИГРУ
-					</FormButton>
-					<FormButton
-						buttonColor='#47156C'
-						buttonHoverColor='#C896FF'
-						textColor='#FFFFFF'
-						textHoverColor='#47156C'
-						type='primary'
-					>
+					</LinkButton>
+					<LinkButton buttonType="main" to={links.account.myOrders}>
 						Стать ситтером
-					</FormButton>
+					</LinkButton>
+
 				</div>
 			</div>
 		</article>

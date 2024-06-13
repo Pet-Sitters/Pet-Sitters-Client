@@ -1,5 +1,7 @@
-import FormButton from '../../../components/UI/Buttons/FormButton/FormButton'
 import s from './Promo.module.scss'
+import LinkButton from "../../../components/UI/Buttons/LinkButton/LinkButton.jsx";
+import links from "../../../router/links.js"
+
 export function Promo() {
 	return (
 		<article className={s.promo}>
@@ -16,15 +18,9 @@ export function Promo() {
 				</div>
 				<p className={s.subtitle}>Поможет Petsitter</p>
 
-				<FormButton
-					buttonColor='#47156C'
-					buttonHoverColor='#C896FF'
-					textColor='#FFFFFF'
-					textHoverColor='#47156C'
-					type='primary'
-				>
+				<LinkButton buttonType="main" to={links.account.myOrders}>
 					Оформить заказ
-				</FormButton>
+				</LinkButton>
 			</div>
 
 			<img src='/assets/images/Home/promo_right.png' alt='imagePromo' />

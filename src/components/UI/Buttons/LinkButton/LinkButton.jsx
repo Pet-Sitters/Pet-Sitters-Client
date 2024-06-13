@@ -1,4 +1,3 @@
-import React, {useEffect, useState} from 'react';
 import {Link} from "react-router-dom";
 import {Button, ConfigProvider} from "antd";
 
@@ -12,7 +11,7 @@ const types = {
     "main": {
         style: "main",
         main_color: COLOR,
-        hover_color: MAIN_COLOR
+        hover_color: MAIN_COLOR,
     },
     "green": {
         style: "green",
@@ -26,7 +25,7 @@ const types = {
     }
 }
 
-const LinkButton = ({children, buttonType}) => {
+const LinkButton = ({children, buttonType, to}) => {
 
 
     return (
@@ -42,7 +41,7 @@ const LinkButton = ({children, buttonType}) => {
                 },
             }}
         >
-            <Link to="/your-route" className={styles.link}>
+            <Link to={to} className={styles.link}>
                 <Button
                     className={`${styles.mainButton} ${styles[types[buttonType].style]}`}
                     type="primary">

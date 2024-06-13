@@ -13,6 +13,7 @@ import React, {useEffect, useState} from 'react'
 import FormButton from '../../UI/Buttons/FormButton/FormButton.jsx'
 import styles from './CalculatorForm.module.scss'
 import LinkButton from "../../UI/Buttons/LinkButton/LinkButton.jsx";
+import links from "../../../router/links.js";
 
 const MAIN_COLOR = '#C896FF'
 const SECONDARY_COLOR = '#DBEF98';
@@ -303,27 +304,12 @@ const CalculatorForm = ({
 
 
                 <div className={styles.buttons}>
-                    <LinkButton buttonType="green">
+                    <LinkButton buttonType="green" to={links.account.myOrders}>
                         Ситтеры
                     </LinkButton>
-                    <LinkButton buttonType="main">
+                    <LinkButton buttonType="main" to={links.account.myOrders}>
                         Оформить заказ
                     </LinkButton>
-                    {/*<FormButton*/}
-                    {/*    className={styles.linkButton}*/}
-                    {/*    type='primary'*/}
-                    {/*    htmlType='submit'*/}
-                    {/*>*/}
-                    {/*    Ситтеры*/}
-                    {/*</FormButton>*/}
-
-                    {/*<FormButton*/}
-                    {/*    className={styles.linkButton}*/}
-                    {/*    type='primary'*/}
-                    {/*    htmlType='submit'*/}
-                    {/*>*/}
-                    {/*    Оформить заказ*/}
-                    {/*</FormButton>*/}
                 </div>
 
             </div>

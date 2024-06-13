@@ -1,5 +1,6 @@
-import FormButton from '../../../components/UI/Buttons/FormButton/FormButton'
 import s from './HowWork.module.scss'
+import LinkButton from "../../../components/UI/Buttons/LinkButton/LinkButton.jsx";
+import links from "../../../router/links.js";
 
 export function HowWork() {
 	return (
@@ -94,25 +95,13 @@ export function HowWork() {
 						</div>
 					</div>
 					<div className={s.buttons}>
-						<FormButton
-							buttonColor='#47156C'
-							buttonHoverColor='#C896FF'
-							textColor='#FFFFFF'
-							textHoverColor='#47156C'
-							type='primary'
-						>
+						<LinkButton buttonType="main" to={links.account.myOrders}>
 							Оформить заказ
-						</FormButton>
+						</LinkButton>
 
-						<FormButton
-							buttonColor='#C896FF'
-							buttonHoverColor='#DBEF98'
-							textColor='#47156C'
-							textHoverColor='#47156C'
-							type='primary'
-						>
+						<LinkButton buttonType="light" to={links.account.myOrders}>
 							Стать ситтером
-						</FormButton>
+						</LinkButton>
 					</div>
 				</div>
 			</div>

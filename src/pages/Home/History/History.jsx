@@ -1,5 +1,7 @@
 import FormButton from '../../../components/UI/Buttons/FormButton/FormButton'
 import s from './History.module.scss'
+import LinkButton from "../../../components/UI/Buttons/LinkButton/LinkButton.jsx";
+import links from "../../../router/links.js";
 export function History() {
 	return (
 		<article className={s.history}>
@@ -21,15 +23,9 @@ export function History() {
 					<span className={s.accent}>Решили сделать сами</span> <br /> Такой
 					сервис, которому могли доверить нашу любимую кошку
 				</p>
-				<FormButton
-					buttonColor='#47156C'
-					buttonHoverColor='#C896FF'
-					textColor='#FFFFFF'
-					textHoverColor='#47156C'
-					type='primary'
-				>
+				<LinkButton buttonType="main" to={links.account.myOrders}>
 					Оформить заказ
-				</FormButton>
+				</LinkButton>
 			</div>
 		</article>
 	)

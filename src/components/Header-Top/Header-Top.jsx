@@ -1,8 +1,8 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
 
-import { Login } from '../auth/login/Login.jsx'
-import { Registration } from '../auth/registration/Registration.jsx'
+import { Login } from '../auth/Login/Login.jsx'
+import { Registration } from '../auth/Registration/Registration.jsx'
 import s from './Header-Top.module.scss'
 
 export function Header_Top() {

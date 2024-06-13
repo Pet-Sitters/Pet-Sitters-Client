@@ -1,0 +1,33 @@
+@import './../../../SCSS/index.scss';
+.article {
+	width: 100%;
+	height: 1358px;
+}
+.header {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	height: 250px;
+	background-color: $main-veryLight;
+}
+.titleWrapper {
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	margin-bottom: 24px;
+}
+.title {
+	@include title48px-500-secondary;
+}
+.imageText {
+	margin-left: 15px;
+}
+.strokeOne {
+	@include accentText24-700-italic-primary;
+	color: $white;
+}
+.strokeTwo {
+	@include mainText24-500-primary;
+}
+// CarouserArea

@@ -1,17 +1,16 @@
-import { EyeInvisibleOutlined, EyeOutlined } from '@ant-design/icons'
 import { ConfigProvider, Form, Input, message } from 'antd'
 import { useDispatch } from 'react-redux'
 import { useNavigate } from 'react-router'
 import { login } from '../../../core/store/auth/thunk'
 import FormButton from '../../UI/Buttons/FormButton/FormButton'
-import s from './FormLogin.module.scss'
 import eye from '../img/eye.svg'
 import open_eye from '../img/eye_open.svg'
+import s from './FormLogin.module.scss'
 
 const FormLogin = () => {
 	const navigate = useNavigate()
 	const dispatch = useDispatch()
-	const MyCustomEyeIcon = () => <img src={yey} alt='Custom Eye Icon' />
+
 	message.config({
 		top: 400, // отступ от верхней части экрана (в пикселях)
 		duration: 3, // время показа уведомления (в секундах)
@@ -46,18 +45,11 @@ const FormLogin = () => {
 						paddingBlock: 10,
 					},
 					Message: {
+						zIndexPopup: 20,
 						colorBgDefault: '#FFFAE6',
 						colorText: '#333333',
 						borderRadius: '4px',
 						padding: '2px',
-						boxShadow: '0 2px 8px rgba(0, 0, 0, 0.15)',
-					},
-					Tooltip: {
-						colorBgDefault: '#FFFAE6',
-						colorText: '#333333',
-						borderRadius: '4px',
-						padding: '2px',
-						zIndexPopup: 1070,
 						boxShadow: '0 2px 8px rgba(0, 0, 0, 0.15)',
 					},
 				},
@@ -103,9 +95,9 @@ const FormLogin = () => {
 						placeholder='Пароль'
 						iconRender={(visible) =>
 							visible ? (
-								<img src={eye} alt='Show Password'/>
+								<img src={eye} alt='Show Password' />
 							) : (
-								<img src={open_eye} height={18} alt='Hide Password'/>
+								<img src={open_eye} alt='Hide Password' />
 							)
 						}
 					/>

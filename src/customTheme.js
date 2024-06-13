@@ -1,5 +1,5 @@
-const MAIN_COLOR = '#C896FF';
-const HOVER_INPUT_COLOR = '#8422E6';
+const HOVER_INPUT_COLOR = '#C896FF';
+const MAIN_COLOR = '#47156C';
 const ERROR_COLOR = '#FF1B1B';
 
 export const customTheme = {

@@ -1,4 +1,8 @@
 # Pet-Sitters
+Установить Node.js:
+`https://nodejs.org/en/download/prebuilt-installer`
+Установить yarn: `npm install --global yarn`
+
 1. Скачать проект:
 
    `git clone 'https://github.com/Natali-gf/Pet-Sitters-Client.git'`

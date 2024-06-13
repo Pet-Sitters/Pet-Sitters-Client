@@ -1,0 +1,29 @@
+.link {
+  width: 290px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .mainButton {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .main {
+    span:hover{
+      color: black;
+    }
+  }
+
+  .green {
+    span {
+      font-style: italic;
+      font-weight: 500;
+      line-height: 28px;
+      text-transform: uppercase;
+      color: black;
+    }
+  }
+}

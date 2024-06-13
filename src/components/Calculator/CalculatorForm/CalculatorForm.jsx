@@ -12,9 +12,12 @@ import React, {useEffect, useState} from 'react'
 
 import FormButton from '../../UI/Buttons/FormButton/FormButton.jsx'
 import styles from './CalculatorForm.module.scss'
+import LinkButton from "../../UI/Buttons/LinkButton/LinkButton.jsx";
+import links from "../../../router/links.js";
 
 const MAIN_COLOR = '#C896FF'
 const SECONDARY_COLOR = '#DBEF98';
+const COLOR = '#47156C';
 
 const CalculatorForm = ({
                             marks,
@@ -269,11 +272,22 @@ const CalculatorForm = ({
                         <p className={styles.pLabel}>Первое знакомство</p>
                     </div>
                     <div className={styles.switchContainer}>
-                        <Form.Item
-                            name='withoutOthers'
+                        <ConfigProvider
+                            theme={{
+                                components: {
+                                    Switch: {
+                                        colorPrimary: COLOR,
+                                        colorPrimaryHover: COLOR,
+                                    },
+                                },
+                            }}
                         >
-                            <Switch onChange={handleWithoutOthersChange}/>
-                        </Form.Item>
+                            <Form.Item
+                                name='withoutOthers'
+                            >
+                                <Switch onChange={handleWithoutOthersChange}/>
+                            </Form.Item>
+                        </ConfigProvider>
                         <p className={styles.pLabel}>Без других животных</p>
                     </div>
                     <p className={styles.switchInfo}>Ваша собака будет единственной
@@ -290,21 +304,12 @@ const CalculatorForm = ({
 
 
                 <div className={styles.buttons}>
-                    <FormButton
-                        className={styles.linkButton}
-                        type='primary'
-                        htmlType='submit'
-                    >
-                        Сохранить данные
-                    </FormButton>
-
-                    <FormButton
-                        className={styles.linkButton}
-                        type='primary'
-                        htmlType='submit'
-                    >
+                    <LinkButton buttonType="green" to={links.account.myOrders}>
                         Ситтеры
-                    </FormButton>
+                    </LinkButton>
+                    <LinkButton buttonType="main" to={links.account.myOrders}>
+                        Оформить заказ
+                    </LinkButton>
                 </div>
 
             </div>

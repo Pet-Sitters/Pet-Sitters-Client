@@ -5,8 +5,8 @@ import { useNavigate } from 'react-router'
 import { login } from '../../../core/store/auth/thunk'
 import FormButton from '../../UI/Buttons/FormButton/FormButton'
 import s from './FormLogin.module.scss'
-import eye from './eye.svg'
-import open_eye from './open_eye.png'
+import eye from '../img/eye.svg'
+import open_eye from '../img/eye_open.svg'
 
 const FormLogin = () => {
 	const navigate = useNavigate()
@@ -105,7 +105,7 @@ const FormLogin = () => {
 							visible ? (
 								<img src={eye} alt='Show Password'/>
 							) : (
-								<img src={open_eye} alt='Hide Password'/>
+								<img src={open_eye} height={18} alt='Hide Password'/>
 							)
 						}
 					/>

@@ -5,6 +5,8 @@ import { register } from '../../../core/store/auth/thunk'
 import FormButton from '../../UI/Buttons/FormButton/FormButton'
 import styles from './../../../SCSS/styles-ant.module.scss'
 import s from './Form.module.scss'
+import eye from '../img/eye.svg'
+import open_eye from '../img/eye_open.svg'
 
 const FormRegistration = () => {
 	const navigate = useNavigate()
@@ -109,7 +111,16 @@ const FormRegistration = () => {
 					]}
 					hasFeedback
 				>
-					<Input.Password placeholder='Пароль' className={s.input} />
+					<Input.Password placeholder='Пароль'
+									className={s.input}
+									iconRender={(visible) =>
+										visible ? (
+											<img src={eye} alt='Show Password'/>
+										) : (
+											<img src={open_eye} height={18} alt='Hide Password'/>
+										)
+									}
+					/>
 				</Form.Item>
 
 				<Form.Item className={s.buttonContainer}>

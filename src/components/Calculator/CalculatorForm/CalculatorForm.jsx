@@ -204,7 +204,7 @@ const CalculatorForm = ({
             <div className={styles.inputsAndSwitches}>
                 <div className={styles.calc}>
                     <div className={styles.counts}>
-                        <div>
+                        <div className={styles.inputs}>
                             <Form.Item name={inputInfo.name}>
                                 <div className={styles.inputGroup}>
                                     <Button
@@ -213,6 +213,7 @@ const CalculatorForm = ({
                                         onClick={handleDecrease}
                                     />
                                     <InputNumber
+                                        className={styles.inputNumber}
                                         controls={false}
                                         keyboard={false}
                                         value={showWalks ? walksPerDay : animalsNumber}
@@ -235,6 +236,7 @@ const CalculatorForm = ({
                             <div className={styles.dogsCount}>
                                 <Form.Item name='animalsNumber'>
                                     <Radio.Group
+                                        className={styles.radioGroup}
                                         options={dogsCount}
                                         optionType='button'
                                         onChange={handleRadioChange}
@@ -248,11 +250,22 @@ const CalculatorForm = ({
 
                 <div className={styles.swithces}>
                     <div className={styles.switchContainer}>
-                        <Form.Item
-                            name='firstMeet'
+                        <ConfigProvider
+                            theme={{
+                                components: {
+                                    Switch: {
+                                        colorPrimary: SECONDARY_COLOR,
+                                        colorPrimaryHover: SECONDARY_COLOR,
+                                    },
+                                },
+                            }}
                         >
-                            <Switch onChange={handleFirstMeetChange}/>
-                        </Form.Item>
+                            <Form.Item
+                                name='firstMeet'
+                            >
+                                <Switch onChange={handleFirstMeetChange}/>
+                            </Form.Item>
+                        </ConfigProvider>
                         <p className={styles.pLabel}>Первое знакомство</p>
                     </div>
                     <div className={styles.switchContainer}>

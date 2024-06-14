@@ -1,0 +1,30 @@
+.customArrow,
+.ant-carousel {
+	position: absolute !important;
+	cursor: pointer;
+	opacity: 0;
+	right: auto;
+	left: auto;
+	img {
+		width: 26px;
+		height: 38px;
+	}
+}
+
+.prevArrow,
+.slick-prev {
+	opacity: 1 !important;
+	position: absolute !important;
+	top: calc(50% + 20px);
+	inset-inline-start: 95% !important;
+	margin-block-start: 460px !important;
+}
+
+.nextArrow,
+.slick-next {
+	opacity: 1 !important;
+	position: absolute !important;
+	top: calc(50% - 20px);
+	inset-inline-start: 95% !important;
+	margin-block-end: 460px !important;
+}

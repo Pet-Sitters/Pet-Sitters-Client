@@ -1,7 +1,22 @@
 .carousel {
 	display: flex;
-	justify-content: center;
-	width: 1440px;
-	height: 1108px;
-	background-color: #faf9f7;
+	align-self: center;
+	width: 1200px;
+	height: 320px;
+	margin-bottom: 40px;
+}
+.carouselContainer {
+	position: relative !important;
+}
+.carousel {
+	.slick-next {
+		&::after {
+			content: './CustomArrow/up.svg';
+		}
+	}
+	.slick-prev {
+		&::after {
+			content: './CustomArrow/down.svg';
+		}
+	}
 }

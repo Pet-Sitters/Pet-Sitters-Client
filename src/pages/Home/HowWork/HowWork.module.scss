@@ -69,58 +69,32 @@
 						background-color: $light-green;
 						margin-bottom: 12px;
 						.bottle {
-							width: 129.99px;
-							height: 160.24px;
 							&:hover {
-								width: 144px;
-								height: 174px;
 								content: url('/assets/icons/Home/bottle.gif');
 							}
 						}
 						.face {
-							width: 121px;
-							height: 155px;
 							&:hover {
-								width: 143px;
-								height: 213px;
 								content: url('/assets/icons/Home/face.gif');
 							}
 						}
 						.phone {
-							width: 140px;
-							height: 140px;
 							&:hover {
-								width: 173px;
-								height: 174px;
 								content: url('/assets/icons/Home/phone.gif');
 							}
 						}
 						.dog {
-							width: 107px;
-							height: 158px;
 							&:hover {
-								width: 145px;
-								height: 213px;
 								content: url('/assets/icons/Home/dog.gif');
 							}
 						}
 						.cat {
-							width: 178px;
-							height: 131px;
-							object-fit: fill;
 							&:hover {
-								width: 199px;
-								height: 143px;
-
 								content: url('/assets/icons/Home/cat.gif');
 							}
 						}
 						.together {
-							width: 110.35px;
-							height: 137.05;
 							&:hover {
-								width: 144.35px;
-								height: 187.05;
 								content: url('/assets/icons/Home/together.gif');
 							}
 						}

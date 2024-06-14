@@ -11,9 +11,14 @@ import { Sitters } from '../pages/Account/Sitters/Sitters'
 import { Home } from '../pages/Home/Home'
 import ErrorPage from '../pages/error-pages'
 
+
+import TestApi from "../pages/testApi/TestApi.jsx";
+
+import links from "./links.js";
+
 export const router = createBrowserRouter([
 	{
-		path: '/',
+		path: links.home,
 		element: <Layout />,
 		errorElement: <ErrorPage />,
 		children: [
@@ -24,42 +29,47 @@ export const router = createBrowserRouter([
 			},
 
 			{
-				path: 'account/',
+				path: links.account.base,
 				element: <Account />,
 				errorElement: <ErrorPage />,
 				children: [
 					{
-						path: 'personal/',
+						path: links.account.personal,
 						element: <PersonalData />,
 						errorElement: <ErrorPage />,
 					},
 
 					{
-						path: 'my-pets/',
+						path: links.account.myPets,
 						element: <MyPets />,
 						errorElement: <ErrorPage />,
 					},
 					{
-						path: 'add-pets/',
+						path: links.account.addPets,
 						element: <PetForm />,
 						errorElement: <ErrorPage />,
 					},
 					{
-						path: 'my-order/',
+						path: links.account.myOrders,
 						element: <Orders />,
 						errorElement: <ErrorPage />,
 					},
 					{
-						path: 'my-sitter/',
+						path: links.account.mySitters,
 						element: <Sitters />,
 						errorElement: <ErrorPage />,
 					},
 					{
-						path: 'settings/',
+						path: links.account.settings,
 						element: <Settings />,
 						errorElement: <ErrorPage />,
 					},
 				],
+			},
+			{
+				path: 'test/',
+				element: <TestApi />,
+				errorElement: <ErrorPage />,
 			},
 		],
 	},

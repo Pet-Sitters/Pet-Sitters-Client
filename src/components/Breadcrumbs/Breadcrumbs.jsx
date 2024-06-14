@@ -1,11 +1,14 @@
 import React from 'react';
 import {Link, useLocation} from "react-router-dom";
 import {Breadcrumb} from "antd";
+import links from "../../router/links.js";
 
 const Breadcrumbs = () => {
     const location = useLocation();
     const pathnames = location.pathname.split('/')
                                                 .filter((x) => x);
+
+
 
     const breadcrumbNameMap = {
         '/account': 'Профиль',

@@ -18,7 +18,7 @@ export function Promo() {
 				</div>
 				<p className={s.subtitle}>Поможет Petsitter</p>
 
-				<LinkButton buttonType="main" to={links.account.myOrders}>
+				<LinkButton buttonType="main" to={links.home}>
 					Оформить заказ
 				</LinkButton>
 			</div>

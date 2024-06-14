@@ -13,7 +13,7 @@ export const register = createAsyncThunk(
 	}
 )
 export const login = createAsyncThunk(
-	'auth/login',
+	'auth/Login',
 	async (payload, thunkAPI) => {
 		try {
 			const response = await api.post('/auth/token/login/', payload)

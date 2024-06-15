@@ -1,3 +1,3 @@
 export function Sitters() {
-	return <div>Sitters</div>
+  return <div>Sitters</div>;
 }

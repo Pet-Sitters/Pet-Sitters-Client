@@ -1,30 +1,17 @@
-.customArrow,
-.ant-carousel {
+.prevArrow {
+	opacity: 1 !important;
 	position: absolute !important;
-	cursor: pointer;
-	opacity: 0;
-	right: auto;
-	left: auto;
-	img {
-		width: 26px;
-		height: 38px;
-	}
+	inset-inline-start: 95% !important;
+	margin-block-start: 42% !important;
 }
 
+.nextArrow {
+	opacity: 1 !important;
+	position: absolute !important;
+	inset-inline-start: 95% !important;
+	margin-block-end: 42% !important;
+}
 .prevArrow,
-.slick-prev {
-	opacity: 1 !important;
-	position: absolute !important;
-	top: calc(50% + 20px);
-	inset-inline-start: 95% !important;
-	margin-block-start: 460px !important;
-}
-
-.nextArrow,
-.slick-next {
-	opacity: 1 !important;
-	position: absolute !important;
-	top: calc(50% - 20px);
-	inset-inline-start: 95% !important;
-	margin-block-end: 460px !important;
+.nextArrow {
+	z-index: 10 !important;
 }

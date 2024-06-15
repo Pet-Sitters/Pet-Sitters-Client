@@ -31,6 +31,7 @@ const TestApi = () => {
         try {
             const response = await PetService.fetchPets()
             console.log(response)
+            console.log(response.data)
         } catch (e){
             console.log(e)
         }

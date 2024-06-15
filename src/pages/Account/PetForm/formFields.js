@@ -1,11 +1,35 @@
+// {
+
+
+//     "birth_year": "2024-06-14",
+//     "immunized": true,
+
+//     "emergency_contact": "string",
+//     "diseases": "string",
+//     "fears": "string",
+//     "features": "string",
+//     "outside_lb": "NO",
+//     "scratch": "string",
+//     "pulls": "NO",
+//     "picks": "NO",
+//     "take": "YES",
+//     "aggression": "string",
+//     "no_leash": "YES",
+//     "dogs_contact": "YES",
+//     "wash_paws": "BATH",
+//     "pee_home": "YES",
+//     "gnaw_home": "NO",
+//     "walk": "NO"
+// }
+
 export const animalTypes = [
     {
         label: 'Кошка',
-        value: 'cat',
+        value: 'CAT',
     },
     {
         label: 'Собака',
-        value: 'dog',
+        value: 'DOG',
     },
     {
         label: 'Другое',
@@ -43,16 +67,16 @@ export const formRadioGroups = [
         label: "Пол",
         name: "gender",
         options: [
-            {label: "Мальчик", value: "male"},
-            {label: "Девочка", value: "female"},
+            {label: "Мальчик", value: "MALE"},
+            {label: "Девочка", value: "FEM"},
         ]
     },
     {
         label: "Питомец кастрирован/стерилизован?",
-        name: "isSterilized",
+        name: "sterilized",
         options: [
-            {label: "Да", value: "yes"},
-            {label: "Нет", value: "no"},
+            {label: "Да", value: true},
+            {label: "Нет", value: false},
             {label: "Не знаю точно", value: "unknown"}
         ]
     },
@@ -67,10 +91,10 @@ export const formRadioGroups = [
     },
     {
         label: "Питомец имеет ветеринарный паспорт?",
-        name: "hasPassport",
+        name: "vet_ppt",
         options: [
-            {label: "Да", value: "yes"},
-            {label: "Нет", value: "no"},
+            {label: "Да", value: true},
+            {label: "Нет", value: false},
             {label: "Не знаю точно", value: "unknown"}
         ]
     },

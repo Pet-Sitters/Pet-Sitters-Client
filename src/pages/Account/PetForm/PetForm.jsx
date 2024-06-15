@@ -28,7 +28,7 @@ const PetForm = () => {
 			onFinish={handleFinish}
 			initialValues={{ animalType: animalTypes[0].value }}
 		>
-			<FormRadio name='animalType' options={animalTypes} />
+			<FormRadio name='species' options={animalTypes} />
 
 			{formInputs.map((input) => (
 				<FormInput

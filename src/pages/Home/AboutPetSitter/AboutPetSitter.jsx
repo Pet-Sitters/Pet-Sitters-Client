@@ -1,6 +1,7 @@
+import LinkButton from '../../../components/UI/Buttons/LinkButton/LinkButton.jsx'
+import links from '../../../router/links.js'
 import s from './AboutPetSitter.module.scss'
-import LinkButton from "../../../components/UI/Buttons/LinkButton/LinkButton.jsx";
-import links from "../../../router/links.js";
+import { Motion } from './Motion/Motion'
 
 export function AboutPetSitter() {
 	return (
@@ -15,7 +16,7 @@ export function AboutPetSitter() {
 					<h3 className={s.title}>Передержка собак</h3>
 					<span className={s.accent}>Догситтер</span>
 					<p className={s.text}>заберет вашего питомца к себе домой</p>
-					<LinkButton buttonType="main" to={links.account.myOrders}>
+					<LinkButton buttonType='main' to={links.account.myOrders}>
 						Оформить заказ
 					</LinkButton>
 				</div>
@@ -28,18 +29,12 @@ export function AboutPetSitter() {
 					<h3 className={s.title}>Передержка кошек</h3>
 					<span className={s.accent}>Кетситтер</span>
 					<p className={s.text}>обеспечит комплексный уход за вашим питомцем</p>
-					<LinkButton buttonType="main" to={links.account.myOrders}>
+					<LinkButton buttonType='main' to={links.account.myOrders}>
 						Оформить заказ
 					</LinkButton>
 				</div>
 			</div>
-			<div className={s.wrapperFrame}>
-				<img
-					src='/assets/icons/Home/Frame.png'
-					alt='frame'
-					className={s.frame}
-				/>
-			</div>
+			<Motion />
 		</article>
 	)
 }

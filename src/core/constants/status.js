@@ -4,4 +4,4 @@ export const Status = {
   Rejected: 'Rejected',
 };
 
-Object.freeze(Status)
+Object.freeze(Status);

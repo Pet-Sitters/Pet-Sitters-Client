@@ -1,0 +1,18 @@
+@import './../../../../SCSS/index.scss';
+.social {
+	display: flex;
+	text-align: center;
+	align-items: center;
+	gap: 12px;
+	width: 356px;
+	height: 60px;
+	background-color: $main-veryLight !important;
+	padding: 5.5px 33px 6.5px 33px !important;
+	transition: $transition;
+	border-radius: 30px;
+	text-decoration: none;
+	@include mainText24-500-primary;
+	&:hover {
+		background-color: $light-green !important;
+	}
+}

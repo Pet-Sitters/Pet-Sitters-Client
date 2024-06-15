@@ -1,0 +1,79 @@
+@import './../../SCSS/index.scss';
+.footer {
+	display: grid;
+	grid-template-rows: auto 66px;
+	width: 100%;
+	background-color: $main-dark;
+}
+.mainFooter {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	padding: 137px 173px;
+	padding: 137px 173px;
+}
+.linksContainer {
+	display: grid;
+	grid-template-rows: 66px auto;
+	gap: 40px;
+	justify-content: left;
+}
+.links {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: 40px;
+}
+.linksPetsitter,
+.linksSitter {
+	display: flex;
+	gap: 16px;
+	flex-direction: column;
+}
+.link {
+	text-decoration: none;
+	font-size: 20px;
+	font-weight: 500;
+	line-height: 23.6px;
+	text-align: left;
+	color: $white;
+}
+.contacts {
+	display: flex;
+	flex-direction: column;
+	justify-content: right;
+}
+
+.contacts {
+	display: flex;
+	flex-direction: column;
+	gap: 24px;
+	justify-content: right;
+	align-items: end;
+}
+.phone,
+.mail {
+	display: flex;
+	justify-content: end;
+}
+.linkMailPhone {
+	text-decoration: none;
+	font-size: 32px;
+	font-weight: 500;
+	line-height: 37.77px;
+	text-align: left;
+	color: $white;
+}
+.copyright {
+	border-top: 1px solid $white;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 20px;
+}
+.linkCopyright {
+	text-decoration: none;
+	color: $white;
+	font-size: 14px;
+	font-weight: 500;
+	line-height: 16.52px;
+	text-align: center;
+}

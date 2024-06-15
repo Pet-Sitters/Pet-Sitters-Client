@@ -1,3 +1,4 @@
+import { Footer } from '../../components/Footer/Footer'
 import { AboutPetSitter } from './AboutPetSitter/AboutPetSitter'
 import CalculatorArea from './CalculatorArea/CalculatorArea.jsx'
 import FaqArea from './FAQArea/FaqArea.jsx'
@@ -8,6 +9,7 @@ import s from './Home.module.scss'
 import { HowWork } from './HowWork/HowWork'
 import { Map } from './Map/Map'
 import { Promo } from './Promo/Promo'
+import { Questions } from './Questions/Questions'
 import { Skills } from './Skills/Skills'
 import SwiperArea from './SwiperArea/SwiperArea.jsx'
 
@@ -25,6 +27,8 @@ export function Home() {
 			<Map />
 			<Feedback />
 			<FaqArea />
+			<Questions />
+			<Footer />
 		</section>
 	)
 }

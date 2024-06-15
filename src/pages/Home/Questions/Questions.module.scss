@@ -1,0 +1,40 @@
+@import './../../../SCSS/index.scss';
+.questions {
+	position: relative;
+	padding: 126px 178px 126px 506px;
+	width: 100%;
+	height: 490px;
+	background-color: $bg-color_forth;
+	margin-top: 60px;
+}
+.title {
+	@include title48px-500-secondary;
+	margin-bottom: 24px;
+}
+.accent {
+	@include title48px-700-italic-primary;
+	color: $main-light;
+}
+.subTitle {
+	@include accentText24-700-italic-primary;
+	color: $yellow;
+}
+.wrapperText {
+	display: flex;
+	align-items: center;
+	margin-bottom: 44px;
+}
+.text {
+	@include mainText24-400-primary;
+	margin-right: 10px;
+}
+.fatCat {
+	position: absolute;
+	bottom: -7px;
+	left: 105px;
+}
+.decorEl {
+	position: absolute;
+	bottom: -7px;
+	left: 0;
+}

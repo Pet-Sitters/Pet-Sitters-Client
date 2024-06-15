@@ -8,7 +8,7 @@ export const PrevArrow = (props) => {
 			style={{ ...style }}
 			onClick={onClick}
 		>
-			<img src={'/assets/icons/Home/up.png'} alt='prew' />
+			<img src={'/assets/icons/Home/down.png'} alt='prew' />
 		</div>
 	)
 }
@@ -21,7 +21,7 @@ export const NextArrow = (props) => {
 			style={{ ...style }}
 			onClick={onClick}
 		>
-			<img src={'/assets/icons/Home/down.png'} alt='next' />
+			<img src={'/assets/icons/Home/up.png'} alt='next' />
 		</div>
 	)
 }

@@ -14,7 +14,7 @@ const FormLogin = ({ onClose }) => {
   const dispatch = useDispatch();
   const isLoading = useSelector(selectAuthIsLoading);
   const isSuccess = useSelector(selectAuthIsSuccess);
-
+  const appPrefix = 'petSitterApp_';
   message.config({
     top: 400, // отступ от верхней части экрана (в пикселях)
     duration: 3, // время показа уведомления (в секундах)
@@ -25,8 +25,8 @@ const FormLogin = ({ onClose }) => {
     try {
       const action = await dispatch(login(values));
       if (login.fulfilled.match(action)) {
-        // message.success('Вход выполнен успешно!');
-        localStorage.setItem('accessToken', action.payload.auth_token);
+        message.success('Вход выполнен успешно!');
+        localStorage.setItem(`${appPrefix}accessToken`, action.payload.auth_token);
         isSuccess && navigate(links.account.base);
         onClose();
       } else {

@@ -27,7 +27,7 @@ export const getCurrentUser = createAsyncThunk(
   'auth/getCurrentUser',
   async (_, thunkAPI) => {
     try {
-      const token = localStorage.getItem('accessToken') ?? '';
+      const token = localStorage.getItem('petSitterApp_accessToken') ?? '';
 
       const response = await authApi.get('/auth/users/', {
         headers: {

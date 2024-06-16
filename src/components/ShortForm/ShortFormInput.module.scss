@@ -12,9 +12,16 @@
     height: 56px;
     padding: 16px 26px;
     border: 1px solid $main-veryLight;
+    .ant-form-item-explain-error {
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 18.88px;
+      letter-spacing: -0.02em;
+      text-align: left;
+    }
   }
 }
-.button {
-  display: flex;
-  justify-content: center;
+
+.ant-form-item-explain-error {
+  font-size: 10px !important;
 }

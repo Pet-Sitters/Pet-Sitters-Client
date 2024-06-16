@@ -73,7 +73,7 @@ const FormLogin = ({ onClose }) => {
           rules={[
             {
               required: true,
-              message: 'Please input your Username!',
+              message: 'Не верный Логин (email или номер телефона)',
             },
           ]}>
           <Input className={s.input} placeholder='Логин (email или номер телефона)' />
@@ -85,7 +85,7 @@ const FormLogin = ({ onClose }) => {
           rules={[
             {
               required: true,
-              message: 'Please input your Password!',
+              message: 'Не верный пароль',
             },
           ]}>
           <Input.Password

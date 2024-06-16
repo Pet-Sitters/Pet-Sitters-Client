@@ -1,38 +1,38 @@
 @import './../../../SCSS/index.scss';
 .error {
-	color: #333333;
+  color: #333333;
 }
 .form {
-	margin-top: 24px;
-	height: 240px;
+  margin-top: 24px;
+  height: 240px;
 }
 .input {
-	border-radius: 18px;
-	width: 413px !important;
-	bottom: 18px !important;
-	font-size: 18px;
-	margin-bottom: 0px;
-	font-weight: 500;
-	line-height: 21.24px;
-	letter-spacing: -0.02em;
-	text-align: left;
-	color: #320064;
+  border-radius: 18px;
+  width: 413px !important;
+  bottom: 18px !important;
+  font-size: 18px;
+  margin-bottom: 0px;
+  font-weight: 500;
+  line-height: 21.24px;
+  letter-spacing: -0.02em;
+  text-align: left;
+  color: #320064;
 }
 .buttonContainer {
-	display: flex;
-	justify-content: center;
+  display: flex;
+  justify-content: center;
 }
 .ant-form-item {
-	.ant-form-item-explain-error {
-		color: #4dffb8 !important; // Замените на желаемый цвет текста
-		font-size: 14px; // Замените на желаемый размер шрифта
-		font-weight: bold; // Замените на желаемую толщину шрифта
-		margin-top: 5px; // Замените на желаемое значение отступа сверху
-	}
+  .ant-form-item-explain-error {
+    color: #4dffb8 !important; // Замените на желаемый цвет текста
+    font-size: 14px; // Замените на желаемый размер шрифта
+    font-weight: bold; // Замените на желаемую толщину шрифта
+    margin-top: 5px; // Замените на желаемое значение отступа сверху
+  }
 }
 .ant-form-item-explain-error {
-	color: #4dffb8 !important; // Замените на желаемый цвет текста
-	font-size: 14px; // Замените на желаемый размер шрифта
-	font-weight: bold; // Замените на желаемую толщину шрифта
-	margin-top: 5px; // Замените на желаемое значение отступа сверху
+  color: #4dffb8 !important; // Замените на желаемый цвет текста
+  font-size: 14px; // Замените на желаемый размер шрифта
+  font-weight: bold; // Замените на желаемую толщину шрифта
+  margin-top: 5px; // Замените на желаемое значение отступа сверху
 }

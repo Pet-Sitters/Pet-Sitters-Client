@@ -18,7 +18,7 @@ export function Login({ open, onClose, visible, onCancel, onSwitch }) {
 
           <DialogTitle className={s.title}>Вход</DialogTitle>
 
-          <FormLogin />
+          <FormLogin onClose={onClose} />
           <div className={s.linkContainer}>
             Нет аккаунта{' '}
             <a onClick={onSwitch} className={s.link}>

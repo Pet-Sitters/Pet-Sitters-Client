@@ -15,8 +15,9 @@
 			border-radius: 20px;
 			.imageDog {
 				position: absolute;
+				background: none;
 				bottom: 0;
-				left: 0;
+				left: 45px;
 			}
 			.title {
 				@include title40px-500-italic-primary;
@@ -38,7 +39,7 @@
 			.imageCat {
 				position: absolute;
 				bottom: 0;
-				right: 0;
+				right: 90px;
 			}
 			.title {
 				@include title40px-500-italic-primary;
@@ -52,15 +53,6 @@
 				line-height: 48px;
 				color: $yellow;
 			}
-		}
-	}
-	.wrapperFrame {
-		display: flex;
-		justify-content: center;
-		margin-bottom: 141px;
-		.frame {
-			width: 971px;
-			height: 456.75px;
 		}
 	}
 }

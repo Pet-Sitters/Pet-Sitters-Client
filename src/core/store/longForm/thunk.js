@@ -1,5 +1,5 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
-import api from '../../utils/mainRequest';
+import { api } from '../../utils/mainRequest';
 
 export const postLongForm = createAsyncThunk(
   'longForm/post',

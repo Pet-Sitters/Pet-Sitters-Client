@@ -1,38 +1,32 @@
 @import './../../../SCSS/index.scss';
-.error {
-	color: #333333;
-}
+
 .form {
-	margin-top: 24px;
-	height: 240px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  height: 240px;
 }
 .input {
-	border-radius: 18px;
-	width: 413px !important;
-	bottom: 18px !important;
-	font-size: 18px;
-	margin-bottom: 0px;
-	font-weight: 500;
-	line-height: 21.24px;
-	letter-spacing: -0.02em;
-	text-align: left;
-	color: #320064;
+  margin-bottom: -15px !important;
+  border-radius: 18px;
+  width: 413px !important;
+  bottom: 18px !important;
+  font-size: 18px;
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  text-align: left;
+  color: #320064;
+  input {
+    .ant-form-item-explain-error {
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 18.88px;
+      letter-spacing: -0.02em;
+      text-align: left;
+    }
+  }
 }
 .buttonContainer {
-	display: flex;
-	justify-content: center;
-}
-.ant-form-item {
-	.ant-form-item-explain-error {
-		color: #4dffb8 !important; // Замените на желаемый цвет текста
-		font-size: 14px; // Замените на желаемый размер шрифта
-		font-weight: bold; // Замените на желаемую толщину шрифта
-		margin-top: 5px; // Замените на желаемое значение отступа сверху
-	}
-}
-.ant-form-item-explain-error {
-	color: #4dffb8 !important; // Замените на желаемый цвет текста
-	font-size: 14px; // Замените на желаемый размер шрифта
-	font-weight: bold; // Замените на желаемую толщину шрифта
-	margin-top: 5px; // Замените на желаемое значение отступа сверху
+  display: flex;
+  justify-content: center;
 }

@@ -14,4 +14,7 @@
 .prevArrow,
 .nextArrow {
 	z-index: 10 !important;
+	&::after {
+		display: none;
+	}
 }

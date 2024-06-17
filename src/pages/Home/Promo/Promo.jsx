@@ -1,8 +1,14 @@
-import LinkButton from '../../../components/UI/Buttons/LinkButton/LinkButton.jsx';
-import links from '../../../router/links.js';
+import { useState } from 'react';
+import { ShortForm } from '../../../components/ShortForm/ShortForm.jsx';
+import FormButton from '../../../components/UI/Buttons/FormButton/FormButton.jsx';
 import s from './Promo.module.scss';
 
 export function Promo() {
+  const [isShortFormModalVisible, setShortFormModalVisible] = useState(false);
+  const openShortFormModal = () => {
+    setShortFormModalVisible(true);
+  };
+
   return (
     <article className={s.promo}>
       <img src='/assets/images/Home/promo_left.png' alt='imagePromo' />
@@ -17,10 +23,12 @@ export function Promo() {
           <br /> навестить родителей, съездить в командировку или отдохнуть
         </div>
         <p className={s.subtitle}>Поможет Petsitter</p>
+        <FormButton onClick={() => openShortFormModal(true)}>Оформить заказ</FormButton>
 
-        <LinkButton buttonType='main' to={links.home}>
-          Оформить заказ
-        </LinkButton>
+        <ShortForm
+          open={isShortFormModalVisible}
+          onClose={() => setShortFormModalVisible(false)}
+        />
       </div>
 
       <img src='/assets/images/Home/promo_right.png' alt='imagePromo' />

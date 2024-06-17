@@ -1,12 +1,8 @@
-<<<<<<< HEAD
-import { Link } from 'react-router-dom'
-import { OrderButton } from '../OrderButton/OrderButton.jsx'
-import s from './AddPetCard.module.scss'
-=======
+
 import { Link } from 'react-router-dom';
 import { OrderButton } from '../OrderButton/OrderButton';
 import s from './AddPetCard.module.scss';
->>>>>>> d87e81436f01425444745a5336816427e76e4077
+
 
 export function AddPetCard() {
   const img = false;

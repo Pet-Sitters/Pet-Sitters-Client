@@ -1,5 +1,6 @@
 import { Outlet } from 'react-router-dom';
 
+import { Footer } from '../components/Footer/Footer.jsx';
 import { Header_Main } from '../components/Header-Main/Header-Main.jsx';
 import { Header_Top } from '../components/Header-Top/Header-Top';
 
@@ -16,6 +17,10 @@ export function Layout() {
       <main className={s.mainContainer}>
         <Outlet />
       </main>
+
+      <footer>
+        <Footer />
+      </footer>
     </div>
   );
 }

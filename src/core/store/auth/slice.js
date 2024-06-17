@@ -5,6 +5,7 @@ const initialState = {
   currentUser: undefined,
   isLoading: false,
   isError: false,
+  isSuccess: false,
 };
 
 const authSlice = createSlice({
@@ -19,6 +20,7 @@ const authSlice = createSlice({
       })
       .addCase(register.fulfilled, (state, action) => {
         state.isLoading = false;
+        state.isSuccess = true;
         state.currentUser = action.payload;
       })
       .addCase(register.rejected, (state) => {
@@ -32,6 +34,7 @@ const authSlice = createSlice({
       })
       .addCase(login.fulfilled, (state, action) => {
         state.isLoading = false;
+        state.isSuccess = true;
         state.currentUser = action.payload;
       })
       .addCase(login.rejected, (state) => {
@@ -61,7 +64,7 @@ const authSlice = createSlice({
   },
 });
 export const selectCurrentUser = (state) => state.auth.currentUser;
-export const selectIsLoading = (state) => state.auth.isLoading;
-export const selectAuthError = (state) => state.auth.isError;
-
+export const selectAuthIsLoading = (state) => state.auth.isLoading;
+export const selectAuthIsError = (state) => state.auth.isError;
+export const selectAuthIsSuccess = (state) => state.auth.isSuccess;
 export default authSlice.reducer;

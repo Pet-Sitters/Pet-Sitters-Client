@@ -1,16 +1,20 @@
+import { Loading3QuartersOutlined } from '@ant-design/icons';
 import { ConfigProvider, Form, Input, message } from 'antd';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router';
+import { selectAuthIsLoading, selectAuthIsSuccess } from '../../../core/store/auth/slice';
 import { login } from '../../../core/store/auth/thunk';
+import links from '../../../router/links';
 import FormButton from '../../UI/Buttons/FormButton/FormButton';
 import eye from '../img/eye.svg';
 import open_eye from '../img/eye_open.svg';
 import s from './FormLogin.module.scss';
-
-const FormLogin = () => {
+const FormLogin = ({ onClose }) => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
-
+  const isLoading = useSelector(selectAuthIsLoading);
+  const isSuccess = useSelector(selectAuthIsSuccess);
+  const appPrefix = 'petSitterApp_';
   message.config({
     top: 400, // отступ от верхней части экрана (в пикселях)
     duration: 3, // время показа уведомления (в секундах)
@@ -22,8 +26,9 @@ const FormLogin = () => {
       const action = await dispatch(login(values));
       if (login.fulfilled.match(action)) {
         message.success('Вход выполнен успешно!');
-        localStorage.setItem('accessToken', action.payload.auth_token);
-        navigate('/');
+        localStorage.setItem(`${appPrefix}accessToken`, action.payload.auth_token);
+        isSuccess && navigate(links.account.base);
+        onClose();
       } else {
         throw new Error(action.payload.detail || 'Ошибка входа');
       }
@@ -68,7 +73,7 @@ const FormLogin = () => {
           rules={[
             {
               required: true,
-              message: 'Please input your Username!',
+              message: 'Не верный Логин (email или номер телефона)',
             },
           ]}>
           <Input className={s.input} placeholder='Логин (email или номер телефона)' />
@@ -80,7 +85,7 @@ const FormLogin = () => {
           rules={[
             {
               required: true,
-              message: 'Please input your Password!',
+              message: 'Не верный пароль',
             },
           ]}>
           <Input.Password
@@ -105,7 +110,7 @@ const FormLogin = () => {
             textHoverColor='#FFFFFF'
             type='primary'
             htmlType='submit'>
-            Войти
+            {(isLoading && <Loading3QuartersOutlined />) || 'Войти'}
           </FormButton>
         </Form.Item>
       </Form>

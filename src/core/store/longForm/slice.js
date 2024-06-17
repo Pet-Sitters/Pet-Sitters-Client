@@ -4,6 +4,7 @@ import { getLongForm, postLongForm } from './thunk';
 const initialState = {
   isLoading: false,
   isError: false,
+  isSuccess: false,
   longFormData: null,
 };
 

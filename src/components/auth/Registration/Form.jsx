@@ -1,7 +1,10 @@
+import { Loading3QuartersOutlined } from '@ant-design/icons';
 import { ConfigProvider, Form, Input, message } from 'antd';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router';
+import { selectAuthIsLoading, selectAuthIsSuccess } from '../../../core/store/auth/slice';
 import { register } from '../../../core/store/auth/thunk';
+import links from '../../../router/links';
 import FormButton from '../../UI/Buttons/FormButton/FormButton';
 import eye from '../img/eye.svg';
 import open_eye from '../img/eye_open.svg';
@@ -12,13 +15,15 @@ const FormRegistration = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const [form] = Form.useForm();
+  const isSuccess = useSelector(selectAuthIsSuccess);
+  const isLoading = useSelector(selectAuthIsLoading);
 
   const onFinish = async (values) => {
     try {
       const action = await dispatch(register(values));
       if (register.fulfilled.match(action)) {
-        message.success('Регистрация прошла успешно!');
-        navigate('/');
+        // message.success('Регистрация прошла успешно!');
+        isSuccess && navigate(links.home);
       } else {
         throw new Error(action.payload.detail || 'Ошибка регистрации');
       }
@@ -30,15 +35,22 @@ const FormRegistration = () => {
   return (
     <ConfigProvider
       theme={{
+        token: {
+          colorPrimary: '#C896FF',
+          colorBorder: '#C896FF',
+          colorPrimaryHover: '#8422E6',
+        },
         components: {
           Input: {
-            colorPlaceholder: 'transparent',
-            boxShadow: 'none',
-            colorBgContainer: '#FFFFFF',
-            colorBgContainerDisabled: '#FFFFFF',
-            colorBgContainerHover: '#FFFFFF',
-            colorBgContainerActive: '#FFFFFF',
+            // colorPlaceholder: 'transparent',
+            // boxShadow: 'none',
+            // colorBgContainer: '#FFFFFF',
+            // colorBgContainerDisabled: '#FFFFFF',
+            // colorBgContainerHover: '#FFFFFF',
+            // colorBgContainerActive: '#FFFFFF',
             paddingBlock: 10,
+            controlOutline: 1,
+            lineWidth: 2,
           },
           Message: {
             colorBgDefault: '#FFFAE6',
@@ -80,7 +92,7 @@ const FormRegistration = () => {
               whitespace: true,
             },
           ]}>
-          <Input placeholder='Имя' className={s.input} />
+          <Input placeholder='Имя' autoComplete='false' className={s.input} />
         </Form.Item>
         <Form.Item
           name='email'
@@ -96,7 +108,6 @@ const FormRegistration = () => {
           ]}>
           <Input placeholder='Email' className={s.input} />
         </Form.Item>
-
         <Form.Item
           name='password'
           rules={[
@@ -127,7 +138,7 @@ const FormRegistration = () => {
             textHoverColor='#FFFFFF'
             type='primary'
             htmlType='submit'>
-            Зарегистрироваться
+            {(isLoading && <Loading3QuartersOutlined />) || 'Зарегистрироваться'}
           </FormButton>
         </Form.Item>
       </Form>

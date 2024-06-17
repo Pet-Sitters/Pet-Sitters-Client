@@ -1,0 +1,20 @@
+@import './../../../SCSS/index.scss';
+
+.apartments {
+  width: 100%;
+  padding: 120px 130px;
+  min-height: 1150px;
+}
+.title {
+  @include title48px-500-secondary;
+  .accent {
+    color: $main-light;
+    @include title48px-700-italic-primary;
+  }
+  margin-bottom: 40px;
+}
+.imgContainer {
+  display: grid;
+  grid-template-columns: repeat(4, 280px);
+  column-gap: 20px;
+}

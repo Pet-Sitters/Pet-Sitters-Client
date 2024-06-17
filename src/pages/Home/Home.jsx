@@ -8,7 +8,6 @@ import s from './Home.module.scss';
 import { HowWork } from './HowWork/HowWork';
 import { Map } from './Map/Map';
 import { Promo } from './Promo/Promo';
-import { Questions } from './Questions/Questions';
 import { Skills } from './Skills/Skills';
 import SwiperArea from './SwiperArea/SwiperArea.jsx';
 
@@ -26,7 +25,6 @@ export function Home() {
       <Map />
       <Feedback />
       <FaqArea />
-      <Questions />
     </section>
   );
 }

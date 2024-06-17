@@ -23,7 +23,13 @@ export function Promo() {
           <br /> навестить родителей, съездить в командировку или отдохнуть
         </div>
         <p className={s.subtitle}>Поможет Petsitter</p>
-        <FormButton onClick={() => openShortFormModal(true)}>Оформить заказ</FormButton>
+        <FormButton
+          onClick={() => openShortFormModal(true)}
+          type='primary'
+          htmlType='submit'
+          className={s.button}>
+          Оформить заказ
+        </FormButton>
 
         <ShortForm
           open={isShortFormModalVisible}

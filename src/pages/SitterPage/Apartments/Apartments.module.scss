@@ -14,7 +14,31 @@
   margin-bottom: 40px;
 }
 .imgContainer {
+  position: relative;
   display: grid;
   grid-template-columns: repeat(4, 280px);
   column-gap: 20px;
+  .image {
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    &:hover {
+      transform: scale(1.05);
+    }
+    object-fit: cover;
+    width: 280px;
+    height: 813px;
+    border-radius: 20px;
+  }
+}
+.expandedImage {
+  position: absolute;
+  top: 0;
+  left: 0;
+  object-fit: cover;
+  width: 1180px;
+  height: 813px;
+  cursor: pointer;
+  z-index: 10;
+  transition: transform 0.6s ease;
+  border-radius: 20px;
 }

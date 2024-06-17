@@ -1,0 +1,28 @@
+@import './../../../SCSS/index.scss';
+
+.mapSitter {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 148px 155px;
+  height: 947px;
+  width: 100%;
+  background-color: $bg-color_sec;
+}
+.title {
+  align-self: self-start;
+  @include title48px-500-secondary;
+  .accent {
+    color: $yellow;
+    @include title48px-700-italic-primary;
+  }
+  margin-bottom: 40px;
+}
+.mapContainer {
+  width: 1130px;
+  height: 445px;
+}
+.image {
+  cursor: pointer;
+}

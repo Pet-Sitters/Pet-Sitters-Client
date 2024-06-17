@@ -1,9 +1,9 @@
 import { Carousel } from 'antd';
 import { CarouselCard } from '../CarouselCard/CarouselCard';
-import cardsData from '../data/cardDataCarousel.js';
+// import cardsData from '../data/cardDataCarousel.js';
 import s from './CarouselContainer.module.scss';
 import { NextArrow, PrevArrow } from './CustomArrow/CustomArrow.jsx';
-const CarouselContainer = () => (
+const CarouselContainer = ({ cardsData }) => (
   <Carousel
     style={{ minHeight: '1100px', padding: '0 116px', position: 'relative' }}
     slidesToShow={3}

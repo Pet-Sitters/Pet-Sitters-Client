@@ -7,7 +7,6 @@
   width: 100%;
   height: 490px;
   background-color: $light-green;
-  overflow: hidden;
 }
 .title {
   @include accentText24-700-italic-primary;
@@ -21,18 +20,17 @@
 .imageContainer {
   position: absolute;
   width: 490px;
-  height: 700px;
-  bottom: 0;
+  height: 900px;
+  bottom: -145px;
   right: 0;
   object-fit: cover;
-  overflow: hidden; // Скрыть лишние части изображения
 }
 
 .dogs {
   width: auto;
   height: auto;
   position: absolute;
-  bottom: -145px; // Смещение изображения вверх, чтобы обрезать нижнюю часть
+  bottom: 0; // Смещение изображения вверх, чтобы обрезать нижнюю часть
   right: 80px;
   clip-path: inset(0px 0px 145px 0px); // Обрезка нижней части изображения
 }

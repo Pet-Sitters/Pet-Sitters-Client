@@ -39,10 +39,24 @@ export function Promo() {
         <img src={data.avatar} alt='avatar' />
       </div>
       <div className={s.ratingContainer}>
-        <div className={s.oldSkill}></div>
-        <div className={s.ordersTotal}></div>
-        <div className={s.rating}></div>
-        <div className={s.balls}></div>
+        <div className={s.oldSkill}>
+          <div className={s.numberRating}>
+            5 <span>лет</span>{' '}
+          </div>
+          <div>Опыт</div>
+        </div>
+        <div className={s.ordersTotal}>
+          <div className={s.numberRating}>110</div>
+          <div>Заказы</div>
+        </div>
+        <div className={s.rating}>
+          <div className={s.numberRating}>5</div>
+          <div>Рейтинг</div>
+        </div>
+        <div className={s.balls}>
+          <div className={s.numberRating}>86</div>
+          <div>Оценок</div>
+        </div>
       </div>
       <div className={s.infoContainer}>
         <div className={s.typeSitter}>
@@ -68,7 +82,11 @@ export function Promo() {
           </p>
         </div>
 
-        <FormButton onClick={() => openShortFormModal(true)}>
+        <FormButton
+          type='primary'
+          htmlType='submit'
+          className={s.button}
+          onClick={() => openShortFormModal(true)}>
           Оформить заказ
         </FormButton>
       </div>

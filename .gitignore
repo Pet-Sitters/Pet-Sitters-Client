@@ -22,3 +22,9 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+.vite
+
+#deploy
+.firebaserc
+firebase.json
+.firebase

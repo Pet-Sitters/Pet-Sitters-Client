@@ -1,4 +1,3 @@
-import { Footer } from '../../components/Footer/Footer';
 import { AboutPetSitter } from './AboutPetSitter/AboutPetSitter';
 import CalculatorArea from './CalculatorArea/CalculatorArea.jsx';
 import FaqArea from './FAQArea/FaqArea.jsx';
@@ -28,7 +27,6 @@ export function Home() {
       <Feedback />
       <FaqArea />
       <Questions />
-      <Footer />
     </section>
   );
 }

@@ -9,6 +9,7 @@ import PetForm from '../pages/Account/PetForm/PetForm';
 import { Settings } from '../pages/Account/Settings/Settings';
 import { Sitters } from '../pages/Account/Sitters/Sitters';
 import { Home } from '../pages/Home/Home';
+import { SitterPage } from '../pages/SitterPage/SitterPage.jsx';
 import ErrorPage from '../pages/error-pages';
 
 import TestApi from '../pages/testApi/TestApi.jsx';
@@ -26,7 +27,11 @@ export const router = createBrowserRouter([
         element: <Home />,
         errorElement: <ErrorPage />,
       },
-
+      {
+        path: links.sitter,
+        element: <SitterPage />,
+        errorElement: <ErrorPage />,
+      },
       {
         path: links.account.base,
         element: <Account />,

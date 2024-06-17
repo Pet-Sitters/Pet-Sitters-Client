@@ -1,5 +1,6 @@
 const links = {
   home: '/',
+  sitter: 'sitter',
   account: {
     base: 'account/',
     personal: 'personal/',

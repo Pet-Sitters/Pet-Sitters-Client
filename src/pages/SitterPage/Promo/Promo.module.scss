@@ -1,0 +1,84 @@
+@import './../../../SCSS/index.scss';
+.promoSitter {
+  width: 100%;
+  height: 720px;
+  padding: 119px 130px;
+  display: grid;
+  grid-template-columns: 362px 150px 300px 142px;
+  gap: 60px;
+}
+.ratingContainer {
+  width: 100%;
+  display: grid;
+  grid-template-rows: repeat(4 1fr);
+}
+.oldSkill,
+.ordersTotal,
+.rating,
+.balls {
+  width: 150px;
+  height: 100px;
+  border-radius: 20px;
+  background-color: $light-green;
+}
+.ordersTotal,
+.balls {
+  background-color: $main-veryLight;
+}
+
+.infoContainer {
+  width: 100%;
+  .typeSitter {
+    margin-bottom: 40px;
+    .typeSitterText {
+      color: $main-light;
+      @include accentText24-700-italic-primary;
+    }
+  }
+  .firstNameSitter {
+    .firstNameSitterText {
+      @include title48px-500-secondary;
+    }
+    margin-bottom: 12px;
+  }
+  .lastNameSitter {
+    .lastNameSitterText {
+      @include title48px-500-secondary;
+    }
+    margin-bottom: 24px;
+  }
+  .citySitter {
+    .citySitterText {
+      font-family: Comfortaa;
+      font-size: 32px;
+      font-weight: 400;
+      line-height: 32px;
+      letter-spacing: -0.04em;
+      text-align: left;
+      color: $main-light;
+    }
+    margin-bottom: 40px;
+  }
+  .isAnimalSitter {
+    .isAnimalText {
+      @include mainText24-700-primary;
+    }
+  }
+
+  .homeTypeSitter {
+    .homeTypeSitterText {
+      @include mainText24-700-primary;
+    }
+    margin-bottom: 85px;
+  }
+}
+.pinContainer {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  gap: 12px;
+  .pinImg {
+    width: 65px;
+    height: 65px;
+  }
+}

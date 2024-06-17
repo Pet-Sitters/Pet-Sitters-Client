@@ -2227,6 +2227,11 @@ path-parse@^1.0.7:
   resolved "https://registry.npmjs.org/path-parse/-/path-parse-1.0.7.tgz"
   integrity sha512-LDJzPVEEEPR+y48z93A0Ed0yXb8pAByGWo/k5YYdYgpY2/2EsOsksJrq7lOHxryrVOn1ejG6oAp8ahvOIQD8sw==
 
+petrovich@^0.2.1:
+  version "0.2.1"
+  resolved "https://registry.yarnpkg.com/petrovich/-/petrovich-0.2.1.tgz#373ec55b89674ba34ca722139f7472aa1f9eea5c"
+  integrity sha512-qBuAhvo7C0nusL4ZhgK+tcHYTX8uqkHFyQVbVcvB6/h3K1Hu2zPXT4hnX9/o5MSXc28AGkaoatqX/3D/KEhM+Q==
+
 picocolors@^1.0.0:
   version "1.0.1"
   resolved "https://registry.npmjs.org/picocolors/-/picocolors-1.0.1.tgz"

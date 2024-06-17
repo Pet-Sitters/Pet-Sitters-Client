@@ -48,48 +48,20 @@ const PetForm = () => {
       <Form.Item shouldUpdate={true}>
         {({ getFieldValue }) => {
           const species = getFieldValue('species');
+          const fields =
+            species === 'CAT' ? catFields : species === 'DOG' ? dogFields : animalFields;
 
           return (
             <>
-              {species === 'CAT' && (
-                <>
-                  {catFields.map((item, index) => {
-                    const Component = FormFieldComponentsByType[item.type];
+              {fields.map((item, index) => {
+                const Component = FormFieldComponentsByType[item.type];
 
-                    return (
-                      <Form.Item key={index} {...item.formItemProps}>
-                        <Component {...item.fieldProps} />
-                      </Form.Item>
-                    );
-                  })}
-                </>
-              )}
-              {species === 'DOG' && (
-                <>
-                  {dogFields.map((item, index) => {
-                    const Component = FormFieldComponentsByType[item.type];
-
-                    return (
-                      <Form.Item key={index} {...item.formItemProps}>
-                        <Component {...item.fieldProps} />
-                      </Form.Item>
-                    );
-                  })}
-                </>
-              )}
-              {species === 'OTH' && (
-                <>
-                  {animalFields.map((item, index) => {
-                    const Component = FormFieldComponentsByType[item.type];
-
-                    return (
-                      <Form.Item key={index} {...item.formItemProps}>
-                        <Component {...item.fieldProps} />
-                      </Form.Item>
-                    );
-                  })}
-                </>
-              )}
+                return (
+                  <Form.Item key={index} {...item.formItemProps}>
+                    <Component {...item.fieldProps} />
+                  </Form.Item>
+                );
+              })}
             </>
           );
         }}

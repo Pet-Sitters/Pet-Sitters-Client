@@ -1,7 +1,10 @@
+import { Loading3QuartersOutlined } from '@ant-design/icons';
 import { ConfigProvider, Form, Input, message } from 'antd';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router';
+import { selectAuthIsLoading, selectAuthIsSuccess } from '../../../core/store/auth/slice';
 import { register } from '../../../core/store/auth/thunk';
+import links from '../../../router/links';
 import FormButton from '../../UI/Buttons/FormButton/FormButton';
 import eye from '../img/eye.svg';
 import open_eye from '../img/eye_open.svg';
@@ -12,13 +15,15 @@ const FormRegistration = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const [form] = Form.useForm();
+  const isSuccess = useSelector(selectAuthIsSuccess);
+  const isLoading = useSelector(selectAuthIsLoading);
 
   const onFinish = async (values) => {
     try {
       const action = await dispatch(register(values));
       if (register.fulfilled.match(action)) {
-        message.success('Регистрация прошла успешно!');
-        navigate('/');
+        // message.success('Регистрация прошла успешно!');
+        isSuccess && navigate(links.home);
       } else {
         throw new Error(action.payload.detail || 'Ошибка регистрации');
       }
@@ -133,7 +138,7 @@ const FormRegistration = () => {
             textHoverColor='#FFFFFF'
             type='primary'
             htmlType='submit'>
-            Зарегистрироваться
+            {(isLoading && <Loading3QuartersOutlined />) || 'Зарегистрироваться'}
           </FormButton>
         </Form.Item>
       </Form>

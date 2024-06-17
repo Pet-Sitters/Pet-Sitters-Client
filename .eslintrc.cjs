@@ -112,6 +112,7 @@ module.exports = {
         bracketSpacing: true,
         trailingComma: 'es5',
         printWidth: 90,
+        useTabs: false,
         tabWidth: 2,
         arrowParrens: 'always',
         endOfLine: 'auto',

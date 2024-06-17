@@ -1,9 +1,9 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
-import api from '../../utils/mainRequest';
+import { authApi } from '../../utils/mainRequest';
 
 export const register = createAsyncThunk('auth/register', async (payload, thunkAPI) => {
   try {
-    const response = await api.post('/auth/users/', payload);
+    const response = await authApi.post('/auth/users/', payload);
 
     return response.data;
   } catch (err) {
@@ -12,7 +12,7 @@ export const register = createAsyncThunk('auth/register', async (payload, thunkA
 });
 export const login = createAsyncThunk('auth/Login', async (payload, thunkAPI) => {
   try {
-    const response = await api.post('/auth/token/login/', payload);
+    const response = await authApi.post('/auth/token/login/', payload);
 
     return response.data;
   } catch (err) {
@@ -27,9 +27,9 @@ export const getCurrentUser = createAsyncThunk(
   'auth/getCurrentUser',
   async (_, thunkAPI) => {
     try {
-      const token = localStorage.getItem('accessToken') ?? '';
+      const token = localStorage.getItem('petSitterApp_accessToken') ?? '';
 
-      const response = await api.get('/auth/users/', {
+      const response = await authApi.get('/auth/users/', {
         headers: {
           Authorization: `Token ${token}`,
         },

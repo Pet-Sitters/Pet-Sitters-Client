@@ -30,15 +30,22 @@ const FormRegistration = () => {
   return (
     <ConfigProvider
       theme={{
+        token: {
+          colorPrimary: '#C896FF',
+          colorBorder: '#C896FF',
+          colorPrimaryHover: '#8422E6',
+        },
         components: {
           Input: {
-            colorPlaceholder: 'transparent',
-            boxShadow: 'none',
-            colorBgContainer: '#FFFFFF',
-            colorBgContainerDisabled: '#FFFFFF',
-            colorBgContainerHover: '#FFFFFF',
-            colorBgContainerActive: '#FFFFFF',
+            // colorPlaceholder: 'transparent',
+            // boxShadow: 'none',
+            // colorBgContainer: '#FFFFFF',
+            // colorBgContainerDisabled: '#FFFFFF',
+            // colorBgContainerHover: '#FFFFFF',
+            // colorBgContainerActive: '#FFFFFF',
             paddingBlock: 10,
+            controlOutline: 1,
+            lineWidth: 2,
           },
           Message: {
             colorBgDefault: '#FFFAE6',
@@ -80,7 +87,7 @@ const FormRegistration = () => {
               whitespace: true,
             },
           ]}>
-          <Input placeholder='Имя' className={s.input} />
+          <Input placeholder='Имя' autoComplete='false' className={s.input} />
         </Form.Item>
         <Form.Item
           name='email'
@@ -96,7 +103,6 @@ const FormRegistration = () => {
           ]}>
           <Input placeholder='Email' className={s.input} />
         </Form.Item>
-
         <Form.Item
           name='password'
           rules={[

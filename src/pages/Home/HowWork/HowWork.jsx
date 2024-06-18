@@ -1,4 +1,5 @@
 import LinkButton from '../../../components/UI/Buttons/LinkButton/LinkButton.jsx';
+import { OrderButton } from '../../../components/UI/OrderButton/OrderButton.jsx';
 import links from '../../../router/links.js';
 import s from './HowWork.module.scss';
 
@@ -73,9 +74,7 @@ export function HowWork() {
             </div>
           </div>
           <div className={s.buttons}>
-            <LinkButton buttonType='main' to={links.account.myOrders}>
-              Оформить заказ
-            </LinkButton>
+            <OrderButton />
 
             <LinkButton buttonType='light' to={links.account.myOrders}>
               Стать ситтером

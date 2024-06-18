@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react';
 
 import links from '../../../router/links.js';
 import LinkButton from '../../UI/Buttons/LinkButton/LinkButton.jsx';
+import { OrderButton } from '../../UI/OrderButton/OrderButton.jsx';
 import styles from './CalculatorForm.module.scss';
 
 const MAIN_COLOR = '#C896FF';
@@ -278,9 +279,7 @@ const CalculatorForm = ({ marks, prices, dogsCount, showWalks, info, initialValu
           <LinkButton buttonType='green' to={links.account.myOrders}>
             Ситтеры
           </LinkButton>
-          <LinkButton buttonType='main' to={links.account.myOrders}>
-            Оформить заказ
-          </LinkButton>
+          <OrderButton />
         </div>
       </div>
     </Form>

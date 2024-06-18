@@ -1,5 +1,7 @@
 import { useEffect, useState } from 'react';
+import { useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
+import { openModal } from '../../core/store/modalOrder/slice';
 import s from './HeaderGrid.module.scss';
 
 export function Header_Main() {
@@ -16,7 +18,10 @@ export function Header_Main() {
       window.removeEventListener('scroll', handleScroll);
     };
   }, []);
-
+  const dispatch = useDispatch();
+  const handleOpen = () => {
+    dispatch(openModal());
+  };
   return (
     <header className={`${s.headerMain} ${scrolled ? s.scrolled : ''}`}>
       <nav className={s.menuClientPet}>
@@ -46,7 +51,9 @@ export function Header_Main() {
             <Link className={s.link} to='/become-sitter'>
               Стать ситтером
             </Link>
-            <button className={s.headerButton}>Оформить заказ</button>
+            <button onClick={handleOpen} className={s.headerButton}>
+              Оформить заказ
+            </button>
           </li>
         </ul>
       </nav>

@@ -2,6 +2,7 @@ import { Loading3QuartersOutlined } from '@ant-design/icons';
 import { Form, message } from 'antd';
 import { useDispatch, useSelector } from 'react-redux';
 import { selectCurrentUser } from '../../core/store/auth/slice';
+import { closeModal } from '../../core/store/modalOrder/slice';
 import {
   selectShortFormIsLoading,
   selectShortFormIsSuccess,
@@ -12,7 +13,7 @@ import FormInput from '../UI/FormInput/FormInput';
 import { shortFormInputs } from './ShortFormData';
 import s from './ShortFormInput.module.scss';
 
-const ShortFormInputs = ({ onClose }) => {
+const ShortFormInputs = () => {
   const [form] = Form.useForm();
   const dispatch = useDispatch();
   const isSuccess = useSelector(selectShortFormIsSuccess);
@@ -31,7 +32,7 @@ const ShortFormInputs = ({ onClose }) => {
     const orderData = { ...values, phone_num: parseInt(values.phone_num, 10), user: id };
 
     dispatch(postShortForm(orderData));
-    isSuccess && onClose();
+    isSuccess && dispatch(closeModal());
   };
 
   const onFinishFailed = (errorInfo) => {

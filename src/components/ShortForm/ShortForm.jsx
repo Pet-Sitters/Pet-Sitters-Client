@@ -1,13 +1,20 @@
 import { Dialog, DialogPanel, DialogTitle } from '@headlessui/react';
+import { useDispatch, useSelector } from 'react-redux';
+import { closeModal } from '../../core/store/modalOrder/slice';
 import s from './ShortForm.module.scss';
 import ShortFormInputs from './ShortFormInput';
 
-export function ShortForm({ open, onClose }) {
+export function ShortForm() {
+  const dispatch = useDispatch();
+  const isOpen = useSelector((state) => state.modalOrder.isShortFormModalVisible);
+  const handleClose = () => {
+    dispatch(closeModal());
+  };
   return (
     <>
-      <Dialog open={open} onClose={onClose} className={s.wrapper}>
+      <Dialog open={isOpen} onClose={handleClose} className={s.wrapper}>
         <DialogPanel className={s.modal}>
-          <button onClick={onClose} className={s.button}>
+          <button onClick={handleClose} className={s.button}>
             <img src='/assets/icons/Auth/close.png' alt='close' className={s.buttonImg} />
           </button>
 
@@ -16,7 +23,7 @@ export function ShortForm({ open, onClose }) {
             Пожалуйста, заполните короткую заявку на ситтинг. После этого мы свяжемся с
             вами и расскажем, что делать дальше.
           </p>
-          <ShortFormInputs onClose={onClose} />
+          <ShortFormInputs />
           <div className={s.catContainer}>
             <img src='/assets/images/Auth/cat.png' alt='cat' />
           </div>

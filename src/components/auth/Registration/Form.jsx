@@ -11,12 +11,17 @@ import open_eye from '../img/eye_open.svg';
 import styles from './../../../SCSS/styles-ant.module.scss';
 import s from './Form.module.scss';
 
-const FormRegistration = () => {
+const FormRegistration = ({ onClose }) => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const [form] = Form.useForm();
   const isSuccess = useSelector(selectAuthIsSuccess);
   const isLoading = useSelector(selectAuthIsLoading);
+  message.config({
+    top: 400, // отступ от верхней части экрана (в пикселях)
+    duration: 3, // время показа уведомления (в секундах)
+    maxCount: 3, // максимальное количество одновременно отображаемых уведомлений
+  });
 
   const onFinish = async (values) => {
     try {
@@ -24,6 +29,7 @@ const FormRegistration = () => {
       if (register.fulfilled.match(action)) {
         // message.success('Регистрация прошла успешно!');
         isSuccess && navigate(links.home);
+        onClose();
       } else {
         throw new Error(action.payload.detail || 'Ошибка регистрации');
       }

@@ -17,9 +17,10 @@ import catRadioFields from "./data/cat/catRadioFields.js";
 import dogInputFields from "./data/dog/dogInputFields.js";
 import dogRadioFields from "./data/dog/dogRadioFields.js";
 import {
+    resetPetFormState,
     selectPetFormIsError,
     selectPetFormIsSuccess
-    } from "../../../core/store/pet/slice.js";
+} from "../../../core/store/pet/slice.js";
 import {postPetForm} from "../../../core/store/pet/thunk.js";
 import links from "../../../router/links.js";
 import {useNavigate} from "react-router";
@@ -39,8 +40,9 @@ const PetForm = () => {
     useEffect(() => {
         if (isSuccess) {
             navigate(`/${links.account.base}${links.account.myPets}`);
+            dispatch(resetPetFormState());
         }
-    }, [isSuccess]);
+    }, [isSuccess, navigate, dispatch]);
 
 
     const handleFinish = async (values) => {

@@ -6,38 +6,49 @@ import {useEffect} from "react";
 import PetCard from "../../../components/UI/PetCard/PetCard.jsx";
 import {useDispatch, useSelector} from "react-redux";
 import {
-    selectPetFormIsError,
+    resetPetFormState,
     selectPetFormIsLoading,
     selectPetFormIsSuccess,
     selectPetsData
 } from "../../../core/store/pet/slice.js";
 import {getPetForm} from "../../../core/store/pet/thunk.js";
-import {selectCurrentUser} from "../../../core/store/auth/slice.js";
 
 
 export function MyPets() {
     const dispatch = useDispatch();
     const isLoading = useSelector(selectPetFormIsLoading);
     const isSuccess = useSelector(selectPetFormIsSuccess);
-    const isError = useSelector(selectPetFormIsError)
     const petsData = useSelector(selectPetsData);
-    const currentUser = useSelector(selectCurrentUser);
 
     useEffect(() => {
         dispatch(getPetForm())
     }, [dispatch]);
 
+    useEffect(() => {
+        if (petsData === null) {
+            dispatch(getPetForm());
+        }
+    }, [dispatch, petsData]);
+
+    useEffect(() => {
+        if (isSuccess) {
+            dispatch(resetPetFormState());
+        }
+    }, [petsData, dispatch]);
+
     return (
         <div className={s.myPets_container}>
             {isLoading ? (
                 <Space className={s.loading}><LoadingOutlined/></Space>
-
             ) : (
-                isSuccess && petsData && petsData.length > 0 ? (
-                    petsData.map((pet) => <PetCard key={pet.id} name={pet.name} species={pet.species} id={pet.id} />)
-                ) : (
-                    <div> Вы пока не добавили ни одного животного </div>
-                )
+                petsData && petsData.length > 0 ? (
+                    petsData.map((pet) => <PetCard
+                                                key={pet.id}
+                                                name={pet.name}
+                                                species={pet.species}
+                                                id={pet.id}
+                                            />)
+                ) : ''
             )}
             <AddPetCard/>
         </div>

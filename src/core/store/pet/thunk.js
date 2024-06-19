@@ -15,13 +15,12 @@ export const postPetForm = createAsyncThunk(
 );
 export const getPetForm = createAsyncThunk(
   'petForm/get',
-  async (payload, thunkAPI) => {
-    try {
-      const response = await api.get('/pet/pet_crud/', payload);
-
-      return response.data;
-    } catch (err) {
-      return thunkAPI.rejectWithValue(err.response.data.errors);
-    }
+  async (_, thunkAPI) => {
+      try {
+          const response = await api.get('/pet/pet_crud/');
+          return response.data;
+      } catch (err) {
+          return thunkAPI.rejectWithValue(err.response.data.errors);
+      }
   }
 );

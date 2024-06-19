@@ -26,9 +26,6 @@ const ProfileSidebar = () => {
           <Link to={'/account/settings'} className={styles.link}>
             Настройки{' '}
           </Link>
-          <Link to={'/account/calc'} className={styles.link}>
-            Калькулятор
-          </Link>
         </nav>
       </div>
     </>

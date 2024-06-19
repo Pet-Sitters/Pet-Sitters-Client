@@ -1,122 +1,164 @@
-import { UploadOutlined } from '@ant-design/icons';
-import { Button, Form, Radio, Upload } from 'antd';
+import dayjs from 'dayjs';
+import {DatePicker, Form} from 'antd';
 import FormButton from '../../../components/UI/Buttons/FormButton/FormButton';
-import styles from './PetForm.module.scss';
+import FormRadio from "../../../components/UI/FormRadio/FormRadio.jsx";
+import FormInput from "../../../components/UI/FormInput/FormInput.jsx";
+import {useDispatch, useSelector} from "react-redux";
 
-import { animalFields } from './animalFields.js';
-import { catFields } from './catFields.js';
-import { dogFields } from './dogFields.js';
-import { FormFieldComponentsByType } from './fieldTypes.js';
-import { animalTypes } from './formFields.js';
+import initialFormState from "./data/initialFormState.js";
+import animalTypes from "./data/animalTypes.js";
 
-const animalTypeOptions = [
-  {
-    label: 'Кошка',
-    value: 'CAT',
-  },
-  {
-    label: 'Собака',
-    value: 'DOG',
-  },
-  {
-    label: 'Другое',
-    value: 'OTH',
-  },
-];
+import animalInputFields from "./data/animal/animalInputFields.js";
+import animalRadioFields from "./data/animal/animalRadioFields.js";
+
+import catInputFields from "./data/cat/catInputFields.js";
+import catRadioFields from "./data/cat/catRadioFields.js";
+
+import dogInputFields from "./data/dog/dogInputFields.js";
+import dogRadioFields from "./data/dog/dogRadioFields.js";
+import {
+    selectPetFormIsError,
+    selectPetFormIsSuccess
+    } from "../../../core/store/pet/slice.js";
+import {postPetForm} from "../../../core/store/pet/thunk.js";
+import links from "../../../router/links.js";
+import {useNavigate} from "react-router";
+import {useEffect} from "react";
+
 
 const PetForm = () => {
-  const [form] = Form.useForm();
+    const [form] = Form.useForm();
 
-  const handleFinish = (values) => {
-    console.log('Form values:', values);
-  };
+    const navigate = useNavigate();
 
-  const onFinishFailed = (errorInfo) => {
-    console.log('Failed:', errorInfo);
-  };
+    const dispatch = useDispatch();
 
-  return (
-    <Form
-      form={form}
-      layout='vertical'
-      onFinishFailed={onFinishFailed}
-      onFinish={handleFinish}
-      initialValues={{ animalType: animalTypes[0].value }}>
-      <Form.Item name='species' label='animalType'>
-        <Radio.Group options={animalTypeOptions} />
-      </Form.Item>
-      <Form.Item shouldUpdate={true}>
-        {({ getFieldValue }) => {
-          const species = getFieldValue('species');
-          const fields =
-            species === 'CAT' ? catFields : species === 'DOG' ? dogFields : animalFields;
+    const isSuccess = useSelector(selectPetFormIsSuccess)
+    const isError = useSelector(selectPetFormIsError)
 
-          return (
-            <>
-              {fields.map((item, index) => {
-                const Component = FormFieldComponentsByType[item.type];
-
-                return (
-                  <Form.Item key={index} {...item.formItemProps}>
-                    <Component {...item.fieldProps} />
-                  </Form.Item>
-                );
-              })}
-            </>
-          );
-        }}
-      </Form.Item>
-      {/* <FormRadio name='animalType' options={animalTypes} /> */}
-      {/* {formInputs.map((input) => (
-        <FormInput
-          key={input.name}
-          placeholder={input.placeholder}
-          name={input.name}
-          rules={input.rules}
-          type={input.type}
-        />
-      ))}
-
-      {formRadioGroups.map((group) => (
-        <FormRadio
-          key={group.name}
-          name={group.name}
-          label={group.label}
-          options={group.options}
-          rules={[{ required: true, message: 'Введите один из вариантов' }]}
-        />
-      ))}
-
-      <Form.Item
-        shouldUpdate={(prevValues, curValues) =>
-          prevValues.isObserved !== curValues.isObserved
-        }>
-        {({ getFieldValue }) =>
-          getFieldValue('isObserved') === 'yes' ? (
-            <FormInput
-              name='clinicInfo'
-              placeholder='Введите информацию о клинике'
-              rules={[{ required: true, message: 'Введите информацию о клинике' }]}
-            />
-          ) : null
+    useEffect(() => {
+        if (isSuccess) {
+            navigate(`/${links.account.base}${links.account.myPets}`);
         }
-      </Form.Item>
+    }, [isSuccess]);
 
-      <Form.Item label='Другие важные особенности вашего питомца' name='additionalInfo'>
-        <TextArea rows={4} />
-      </Form.Item> */}
 
-      {/* <Form.Item label='Добавить фото питомца' name='photo'>
+    const handleFinish = async (values) => {
+        values.birth_year = dayjs(values.birth_year).format('YYYY-MM-DD');
+        dispatch(postPetForm(values))
+    }
+
+    const onFinishFailed = (errorInfo) => {
+        console.log('Failed:', errorInfo);
+        console.log('Error:', isError);
+    };
+
+    return (
+        <Form
+            form={form}
+            layout='vertical'
+            onFinishFailed={onFinishFailed}
+            onFinish={handleFinish}
+            initialValues={initialFormState}>
+
+            <FormRadio name='species' options={animalTypes}/>
+
+            <Form.Item shouldUpdate={true}>
+                {({ getFieldValue }) => {
+                    const species = getFieldValue('species');
+                    const fields =
+                        species === 'CAT' ? catInputFields : species === 'DOG' ? dogInputFields : animalInputFields;
+
+                    return (
+                        <>
+                            {fields.map((input, index) => {
+                                // const Component = FormFieldComponentsByType[item.type];
+
+                                return (
+                                    input.type === 'year' ? (
+                                        <Form.Item
+                                            key={input.name}
+                                            name={input.name}
+                                            rules={input.rules}
+                                            label={input.placeholder}>
+                                            <DatePicker/>
+                                        </Form.Item>
+                                    ) : (
+                                        <FormInput
+                                            key={input.name}
+                                            placeholder={input.placeholder}
+                                            name={input.name}
+                                            rules={input.rules}
+                                            type={input.type}
+                                        />
+                                    )
+                                    // <Form.Item key={index} {...item.formItemProps}>
+                                    //     <Component {...item.fieldProps} />
+                                    // </Form.Item>
+                                );
+                            })}
+                        </>
+                    );
+                }}
+            </Form.Item>
+
+            <Form.Item shouldUpdate={true}>
+                {({ getFieldValue }) => {
+                    const species = getFieldValue('species');
+                    const fields =
+                        species === 'CAT' ? catRadioFields : species === 'DOG' ? dogRadioFields : animalRadioFields;
+
+                    return (
+                        <>
+                            {fields.map((group, index) => {
+                                // const Component = FormFieldComponentsByType[item.type];
+
+                                return (
+                                    <FormRadio
+                                        key={index}
+                                        name={group.name}
+                                        label={group.label}
+                                        options={group.options}
+                                        rules={[{required: true, message: 'Введите один из вариантов'}]}
+                                    />
+                                );
+                            })}
+                        </>
+                    );
+                }}
+            </Form.Item>
+
+
+      {/*<Form.Item*/}
+      {/*  shouldUpdate={(prevValues, curValues) =>*/}
+      {/*    prevValues.isObserved !== curValues.isObserved*/}
+      {/*  }>*/}
+      {/*  {({ getFieldValue }) =>*/}
+      {/*    getFieldValue('isObserved') === 'yes' ? (*/}
+      {/*      <FormInput*/}
+      {/*        name='clinicInfo'*/}
+      {/*        placeholder='Введите информацию о клинике'*/}
+      {/*        rules={[{ required: true, message: 'Введите информацию о клинике' }]}*/}
+      {/*      />*/}
+      {/*    ) : null*/}
+      {/*  }*/}
+      {/*</Form.Item>*/}
+
+      {/*<Form.Item label='Другие важные особенности вашего питомца' name='additionalInfo'>*/}
+      {/*  <TextArea rows={4} />*/}
+      {/*</Form.Item> *!/*/}
+
+            {/* <Form.Item label='Добавить фото питомца' name='photo'>
         <Upload name='photo' listType='picture' beforeUpload={() => false}>
           <Button icon={<UploadOutlined />}>Upload</Button>
         </Upload>
       </Form.Item> */}
 
-      <FormButton clName={styles.submitButton} type='primary' htmlType='submit'>
-        Сохранить данные
-      </FormButton>
-    </Form>
-  );
+            <FormButton type='primary' htmlType='submit'>
+                Сохранить данные
+            </FormButton>
+        </Form>
+    );
 };
 
 export default PetForm;

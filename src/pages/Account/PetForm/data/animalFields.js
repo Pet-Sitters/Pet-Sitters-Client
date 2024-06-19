@@ -1,12 +1,12 @@
-import { FormFieldType } from './fieldTypes';
+import { FormFieldType } from './fieldTypes.js';
 
 export const animalFields = [
   {
     type: FormFieldType.Input,
     formItemProps: {
       name: 'name',
-      label: 'name',
-      rules: [{ required: true, message: '' }],
+      rules: [{ required: true, message: 'Введите кличку' }],
+      placeholder: 'Кличка',
     },
     fieldProps: { placeholder: '' },
   },
@@ -15,7 +15,8 @@ export const animalFields = [
     formItemProps: {
       name: 'breed',
       label: 'breed',
-      rules: [{ required: true, message: '' }],
+      rules: [{ required: true, message: 'Введите породу' }],
+      placeholder: 'Порода',
     },
     fieldProps: { placeholder: '' },
   },
@@ -32,5 +33,12 @@ export const animalFields = [
         { label: 'Девочка', value: 'FEM' },
       ],
     },
+  },
+
+  {
+    placeholder: 'Год рождения',
+    name: 'birth_year',
+    rules: [{ required: true, message: 'Введите год рождения' }],
+    type: 'year',
   },
 ];

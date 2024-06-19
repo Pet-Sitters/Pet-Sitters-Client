@@ -5,7 +5,7 @@ const initialState = {
   isLoading: false,
   isError: false,
   isSuccess: false,
-  petFormData: null,
+  petsData: null,
 };
 
 const petForm = createSlice({
@@ -34,24 +34,25 @@ const petForm = createSlice({
         state.isLoading = true;
         state.isSuccess = false;
         state.isError = false;
-        state.longFormData = null;
+        state.petsData = null;
       })
       .addCase(getPetForm.fulfilled, (state, action) => {
         state.isLoading = false;
         state.isSuccess = true;
         state.isError = false;
-        state.longFormData = action.payload;
+        state.petsData = action.payload;
       })
       .addCase(getPetForm.rejected, (state) => {
         state.isLoading = false;
         state.isSuccess = false;
         state.isError = true;
-        state.longFormData = null;
+        state.petsData = null;
       });
   },
 });
 export const selectPetFormIsLoading = (state) => state.petForm.isLoading;
 export const selectPetFormIsSuccess = (state) => state.petForm.isSuccess;
 export const selectPetFormIsError = (state) => state.petForm.isError;
-export const selectPetFormData = (state) => state.petForm.longFormData;
+export const selectPetsData = (state) => state.petForm.petsData;
+
 export default petForm.reducer;

@@ -18,7 +18,7 @@ export function Registration({ open, onClose, visible, onCancel, onSwitch }) {
 
           <DialogTitle className={s.title}>Регистрация</DialogTitle>
 
-          <FormRegistration />
+          <FormRegistration onClose={onClose} />
           <div className={s.linkContainer}>
             Уже есть аккаунт?{' '}
             <a onClick={onSwitch} className={s.link}>

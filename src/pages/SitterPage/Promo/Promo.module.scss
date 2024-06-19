@@ -6,6 +6,7 @@
   display: grid;
   grid-template-columns: 362px 150px 300px 142px;
   gap: 60px;
+  margin-top: 104px;
 }
 .ratingContainer {
   width: 100%;
@@ -16,6 +17,11 @@
 .ordersTotal,
 .rating,
 .balls {
+  display: flex;
+  gap: 5px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   width: 150px;
   height: 100px;
   border-radius: 20px;
@@ -25,7 +31,14 @@
 .balls {
   background-color: $main-veryLight;
 }
-
+.numberRating {
+  font-family: Comfortaa;
+  font-size: 42px;
+  font-weight: 700;
+  line-height: 32px;
+  letter-spacing: -0.04em;
+  text-align: center;
+}
 .infoContainer {
   width: 100%;
   .typeSitter {

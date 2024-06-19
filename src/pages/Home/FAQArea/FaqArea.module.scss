@@ -1,7 +1,7 @@
 @import '../../../SCSS/index';
 
 .ant-collapse-header {
-  border-top: 2px solid #FFD700;
+  border-top: 2px solid #ffd700;
 }
 
 .container {
@@ -9,6 +9,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  margin-bottom: 60px;
 
   h1 {
     font-size: 48px;
@@ -42,7 +43,7 @@
         bottom: -10px;
         width: 100%;
         height: 2px;
-        background-color: #F1A800;
+        background-color: #f1a800;
       }
 
       span {

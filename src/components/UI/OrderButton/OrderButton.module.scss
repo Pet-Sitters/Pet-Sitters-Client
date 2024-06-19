@@ -1,24 +1,26 @@
 @import './../../../SCSS/index.scss';
 
 .button {
-	display: flex;
-	align-items: center;
-	justify-content: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 290px;
+  height: 60px;
 
-	font-weight: 500;
-	font-size: 24px;
-	line-height: 28.32px;
-	border: none;
-	border-radius: $border-radius-button;
-	background-color: $main-dark;
-	color: $font-color-light;
-	letter-spacing: -0.04em;
-	text-align: left;
-	transition: $transition;
-	cursor: pointer;
-	&:hover,
-	&:active {
-		background-color: $main-veryLight;
-		color: $black;
-	}
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 28.32px;
+  border: none;
+  border-radius: $border-radius-button;
+  background-color: $main-dark;
+  color: $font-color-light;
+  letter-spacing: -0.04em;
+  text-align: left;
+  transition: $transition;
+  cursor: pointer;
+  &:hover,
+  &:active {
+    background-color: $main-veryLight;
+    color: $black;
+  }
 }

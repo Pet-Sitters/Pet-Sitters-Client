@@ -1,4 +1,5 @@
 import LinkButton from '../../../components/UI/Buttons/LinkButton/LinkButton.jsx';
+import { OrderButton } from '../../../components/UI/OrderButton/OrderButton.jsx';
 import links from '../../../router/links.js';
 import s from './Map.module.scss';
 
@@ -14,9 +15,7 @@ export function Map() {
         <LinkButton buttonType='green' to={links.account.myOrders}>
           Ситтеры
         </LinkButton>
-        <LinkButton buttonType='main' to={links.account.myOrders}>
-          Оформить заказ
-        </LinkButton>
+        <OrderButton />
       </div>
     </article>
   );

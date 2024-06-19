@@ -12,16 +12,19 @@ export const sitterInfoData = {
   },
   images: [
     {
-      image: '/assets/images/Sitter/1.png',
+      image: '/assets/images/Sitter/1.jpg',
     },
     {
-      image: '/assets/images/Sitter/2.png',
+      image: '/assets/images/Sitter/2.jpg',
     },
     {
-      image: '/assets/images/Sitter/3.png',
+      image: '/assets/images/Sitter/3.jpg',
     },
     {
-      image: '/assets/images/Sitter/4.png',
+      image: '/assets/images/Sitter/4.jpg',
+    },
+    {
+      image: '/assets/images/Sitter/5.jpg',
     },
   ],
   passport: {

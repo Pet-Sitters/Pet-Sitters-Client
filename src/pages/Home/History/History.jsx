@@ -1,5 +1,4 @@
-import LinkButton from '../../../components/UI/Buttons/LinkButton/LinkButton.jsx';
-import links from '../../../router/links.js';
+import { OrderButton } from '../../../components/UI/OrderButton/OrderButton.jsx';
 import s from './History.module.scss';
 export function History() {
   return (
@@ -17,9 +16,7 @@ export function History() {
           <span className={s.accent}>Решили сделать сами</span> <br /> Такой сервис,
           которому могли доверить нашу любимую кошку
         </p>
-        <LinkButton buttonType='main' to={links.account.myOrders}>
-          Оформить заказ
-        </LinkButton>
+        <OrderButton />
       </div>
     </article>
   );

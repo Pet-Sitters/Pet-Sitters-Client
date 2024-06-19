@@ -18,23 +18,33 @@ import dogInputFields from "./data/dog/dogInputFields.js";
 import dogRadioFields from "./data/dog/dogRadioFields.js";
 import {
     selectPetFormIsError,
-    selectPetFormIsLoading,
     selectPetFormIsSuccess
     } from "../../../core/store/pet/slice.js";
 import {postPetForm} from "../../../core/store/pet/thunk.js";
+import links from "../../../router/links.js";
+import {useNavigate} from "react-router";
+import {useEffect} from "react";
 
 
 const PetForm = () => {
     const [form] = Form.useForm();
+
+    const navigate = useNavigate();
 
     const dispatch = useDispatch();
 
     const isSuccess = useSelector(selectPetFormIsSuccess)
     const isError = useSelector(selectPetFormIsError)
 
+    useEffect(() => {
+        if (isSuccess) {
+            navigate(`/${links.account.base}${links.account.myPets}`);
+        }
+    }, [isSuccess]);
+
+
     const handleFinish = async (values) => {
         values.birth_year = dayjs(values.birth_year).format('YYYY-MM-DD');
-        console.log('Form values:', values);
         dispatch(postPetForm(values))
     }
 

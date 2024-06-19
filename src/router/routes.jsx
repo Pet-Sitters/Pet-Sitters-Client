@@ -12,8 +12,6 @@ import { Home } from '../pages/Home/Home';
 import { SitterPage } from '../pages/SitterPage/SitterPage.jsx';
 import ErrorPage from '../pages/error-pages';
 
-import TestApi from '../pages/testApi/TestApi.jsx';
-
 import links from './links.js';
 
 export const router = createBrowserRouter([
@@ -69,11 +67,6 @@ export const router = createBrowserRouter([
             errorElement: <ErrorPage />,
           },
         ],
-      },
-      {
-        path: 'test/',
-        element: <TestApi />,
-        errorElement: <ErrorPage />,
       },
     ],
   },

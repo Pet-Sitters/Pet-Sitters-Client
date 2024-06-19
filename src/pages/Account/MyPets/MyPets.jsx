@@ -15,7 +15,6 @@ import {selectCurrentUser} from "../../../core/store/auth/slice.js";
 
 
 export function MyPets() {
-    const[pets, setPets] = useState(null);
     const dispatch = useDispatch();
     const isLoading = useSelector(selectPetFormIsLoading);
     const isSuccess = useSelector(selectPetFormIsSuccess);
@@ -24,17 +23,15 @@ export function MyPets() {
     const currentUser = useSelector(selectCurrentUser);
 
     useEffect(() => {
-        if(currentUser){
-            dispatch(getPetForm())
-        }
-    }, [currentUser]);
+        dispatch(getPetForm())
+    }, [dispatch]);
 
     return (
         <div className={s.myPets_container}>
             {isLoading ? (
                 <Loading3QuartersOutlined/>
             ) : (
-                isSuccess ? (
+                isSuccess && petsData && petsData.length > 0 ? (
                     petsData.map((pet) => <PetCard key={pet.id} name={pet.name}/>)
                 ) : (
                     <div> Вы пока не добавили ни одного животного </div>

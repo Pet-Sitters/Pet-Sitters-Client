@@ -21,7 +21,7 @@ import {
     selectPetFormIsLoading,
     selectPetFormIsSuccess
     } from "../../../core/store/pet/slice.js";
-import {selectCurrentUser} from "../../../core/store/auth/slice.js";
+import {postPetForm} from "../../../core/store/pet/thunk.js";
 
 
 const PetForm = () => {
@@ -30,18 +30,12 @@ const PetForm = () => {
     const dispatch = useDispatch();
 
     const isSuccess = useSelector(selectPetFormIsSuccess)
-    const isLoading = useSelector(selectPetFormIsLoading)
     const isError = useSelector(selectPetFormIsError)
-
-    const userData = useSelector(selectCurrentUser);
-    const FIRST_USER_INDEX = 0;
-    const id = userData.length > 0 ? userData[FIRST_USER_INDEX].id : null;
-    // const navigate = useNavigate();
 
     const handleFinish = async (values) => {
         values.birth_year = dayjs(values.birth_year).format('YYYY-MM-DD');
         console.log('Form values:', values);
-        const requestData = {...values, owner: id}
+        dispatch(postPetForm(values))
     }
 
     const onFinishFailed = (errorInfo) => {

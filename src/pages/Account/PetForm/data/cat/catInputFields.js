@@ -5,6 +5,7 @@ const catInputFields = [
     {
         placeholder: 'Дерет мебель?',
         name: 'Дерет мебель?',
+        rules: [{ required: true, message: 'Введите вес' }],
     },
 ]
 

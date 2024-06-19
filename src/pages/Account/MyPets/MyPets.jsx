@@ -11,7 +11,7 @@ import {
 } from "../../../core/store/pet/slice.js";
 import {getPetForm} from "../../../core/store/pet/thunk.js";
 import {Loading3QuartersOutlined} from "@ant-design/icons";
-import {selectAuthIsSuccess, selectCurrentUser} from "../../../core/store/auth/slice.js";
+import {selectCurrentUser} from "../../../core/store/auth/slice.js";
 
 
 export function MyPets() {

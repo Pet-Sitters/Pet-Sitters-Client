@@ -53,5 +53,6 @@ const petForm = createSlice({
 export const selectPetFormIsLoading = (state) => state.petForm.isLoading;
 export const selectPetFormIsSuccess = (state) => state.petForm.isSuccess;
 export const selectPetFormIsError = (state) => state.petForm.isError;
-export const selectPetsData = (state) => state.petForm.longFormData;
+export const selectPetsData = (state) => state.petForm.petsData;
+
 export default petForm.reducer;

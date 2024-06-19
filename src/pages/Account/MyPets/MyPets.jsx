@@ -4,7 +4,7 @@ import {useEffect, useState} from "react";
 import PetService from "../../testApi/api/services/PetService.js";
 import PetCard from "../../../components/UI/PetCard/PetCard.jsx";
 import {useDispatch, useSelector} from "react-redux";
-import {selectPetFormIsLoading, selectPetFormIsSuccess} from "../../../core/store/pet/slice.js";
+import {selectPetFormIsLoading, selectPetFormIsSuccess, selectPetsData} from "../../../core/store/pet/slice.js";
 import {getPetForm} from "../../../core/store/pet/thunk.js";
 import {Loading3QuartersOutlined} from "@ant-design/icons";
 
@@ -15,26 +15,24 @@ export function MyPets() {
     const dispatch = useDispatch();
     const isLoading = useSelector(selectPetFormIsLoading);
     const isSuccess = useSelector(selectPetFormIsSuccess);
-
+    const petsData = useSelector(selectPetsData);
 
     useEffect(() => {
-        console.log('loading data')
         dispatch(getPetForm)
-    }, []);
+    }, [dispatch]);
 
 
     return (
         <div className={s.myPets_container}>
-            {isLoading ? <Loading3QuartersOutlined/> : (
-                <div>Done</div>
-                // {
-                //     pets.map((pet) => (
-                //         <PetCard key={pet.id} name={pet.name}/>
-                //     ))
-                // }
-            )
-            }
-
+            {isLoading ? (
+                <Loading3QuartersOutlined/>
+            ) : (
+                petsData ? (
+                    petsData.map((pet) => <PetCard key={pet.id} name={pet.name}/>)
+                    ) : (
+                        <div> Вы пока не добавили ни одного животного </div>
+                )
+            )}
             <AddPetCard/>
         </div>
     )

@@ -27,10 +27,10 @@ export function Game() {
           подсветит что необходимо изучить
         </p>
         <div className={s.buttons}>
-          <LinkButton buttonType='green' to={links.account.myOrders}>
-            НАЧАТЬ ИГРУ
+          <LinkButton buttonType='game1' to={links.account.myOrders}>
+            начать игру
           </LinkButton>
-          <LinkButton buttonType='main' to={links.account.myOrders}>
+          <LinkButton buttonType='game2' to={links.account.myOrders}>
             Стать ситтером
           </LinkButton>
         </div>

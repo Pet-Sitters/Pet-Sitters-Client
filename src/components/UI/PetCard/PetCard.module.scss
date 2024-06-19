@@ -3,52 +3,16 @@
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	padding-top: 20px;
+	padding-top: 16px;
 	height: 300px;
 	width: 250px;
 	border: 2px solid $main-light;
 	border-radius: 24px;
-	background-color: #ffffff;
-	.photoContainer {
-		position: relative;
-		width: 140px;
-		height: 140px;
-		border-radius: 100%;
-		border: none;
-		background-color: #bbbbbb;
-		margin-bottom: 13px;
-		cursor: pointer;
-		&:after {
-			position: absolute;
-			content: ' ';
-			display: block;
-			top: 70px;
-			left: 40px;
-			width: 60px;
-			height: 1px;
-			background-color: #6a6a6a;
-		}
-		&::before {
-			rotate: 90deg;
-			position: absolute;
-			content: ' ';
-			display: block;
-			top: 70px;
-			left: 40px;
-			width: 60px;
-			height: 1px;
-			background-color: #6a6a6a;
-		}
-	}
-	.img {
-		z-index: 3;
-		width: 140px;
-		height: 140px;
-		top: 0px;
-		left: 0px;
-		margin-bottom: 13px;
-		object-fit: cover;
-		border-radius: 100%;
+
+	.imgCont{
+		height: 144px;
+		width: auto;
+
 	}
 	.title {
 		font-size: 20px;
@@ -56,7 +20,7 @@
 		font-weight: 500;
 		line-height: 22.3px;
 		letter-spacing: -0.02em;
-		margin-bottom: 15px;
+		margin-top: 13px;
 	}
 	.buttonContainer {
 		width: 214px;

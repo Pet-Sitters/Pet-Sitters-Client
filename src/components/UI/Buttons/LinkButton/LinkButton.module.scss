@@ -21,6 +21,21 @@
     }
   }
 
+  .game1{
+    span {
+      font-style: italic;
+      font-weight: 500;
+      line-height: 28px;
+      text-transform: uppercase;
+      color: black;
+    }
+    &:hover{
+      span{
+        color: white;
+      }
+    }
+  }
+
   .green {
     span {
       font-style: italic;

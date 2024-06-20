@@ -14,6 +14,14 @@ const initialState = {
 const authSlice = createSlice({
   name: 'auth',
   initialState,
+  reducers: {
+    resetAuthState: (state) => {
+      state.isLoading = false;
+      state.isError = false;
+      state.isSuccess = false;
+      state.authError = null;
+    },
+  },
   extraReducers: (builder) => {
     builder
       //register
@@ -41,6 +49,7 @@ const authSlice = createSlice({
         state.isSuccess = true;
         state.currentUser = action.payload;
         state.token = action.payload.auth_token;
+        localStorage.setItem(LocalStorageItems.AuthorizationToken, action.payload.token);
       })
       .addCase(login.rejected, (state) => {
         state.isLoading = false;
@@ -65,9 +74,13 @@ const authSlice = createSlice({
         state.isLoading = false;
         state.currentUser = null;
         state.isError = false;
+        state.token = null;
+        localStorage.removeItem(LocalStorageItems.AuthorizationToken);
       });
   },
 });
+export const { resetAuthState } = authSlice.actions;
+
 export const AuthState = (state) => state.auth;
 export const selectCurrentUser = (state) => state.auth.currentUser;
 export const selectAuthIsLoading = (state) => state.auth.isLoading;

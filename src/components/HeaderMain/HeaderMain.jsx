@@ -4,12 +4,14 @@ import { Link } from 'react-router-dom';
 import { RoutePaths } from '../../core/constants/RoutePaths';
 import { AuthState } from '../../core/store/auth/slice';
 import { openModal } from '../../core/store/modalOrder/slice';
+import { openRegistrationModal } from '../../core/store/modalRegistration/slice';
 import s from './HeaderGrid.module.scss';
 
 export function HeaderMain() {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const { token } = useSelector(AuthState);
+  const dispatch = useDispatch();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -22,11 +24,12 @@ export function HeaderMain() {
       window.removeEventListener('scroll', handleScroll);
     };
   }, []);
-  const dispatch = useDispatch();
+
   const handleOpen = () => {
     if (token) {
       dispatch(openModal());
     } else {
+      dispatch(openRegistrationModal());
       //тут нам нужно открыть окно авторизации, если пользователь не авторизован, чтобы он авторизовался прежде чем заполнять короткую форму, но отсюда мы этого не можем сделать, нужно булевую переменную окно авторизации вынести в хранилище редакса
     }
   };

@@ -27,7 +27,7 @@ const FormRegistration = () => {
 
   useEffect(() => {
     if (isSuccess) {
-      // handleRegistrationClose();
+      handleRegistrationClose();
     } else if (isError) {
       formHelpers.setFormErrors(authError, form);
       if (typeof authError === 'string') {

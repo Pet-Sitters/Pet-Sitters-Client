@@ -1,31 +1,27 @@
-import { Fragment, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Fragment } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
 
 import { useDispatch, useSelector } from 'react-redux';
 import { selectCurrentUser } from '../../core/store/auth/slice.js';
 import { logout } from '../../core/store/auth/thunk.js';
-import { Login } from '../auth/Login/Login.jsx';
-import { Registration } from '../auth/Registration/Registration.jsx';
+import { openLoginModal } from '../../core/store/modalLogin/slice.js';
+import { openRegistrationModal } from '../../core/store/modalRegistration/slice.js';
+import links from '../../router/links.js';
 import s from './HeaderTop.module.scss';
-
 export function HeaderTop() {
+  const navigate = useNavigate();
   const auth = useSelector(selectCurrentUser);
   const dispatch = useDispatch();
-  const [isLoginModalVisible, setIsLoginVisible] = useState(false);
-  const [isRegisterModalVisible, setIsRegistrationVisible] = useState(false);
-  const openRegistrationModal = () => {
-    setIsRegistrationVisible(true);
-    setIsLoginVisible(false);
-  };
 
-  const openLoginModal = () => {
-    setIsLoginVisible(true);
-    setIsRegistrationVisible(false);
+  const handleOpenLoginModal = () => {
+    dispatch(openLoginModal());
   };
-
-  const closeModals = () => {
-    setIsRegistrationVisible(false);
-    setIsLoginVisible(false);
+  const handleOpenRegistrationModal = () => {
+    dispatch(openRegistrationModal());
+  };
+  const handleLogOut = () => {
+    dispatch(logout());
+    navigate(links.home);
   };
 
   return (
@@ -40,37 +36,23 @@ export function HeaderTop() {
         <div className={s.rightBlock}>
           {auth === null && (
             <Fragment>
-              <button onClick={() => openLoginModal(true)} className={s.link}>
+              <button onClick={handleOpenLoginModal} className={s.link}>
                 Войти
               </button>{' '}
               /{' '}
-              <button onClick={() => openRegistrationModal(true)} className={s.link}>
+              <button onClick={handleOpenRegistrationModal} className={s.link}>
                 Зарегистрироваться
               </button>
             </Fragment>
           )}
 
           {auth && (
-            <span onClick={() => dispatch(logout())} className={s.link}>
+            <span onClick={handleLogOut} className={s.link}>
               Выйти
             </span>
           )}
         </div>
       </div>
-      <Login
-        visible={isLoginModalVisible}
-        onCancel={closeModals}
-        onSwitch={openRegistrationModal}
-        open={isLoginModalVisible}
-        onClose={() => setIsLoginVisible(false)}
-      />
-      <Registration
-        visible={isRegisterModalVisible}
-        onCancel={closeModals}
-        onSwitch={openLoginModal}
-        open={isRegisterModalVisible}
-        onClose={() => setIsRegistrationVisible(false)}
-      />
     </>
   );
 }

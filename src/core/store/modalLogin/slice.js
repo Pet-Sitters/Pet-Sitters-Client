@@ -1,7 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit';
 
 export const loginModalSlice = createSlice({
-  name: 'loginModal',
+  name: 'modalLogin',
   initialState: {
     isLoginModalVisible: false,
   },

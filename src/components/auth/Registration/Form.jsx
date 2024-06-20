@@ -5,16 +5,20 @@ import { useDispatch, useSelector } from 'react-redux';
 import { formHelpers } from '../../../core/helpers/formHelpers';
 import { AuthState } from '../../../core/store/auth/slice';
 import { register } from '../../../core/store/auth/thunk';
+import { closeRegistrationModal } from '../../../core/store/modalRegistration/slice';
 import FormButton from '../../UI/Buttons/FormButton/FormButton';
 import eye from '../img/eye.svg';
 import open_eye from '../img/eye_open.svg';
 import styles from './../../../SCSS/styles-ant.module.scss';
 import s from './Form.module.scss';
 
-const FormRegistration = ({ onClose }) => {
+const FormRegistration = () => {
   const dispatch = useDispatch();
   const [form] = Form.useForm();
   const { isSuccess, isLoading, isError, authError } = useSelector(AuthState);
+  const handleRegistrationClose = () => {
+    dispatch(closeRegistrationModal());
+  };
   message.config({
     top: 400, // отступ от верхней части экрана (в пикселях)
     duration: 3, // время показа уведомления (в секундах)
@@ -23,7 +27,7 @@ const FormRegistration = ({ onClose }) => {
 
   useEffect(() => {
     if (isSuccess) {
-      onClose();
+      // handleRegistrationClose();
     } else if (isError) {
       formHelpers.setFormErrors(authError, form);
       if (typeof authError === 'string') {
@@ -46,12 +50,6 @@ const FormRegistration = ({ onClose }) => {
         },
         components: {
           Input: {
-            // colorPlaceholder: 'transparent',
-            // boxShadow: 'none',
-            // colorBgContainer: '#FFFFFF',
-            // colorBgContainerDisabled: '#FFFFFF',
-            // colorBgContainerHover: '#FFFFFF',
-            // colorBgContainerActive: '#FFFFFF',
             paddingBlock: 10,
             controlOutline: 1,
             lineWidth: 2,

@@ -1,5 +1,4 @@
 import { ImageCheckbox } from '../../../components/CheckBoxFilter/CheckBoxFilter';
-import { ShortForm } from '../../../components/ShortForm/ShortForm';
 import { OrderButton } from '../../../components/UI/OrderButton/OrderButton';
 import s from './Filter.module.scss';
 
@@ -36,7 +35,6 @@ export function Filter() {
       <div className={s.buttonContainer}>
         <OrderButton />
       </div>
-      <ShortForm />
     </article>
   );
 }

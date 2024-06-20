@@ -1,4 +1,3 @@
-import { ShortForm } from '../../../components/ShortForm/ShortForm.jsx';
 import { OrderButton } from '../../../components/UI/OrderButton/OrderButton.jsx';
 import s from './Promo.module.scss';
 
@@ -17,10 +16,7 @@ export function Promo() {
           <br /> навестить родителей, съездить в командировку или отдохнуть
         </div>
         <p className={s.subtitle}>Поможет Petsitter</p>
-
         <OrderButton></OrderButton>
-
-        <ShortForm />
       </div>
 
       <img src='/assets/images/Home/promo_right.png' alt='imagePromo' />

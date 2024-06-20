@@ -15,7 +15,7 @@ export const store = configureStore({
     petForm: petFormReducer,
     sitterInfo: sitterInfoReducer,
     modalOrder: modalOrderReducer,
-    modalLoginReducer: modalLoginReducer,
-    modalRegistrationReducer: modalRegistrationReducer,
+    modalLogin: modalLoginReducer,
+    modalRegistration: modalRegistrationReducer,
   },
 });

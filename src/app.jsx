@@ -7,10 +7,13 @@ import { getCurrentUser } from './core/store/auth/thunk';
 import { router } from './router/routes.jsx';
 
 export function App() {
-  useCheckAuthorization();
   const dispatch = useDispatch();
+  const { isUserAuthorized } = useCheckAuthorization();
+
   useEffect(() => {
-    // dispatch(getCurrentUser());
+    if (isUserAuthorized) {
+      dispatch(getCurrentUser());
+    }
   }, [dispatch]);
 
   return <RouterProvider router={router} />;

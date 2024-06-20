@@ -1,5 +1,5 @@
 export const LocalStorageItems = {
-  AuthorizationToken: 'AuthorizationToken',
+  AuthorizationToken: 'petSitterApp_accessToken',
 };
 
 Object.freeze(LocalStorageItems);

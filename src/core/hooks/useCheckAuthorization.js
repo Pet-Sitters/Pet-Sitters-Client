@@ -4,11 +4,11 @@ import { LocalStorageItems } from '../constants/LocalStorageItems';
 import { AuthState } from '../store/auth/slice';
 
 export function useCheckAuthorization() {
-  const token = useSelector(AuthState);
+  const { token } = useSelector(AuthState);
 
   useEffect(() => {
     if (token) {
-      // localStorage.setItem(LocalStorageItems.AuthorizationToken, token);
+      localStorage.setItem(LocalStorageItems.AuthorizationToken, token);
     }
   }, [token]);
 

@@ -1,4 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
+import { LocalStorageItems } from '../../constants/LocalStorageItems';
 import { getCurrentUser, login, logout, register } from './thunk';
 
 const initialState = {
@@ -7,6 +8,7 @@ const initialState = {
   isError: false,
   isSuccess: false,
   authError: null,
+  token: localStorage[LocalStorageItems.AuthorizationToken],
 };
 
 const authSlice = createSlice({
@@ -38,6 +40,7 @@ const authSlice = createSlice({
         state.isLoading = false;
         state.isSuccess = true;
         state.currentUser = action.payload;
+        state.token = action.payload.auth_token;
       })
       .addCase(login.rejected, (state) => {
         state.isLoading = false;

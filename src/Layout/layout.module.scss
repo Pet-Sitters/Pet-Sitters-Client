@@ -1,20 +1,20 @@
-@import './../SCSS/index.scss';
+@import './../SCSS/variables.scss';
 .container {
-	width: 1440px;
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
+  width: 1440px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 
-	.header_container {
-		width: 100%;
-		position: fixed;
-		top: 0;
-		z-index: 10;
-	}
+  .header_container {
+    width: 100%;
+    position: fixed;
+    top: 0;
+    z-index: 10;
+  }
 
-	.mainContainer {
-		display: flex;
-		justify-content: center;
-		width: 100%;
-	}
+  .mainContainer {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
 }

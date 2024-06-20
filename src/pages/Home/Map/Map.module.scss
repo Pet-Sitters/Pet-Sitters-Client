@@ -1,28 +1,28 @@
-@import './../../../SCSS/index.scss';
+@import './../../../SCSS/variables.scss';
 
 .map {
-	height: 947px;
-	width: 100%;
-	padding: 120px 155px;
-	background-color: $bg-color_sec;
+  height: 947px;
+  width: 100%;
+  padding: 120px 155px;
+  background-color: $bg-color_sec;
 }
 .title {
-	@include title48px-500-secondary;
+  @include title48px-500-secondary;
 }
 .text {
-	@include title48px-700-italic-primary;
-	color: $yellow;
-	margin-bottom: 44px;
+  @include title48px-700-italic-primary;
+  color: $yellow;
+  margin-bottom: 44px;
 }
 .mapContainer {
-	width: 1130px;
-	height: 445px;
-	object-fit: cover;
-	margin-bottom: 44px;
+  width: 1130px;
+  height: 445px;
+  object-fit: cover;
+  margin-bottom: 44px;
 }
 .buttons {
-	display: flex;
-	gap: 20px;
-	justify-content: center;
-	width: 100%;
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  width: 100%;
 }

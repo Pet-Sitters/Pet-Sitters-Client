@@ -1,49 +1,49 @@
-@import './../../../SCSS/index.scss';
+@import './../../../SCSS/variables.scss';
 .feedbackContainer {
-	width: 100%;
-	height: 1440px;
+  width: 100%;
+  height: 1440px;
 }
 .header {
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-	height: 250px;
-	background-color: $main-veryLight;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 250px;
+  background-color: $main-veryLight;
 }
 .titleWrapper {
-	width: 100%;
-	display: flex;
-	justify-content: center;
-	margin-bottom: 24px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 24px;
 }
 .title {
-	@include title48px-500-secondary;
+  @include title48px-500-secondary;
 }
 .imageText {
-	margin-left: 15px;
+  margin-left: 15px;
 }
 .strokeOne {
-	@include accentText24-700-italic-primary;
-	color: $white;
+  @include accentText24-700-italic-primary;
+  color: $white;
 }
 .strokeTwo {
-	@include mainText24-500-primary;
+  @include mainText24-500-primary;
 }
 .counter {
-	display: flex;
-	justify-content: end;
-	align-items: center;
-	gap: 40px;
-	height: 180px;
-	width: 100%;
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  gap: 40px;
+  height: 180px;
+  width: 100%;
 }
 .quantity {
-	display: flex;
-	gap: 20px;
-	text-align: center;
-	align-items: center;
+  display: flex;
+  gap: 20px;
+  text-align: center;
+  align-items: center;
 }
 .counterText {
-	@include mainText24-500-primary;
+  @include mainText24-500-primary;
 }

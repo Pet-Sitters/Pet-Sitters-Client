@@ -276,7 +276,7 @@ const CalculatorForm = ({ marks, prices, dogsCount, showWalks, info, initialValu
         </div>
 
         <div className={styles.buttons}>
-          <LinkButton buttonType='green' to={links.account.myOrders}>
+          <LinkButton buttonType='green' to={links.sitters}>
             Ситтеры
           </LinkButton>
           <OrderButton />

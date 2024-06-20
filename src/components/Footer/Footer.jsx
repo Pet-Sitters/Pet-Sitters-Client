@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
+import links from '../../router/links';
 import { TgButton } from '../UI/Buttons/TgButton/TgButton';
 import s from './Footer.module.scss';
-
 export function Footer() {
   return (
     <div className={s.footer}>
@@ -42,7 +42,7 @@ export function Footer() {
               </Link>
             </div>
             <div className={s.linksSitter}>
-              <Link to={'/'} className={s.link}>
+              <Link to={links.sitters} className={s.link}>
                 Ситтеры
               </Link>
               <Link to={'/'} className={s.link}>

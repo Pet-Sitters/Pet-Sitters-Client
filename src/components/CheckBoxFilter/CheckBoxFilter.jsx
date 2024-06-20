@@ -16,6 +16,7 @@ export function ImageCheckbox({ imageSrc, label }) {
         checked={checked}
         onChange={handleCheckboxChange}
         className={s.checkbox}
+        
       />
       <label htmlFor={label} className={`${s.label} ${checked ? s.checked : ''}`}>
         <img src={imageSrc} alt={label} className={s.image} />

@@ -1,19 +1,19 @@
-@import './../../../SCSS/index.scss';
+@import './../../../SCSS/variables.scss';
 .error {
-	color: #333333;
+  color: #333333;
 }
 .form {
-	margin-top: 24px;
-	height: 305px;
+  margin-top: 24px;
+  height: 305px;
 }
 .input {
-	border-radius: 18px;
-// 	width: 413px !important;
-// 	bottom: 18px !important;
-	font-size: 20px;
-// 	margin-bottom: 0px;
+  border-radius: 18px;
+  // 	width: 413px !important;
+  // 	bottom: 18px !important;
+  font-size: 20px;
+  // 	margin-bottom: 0px;
 }
 .buttonContainer {
-	display: flex;
-	justify-content: center;
+  display: flex;
+  justify-content: center;
 }

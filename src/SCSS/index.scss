@@ -1,31 +1,29 @@
 @import 'variables';
-@import 'fonts.scss';
-@import 'mixins.scss';
 
 * {
-	margin: 0;
-	padding: 0;
-	box-sizing: border-box;
-	//font
-	font-family: $font-family-primary;
-	font-style: $font-style-normal;
-	font-weight: 400;
-	font-size: 24px;
-	line-height: normal;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  //font
+  font-family: $font-family-primary;
+  font-style: $font-style-normal;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: normal;
 }
 html,
 body {
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	margin: 0 auto;
-	padding: 0;
-	box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 0 auto;
+  padding: 0;
+  box-sizing: border-box;
 }
 body {
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
-	-webkit-tap-highlight-color: transparent;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-tap-highlight-color: transparent;
 }
 h1,
 h2,
@@ -33,5 +31,5 @@ h3,
 h4,
 h5,
 h6 {
-	font-family: $font-family-secondary;
+  font-family: $font-family-secondary;
 }

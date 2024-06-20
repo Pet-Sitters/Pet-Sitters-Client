@@ -79,7 +79,11 @@ export function Motion() {
           variants={pVariants}
           className={s.paragraphFive}>
           Пришлет вам отчет
-          <img src='/assets/icons/Home/togever.png' alt='countdown' />
+          <img
+            src='/assets/icons/Home/togever.png'
+            alt='countdown'
+            className={s.togetherImg}
+          />
         </motion.p>
       </div>
     </div>

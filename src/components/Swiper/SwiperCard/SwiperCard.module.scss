@@ -1,9 +1,9 @@
-@import '../../../SCSS/index';
+@import '../../../SCSS/variables.scss';
 
 .card {
   display: flex;
   gap: 20px;
-  background-color: #FDF7E7;
+  background-color: #fdf7e7;
   height: 320px;
   width: 863px;
   border-radius: 20px;
@@ -43,10 +43,9 @@
   }
 
   .subtitle {
-
   }
 
-  strong{
+  strong {
     font-size: 24px;
     font-weight: 700;
     font-style: italic;

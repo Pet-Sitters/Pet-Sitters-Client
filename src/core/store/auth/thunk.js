@@ -20,7 +20,7 @@ export const login = createAsyncThunk('auth/Login', async (payload, thunkAPI) =>
   }
 });
 export const logout = createAsyncThunk('auth/token/logout', async () => {
-  localStorage.removeItem('accessToken');
+  localStorage.removeItem('petSitterApp_accessToken');
 });
 
 export const getCurrentUser = createAsyncThunk(

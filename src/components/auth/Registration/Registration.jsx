@@ -2,15 +2,10 @@ import { Dialog, DialogPanel, DialogTitle } from '@headlessui/react';
 import FormRegistration from './Form';
 import s from './Registration.module.scss';
 
-export function Registration({ open, onClose, visible, onCancel, onSwitch }) {
+export function Registration({ open, onClose, onCancel, onSwitch }) {
   return (
     <>
-      <Dialog
-        open={open}
-        onClose={onClose}
-        className={s.wrapper}
-        visible={visible}
-        onCancel={onCancel}>
+      <Dialog open={open} onClose={onClose} className={s.wrapper} onCancel={onCancel}>
         <DialogPanel className={s.modal}>
           <button onClick={onClose} className={s.button}>
             <img src='/assets/icons/Auth/close.png' alt='close' className={s.buttonImg} />

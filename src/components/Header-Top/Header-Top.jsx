@@ -1,11 +1,16 @@
-import { useState } from 'react';
+import { Fragment, useState } from 'react';
 import { Link } from 'react-router-dom';
 
+import { useDispatch, useSelector } from 'react-redux';
+import { selectCurrentUser } from '../../core/store/auth/slice.js';
+import { logout } from '../../core/store/auth/thunk.js';
 import { Login } from '../auth/Login/Login.jsx';
 import { Registration } from '../auth/Registration/Registration.jsx';
 import s from './Header-Top.module.scss';
 
 export function Header_Top() {
+  const auth = useSelector(selectCurrentUser);
+  const dispatch = useDispatch();
   const [isLoginModalVisible, setIsLoginVisible] = useState(false);
   const [isRegisterModalVisible, setIsRegistrationVisible] = useState(false);
   const openRegistrationModal = () => {
@@ -33,13 +38,23 @@ export function Header_Top() {
           <img src='/assets/icons/button-arrow.png' alt='arrow' />
         </div>
         <div className={s.rightBlock}>
-          <button onClick={() => openLoginModal(true)} className={s.link}>
-            Войти
-          </button>{' '}
-          /{' '}
-          <button onClick={() => openRegistrationModal(true)} className={s.link}>
-            Зарегистрироваться
-          </button>
+          {auth === null && (
+            <Fragment>
+              <button onClick={() => openLoginModal(true)} className={s.link}>
+                Войти
+              </button>{' '}
+              /{' '}
+              <button onClick={() => openRegistrationModal(true)} className={s.link}>
+                Зарегистрироваться
+              </button>
+            </Fragment>
+          )}
+
+          {auth && (
+            <span onClick={() => dispatch(logout())} className={s.link}>
+              Выйти
+            </span>
+          )}
         </div>
       </div>
       <Login

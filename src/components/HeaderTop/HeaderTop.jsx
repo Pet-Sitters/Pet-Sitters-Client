@@ -6,7 +6,7 @@ import { selectCurrentUser } from '../../core/store/auth/slice.js';
 import { logout } from '../../core/store/auth/thunk.js';
 import { Login } from '../auth/Login/Login.jsx';
 import { Registration } from '../auth/Registration/Registration.jsx';
-import s from './Header-Top.module.scss';
+import s from './HeaderTop.module.scss';
 
 export function Header_Top() {
   const auth = useSelector(selectCurrentUser);

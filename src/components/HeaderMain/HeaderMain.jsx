@@ -1,10 +1,11 @@
 import { useEffect, useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
+import { RoutePaths } from '../../core/constants/RoutePaths';
 import { openModal } from '../../core/store/modalOrder/slice';
 import s from './HeaderGrid.module.scss';
 
-export function Header_Main() {
+export function HeaderMain() {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   useEffect(() => {
@@ -22,6 +23,7 @@ export function Header_Main() {
   const handleOpen = () => {
     dispatch(openModal());
   };
+
   return (
     <header className={`${s.headerMain} ${scrolled ? s.scrolled : ''}`}>
       <nav className={s.menuClientPet}>
@@ -39,9 +41,9 @@ export function Header_Main() {
           </li>
         </ul>
       </nav>
-      <div className={s.logo}>
+      <Link to={RoutePaths.Root} className={s.logo}>
         <img src='/assets/images/logo.png' alt='logo' />
-      </div>
+      </Link>
       <nav className={s.menuClientSitter}>
         <ul className={s.list}>
           <li className={s.item}>

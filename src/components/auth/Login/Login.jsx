@@ -5,12 +5,7 @@ import s from './Login.module.scss';
 export function Login({ open, onClose, visible, onCancel, onSwitch }) {
   return (
     <>
-      <Dialog
-        open={open}
-        onClose={onClose}
-        visible={visible}
-        onCancel={onCancel}
-        className={s.wrapper}>
+      <Dialog open={open} onClose={onClose} onCancel={onCancel} className={s.wrapper}>
         <DialogPanel className={s.modal}>
           <button onClick={onClose} className={s.button}>
             <img src='/assets/icons/Auth/close.png' alt='close' className={s.buttonImg} />

@@ -20,7 +20,7 @@ const ShortFormInputs = () => {
   const isLoading = useSelector(selectShortFormIsLoading);
   const userData = useSelector(selectCurrentUser);
   const FIRST_USER_INDEX = 0;
-  const id = userData.length > 0 ? userData[FIRST_USER_INDEX].id : null;
+  const id = userData?.length > 0 ? userData[FIRST_USER_INDEX].id : null;
 
   message.config({
     top: 400, // отступ от верхней части экрана (в пикселях)

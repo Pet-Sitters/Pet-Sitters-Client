@@ -10,6 +10,7 @@ export function ShortForm() {
   const handleClose = () => {
     dispatch(closeModal());
   };
+
   return (
     <>
       <Dialog open={isOpen} onClose={handleClose} className={s.wrapper}>

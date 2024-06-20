@@ -7,13 +7,13 @@ export const register = createAsyncThunk('auth/register', async (payload, thunkA
 
     return response.data;
   } catch (err) {
-    return thunkAPI.rejectWithValue(err.response.data.errors);
+    return thunkAPI.rejectWithValue(err.response.data);
   }
 });
 export const login = createAsyncThunk('auth/Login', async (payload, thunkAPI) => {
   try {
     const response = await authApi.post('/auth/token/login/', payload);
-
+console.log(response)
     return response.data;
   } catch (err) {
     return thunkAPI.rejectWithValue(err.response.data.errors || 'Login failed');

@@ -2,6 +2,7 @@ const links = {
   home: '/',
   sitter: 'sitter',
   sitters: 'sitters',
+  becameSitter: 'became-sitter',
   account: {
     base: 'account/',
     personal: 'personal/',

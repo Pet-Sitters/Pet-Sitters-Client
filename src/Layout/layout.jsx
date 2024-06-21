@@ -1,8 +1,8 @@
 import { Outlet } from 'react-router-dom';
 
 import { Footer } from '../components/Footer/Footer.jsx';
-import { Header_Main } from '../components/Header-Main/Header-Main.jsx';
-import { Header_Top } from '../components/Header-Top/Header-Top';
+import { HeaderMain } from '../components/HeaderMain/HeaderMain.jsx';
+import { HeaderTop } from '../components/HeaderTop/HeaderTop.jsx';
 
 import s from './layout.module.scss';
 
@@ -10,8 +10,8 @@ export function Layout() {
   return (
     <div className={s.container}>
       <header className={s.header_container}>
-        <Header_Top />
-        <Header_Main />
+        <HeaderTop />
+        <HeaderMain />
       </header>
 
       <main className={s.mainContainer}>

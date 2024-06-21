@@ -1,16 +1,27 @@
 import { createSlice } from '@reduxjs/toolkit';
+import { LocalStorageItems } from '../../constants/LocalStorageItems';
 import { getCurrentUser, login, logout, register } from './thunk';
 
 const initialState = {
-  currentUser: undefined,
+  currentUser: null,
   isLoading: false,
   isError: false,
   isSuccess: false,
+  authError: null,
+  token: localStorage[LocalStorageItems.AuthorizationToken],
 };
 
 const authSlice = createSlice({
   name: 'auth',
   initialState,
+  reducers: {
+    resetAuthState: (state) => {
+      state.isLoading = false;
+      state.isError = false;
+      state.isSuccess = false;
+      state.authError = null;
+    },
+  },
   extraReducers: (builder) => {
     builder
       //register
@@ -23,9 +34,10 @@ const authSlice = createSlice({
         state.isSuccess = true;
         state.currentUser = action.payload;
       })
-      .addCase(register.rejected, (state) => {
+      .addCase(register.rejected, (state, action) => {
         state.isLoading = false;
         state.isError = true;
+        state.authError = action.payload;
       })
       //logIn
       .addCase(login.pending, (state) => {
@@ -36,6 +48,8 @@ const authSlice = createSlice({
         state.isLoading = false;
         state.isSuccess = true;
         state.currentUser = action.payload;
+        state.token = action.payload.auth_token;
+        localStorage.setItem(LocalStorageItems.AuthorizationToken, action.payload.token);
       })
       .addCase(login.rejected, (state) => {
         state.isLoading = false;
@@ -60,9 +74,14 @@ const authSlice = createSlice({
         state.isLoading = false;
         state.currentUser = null;
         state.isError = false;
+        state.token = null;
+        localStorage.removeItem(LocalStorageItems.AuthorizationToken);
       });
   },
 });
+export const { resetAuthState } = authSlice.actions;
+
+export const AuthState = (state) => state.auth;
 export const selectCurrentUser = (state) => state.auth.currentUser;
 export const selectAuthIsLoading = (state) => state.auth.isLoading;
 export const selectAuthIsError = (state) => state.auth.isError;

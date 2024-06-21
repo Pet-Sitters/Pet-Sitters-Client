@@ -12,7 +12,7 @@ export function HowWork() {
             Как работает <span>Petsitters</span>
           </h3>
           <p className={s.text}>
-            Даже если ваш питомец шалит. <span>Petsitter придет на помощь!</span> <br />
+            Даже если ваш питомец шалит, <span>Petsitter придет на помощь!</span> <br />
             Мы найдем для него ситтера. У нас профессиональные догситтеры и кетситтеры
           </p>
         </div>
@@ -26,14 +26,14 @@ export function HowWork() {
                   className={s.bottle}
                 />
               </div>
-              <p className={s.description}>Оставляете заявку на передержку на сайте</p>
+              <p className={s.description}>Оставьте заявку на передержку на сайте</p>
             </div>
             <div className={s.item}>
               <div className={s.circle}>
                 <img src='/assets/icons/Home/face.svg' alt='face' className={s.face} />
               </div>
               <p className={s.description}>
-                Выбираете идеального ситтера из множествавариантов на сайте
+                Выберите наиболее понравившегося ситтера из нашей команды
               </p>
             </div>
             <div className={s.item}>
@@ -41,7 +41,7 @@ export function HowWork() {
                 <img src='/assets/icons/Home/phone.svg' alt='phone' className={s.phone} />
               </div>
               <p className={s.description}>
-                Оплачиваете передержку армянской или российской картой
+                Оплатите передержку армянской или российской картой
               </p>
             </div>
             <div className={s.item}>
@@ -57,7 +57,7 @@ export function HowWork() {
                 <img src='/assets/icons/Home/cat.svg' alt='cat' className={s.cat} />
               </div>
               <p className={s.description}>
-                Кетситер играет с вашим котом, кормит и следит за чистотой лотка
+                Кетситтер играет с вашим котом, кормит и следит за чистотой лотка
               </p>
             </div>
             <div className={s.item}>

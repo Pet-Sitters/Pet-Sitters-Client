@@ -12,6 +12,7 @@ import { Home } from '../pages/Home/Home';
 import { SitterPage } from '../pages/SitterPage/SitterPage.jsx';
 import ErrorPage from '../pages/error-pages';
 
+import { SittersList } from '../pages/Sitters/Sitters';
 import links from './links.js';
 
 export const router = createBrowserRouter([
@@ -28,6 +29,11 @@ export const router = createBrowserRouter([
       {
         path: links.sitter,
         element: <SitterPage />,
+        errorElement: <ErrorPage />,
+      },
+      {
+        path: links.sitters,
+        element: <SittersList />,
         errorElement: <ErrorPage />,
       },
       {

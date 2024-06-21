@@ -1,119 +1,119 @@
-@import './../../../SCSS/index.scss';
+@import './../../../SCSS/variables.scss';
 .howWork {
-	width: 100%;
-	display: flex;
-	justify-content: center;
-	.content {
-		width: 88.88%;
-		display: flex;
-		flex-direction: column;
-		justify-content: space-between;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  .content {
+    width: 88.88%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 
-		border-radius: 20px;
-		.header {
-			display: flex;
-			flex-direction: column;
-			align-items: center;
-			padding-top: 61px;
-			width: 100%;
-			height: 260px;
-			background-color: $main-veryLight;
-			border-radius: 20px 20px 0px 0px;
-			.title {
-				@include title48px-500-secondary;
-				margin-bottom: 24px;
-				span {
-					color: $light-green;
-					@include title48px-700-italic-primary;
-				}
-			}
-			.text {
-				width: 874px;
-				text-align: center;
-				@include mainText24-500-primary;
-				span {
-					color: $white;
-					@include mainText24-500-primary;
-				}
-			}
-		}
-		.wrapper {
-			display: flex;
-			flex-direction: column;
-			justify-content: space-between;
-			align-items: center;
-			height: 980px;
-			background-color: $font-color-light;
-			padding: 104px 80px 104px 80px;
-			box-shadow: 4px 4px 4px 0px #0000001a;
+    border-radius: 20px;
+    .header {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding-top: 61px;
+      width: 100%;
+      height: 260px;
+      background-color: $main-veryLight;
+      border-radius: 20px 20px 0px 0px;
+      .title {
+        @include title48px-500-secondary;
+        margin-bottom: 24px;
+        span {
+          color: $light-green;
+          @include title48px-700-italic-primary;
+        }
+      }
+      .text {
+        width: 874px;
+        text-align: center;
+        @include mainText24-500-primary;
+        span {
+          color: $white;
+          @include mainText24-500-primary;
+        }
+      }
+    }
+    .wrapper {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+      height: 980px;
+      background-color: $font-color-light;
+      padding: 104px 80px 104px 80px;
+      box-shadow: 4px 4px 4px 0px #0000001a;
 
-			.cards {
-				display: grid;
-				width: 1139px;
-				height: 652px;
+      .cards {
+        display: grid;
+        width: 1139px;
+        height: 652px;
 
-				grid-template: repeat(2, 1fr) / repeat(3, 1fr);
+        grid-template: repeat(2, 1fr) / repeat(3, 1fr);
 
-				border-radius: 0px 0px 20px 20px;
-				.item {
-					display: flex;
-					flex-direction: column;
-					align-items: center;
-					.circle {
-						display: flex;
-						justify-content: center;
-						align-items: center;
-						width: 210px;
-						height: 210px;
-						border-radius: 100%;
-						background-color: $light-green;
-						margin-bottom: 12px;
-						.bottle {
-							&:hover {
-								content: url('/assets/icons/Home/bottle.gif');
-							}
-						}
-						.face {
-							&:hover {
-								content: url('/assets/icons/Home/face.gif');
-							}
-						}
-						.phone {
-							&:hover {
-								content: url('/assets/icons/Home/phone.gif');
-							}
-						}
-						.dog {
-							&:hover {
-								content: url('/assets/icons/Home/dog.gif');
-							}
-						}
-						.cat {
-							&:hover {
-								content: url('/assets/icons/Home/cat.gif');
-							}
-						}
-						.together {
-							&:hover {
-								content: url('/assets/icons/Home/together.gif');
-							}
-						}
-					}
-					.description {
-						width: 275px;
-						font-size: 24px;
-						font-weight: 400;
-						line-height: 28.32px;
-						letter-spacing: -0.02em;
-						text-align: left;
-					}
-				}
-			}
-			.buttons {
-				display: flex;
-				gap: 20px;
-				width: 600px;
-			}
-		}
-	}
+        border-radius: 0px 0px 20px 20px;
+        .item {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          .circle {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 210px;
+            height: 210px;
+            border-radius: 100%;
+            background-color: $light-green;
+            margin-bottom: 12px;
+            .bottle {
+              &:hover {
+                content: url('/assets/icons/Home/bottle.gif');
+              }
+            }
+            .face {
+              &:hover {
+                content: url('/assets/icons/Home/face.gif');
+              }
+            }
+            .phone {
+              &:hover {
+                content: url('/assets/icons/Home/phone.gif');
+              }
+            }
+            .dog {
+              &:hover {
+                content: url('/assets/icons/Home/dog.gif');
+              }
+            }
+            .cat {
+              &:hover {
+                content: url('/assets/icons/Home/cat.gif');
+              }
+            }
+            .together {
+              &:hover {
+                content: url('/assets/icons/Home/together.gif');
+              }
+            }
+          }
+          .description {
+            width: 275px;
+            font-size: 24px;
+            font-weight: 400;
+            line-height: 28.32px;
+            letter-spacing: -0.02em;
+            text-align: left;
+          }
+        }
+      }
+      .buttons {
+        display: flex;
+        gap: 20px;
+        width: 600px;
+      }
+    }
+  }
 }

@@ -21,7 +21,7 @@ export function Skills() {
             </p>
             <p className={s.itemText}>
               {' '}
-              <span className={s.accentSkill}>Поладят с собакой</span> , даже если у нее
+              <span className={s.accentSkill}>Поладят с собакой</span>, даже если у нее
               непростой характер
             </p>
             <p className={s.itemText}>
@@ -29,7 +29,7 @@ export function Skills() {
               <span className={s.accentSkill}>Не допустят </span>драку с другой собакой
             </p>
             <p className={s.itemText}>
-              Понимают <span className={s.accentSkill}>язык тела</span>собаки
+              Понимают <span className={s.accentSkill}>язык тела</span> собаки
             </p>
             <p className={s.itemText}>
               <span className={s.accentSkill}>Знают что делать</span>, если собаке стало

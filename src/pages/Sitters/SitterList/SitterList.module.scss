@@ -1,0 +1,9 @@
+.sitterList {
+  width: 100%;
+  padding: 51px 170px;
+  display: grid;
+  grid-template-rows: repeat(1, 1fr);
+  grid-template-columns: repeat(3, 1fr);
+  column-gap: 11px;
+  row-gap: 24px;
+}

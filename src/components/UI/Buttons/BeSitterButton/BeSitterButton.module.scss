@@ -1,13 +1,13 @@
-@import './../../../../SCSS/index.scss';
+@import './../../../../SCSS/variables.scss';
 
 .submitButton {
-	color: $main-dark !important;
-	font-weight: 500 !important;
-	width: 290px;
-	height: 60px;
-	border-radius: $border-radius-button;
-	&:active,
-	&:hover {
-		color: $main-dark !important;
-	}
+  color: $main-dark !important;
+  font-weight: 500 !important;
+  width: 290px;
+  height: 60px;
+  border-radius: $border-radius-button;
+  &:active,
+  &:hover {
+    color: $main-dark !important;
+  }
 }

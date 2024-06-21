@@ -1,0 +1,76 @@
+@import './../../../SCSS/variables.scss';
+.filter {
+  width: 100%;
+  height: 252px;
+  padding: 36px 170px;
+  display: grid;
+  grid-template-columns: 132px 340px 1fr;
+  gap: 40px;
+  background-color: $light-green;
+}
+.animalType {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.inputContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.wrapperInputCity {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.labelCity,
+.labelRating {
+  @include mainText24-400-primary;
+  color: $main-dark;
+}
+.inputCity {
+  width: 340px;
+  height: 44px;
+  border-radius: 30px;
+  border: 1px solid transparent;
+  font-size: 20px;
+  padding: 10px 20px;
+  &:focus {
+    border: 1 px solid transparent;
+    outline: none;
+  }
+}
+// чекбоксы рейтин и отзывы
+.wrapperCheckbox {
+  display: flex;
+  gap: 24px;
+}
+
+.checkboxFeedback,
+.checkboxRating {
+  display: none; // Скрываем настоящий input
+}
+.labelFeedback,
+.labelRating {
+  width: 38px;
+  height: 38px;
+  border-radius: 12px;
+  background-color: #faf9f7; // Задайте цвет фона по умолчанию
+  display: inline-block;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+.checkboxFeedback:checked + .labelFeedback,
+.checkboxRating:checked + .labelRating {
+  background-color: $main-veryLight; // Цвет фона при активном состоянии
+}
+.labelText {
+  cursor: pointer;
+}
+.buttonContainer {
+  width: 100%;
+  display: flex;
+  justify-content: end;
+  align-items: flex-end;
+}

@@ -1,14 +1,7 @@
-import { useDispatch } from 'react-redux';
-import { ShortForm } from '../../../components/ShortForm/ShortForm.jsx';
 import { OrderButton } from '../../../components/UI/OrderButton/OrderButton.jsx';
-import { openModal } from '../../../core/store/modalOrder/slice.js';
 import s from './Promo.module.scss';
 
 export function Promo() {
-  const dispatch = useDispatch();
-  const handleOpen = () => {
-    dispatch(openModal());
-  };
   return (
     <article className={s.promo}>
       <img src='/assets/images/Home/promo_left.png' alt='imagePromo' />
@@ -23,10 +16,7 @@ export function Promo() {
           <br /> навестить родителей, съездить в командировку или отдохнуть
         </div>
         <p className={s.subtitle}>Поможет Petsitter</p>
-
         <OrderButton></OrderButton>
-
-        <ShortForm />
       </div>
 
       <img src='/assets/images/Home/promo_right.png' alt='imagePromo' />

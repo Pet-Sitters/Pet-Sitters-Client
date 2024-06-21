@@ -1,49 +1,49 @@
-@import './../../../SCSS/index.scss';
+@import './../../../SCSS/variables.scss';
 .promo {
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-	margin-top: 104px;
-	width: 100%;
-	min-height: 659px;
-	background-color: #fdf7e7;
-	.centralContent {
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		justify-content: center;
-		gap: 24px;
-		width: 691px;
-		.title {
-			font-size: 64px;
-			font-weight: 700;
-			line-height: 70px;
-			letter-spacing: -0.04em;
-			text-align: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 104px;
+  width: 100%;
+  min-height: 659px;
+  background-color: #fdf7e7;
+  .centralContent {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 24px;
+    width: 691px;
+    .title {
+      font-size: 64px;
+      font-weight: 700;
+      line-height: 70px;
+      letter-spacing: -0.04em;
+      text-align: center;
 
-			.accent {
-				font-size: 72px;
-				font-style: italic;
-				color: $yellow;
-				font-weight: 700;
-				line-height: 70px;
-				letter-spacing: -0.04em;
-				text-align: center;
-			}
-		}
-		.text {
-			width: 661px;
-			@include mainText24-400-primary;
-			text-align: center;
-		}
-		.subtitle {
-			color: $main-veryLight;
-			@include accentText24-700-italic-primary;
-			text-align: center;
-		}
-		.buttonContainer {
-			width: 290px;
-			height: 60px;
-		}
-	}
+      .accent {
+        font-size: 72px;
+        font-style: italic;
+        color: $yellow;
+        font-weight: 700;
+        line-height: 70px;
+        letter-spacing: -0.04em;
+        text-align: center;
+      }
+    }
+    .text {
+      width: 661px;
+      @include mainText24-400-primary;
+      text-align: center;
+    }
+    .subtitle {
+      color: $main-veryLight;
+      @include accentText24-700-italic-primary;
+      text-align: center;
+    }
+    .buttonContainer {
+      width: 290px;
+      height: 60px;
+    }
+  }
 }

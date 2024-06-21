@@ -12,7 +12,7 @@ export function Map() {
         <img src='/assets/images/Home/map.png' alt='map' />
       </div>
       <div className={s.buttons}>
-        <LinkButton buttonType='green' to={links.account.myOrders}>
+        <LinkButton buttonType='green' to={links.sitters}>
           Ситтеры
         </LinkButton>
         <OrderButton />

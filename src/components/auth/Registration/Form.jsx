@@ -1,41 +1,43 @@
 import { Loading3QuartersOutlined } from '@ant-design/icons';
 import { ConfigProvider, Form, Input, message } from 'antd';
+import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { useNavigate } from 'react-router';
-import { selectAuthIsLoading, selectAuthIsSuccess } from '../../../core/store/auth/slice';
+import { formHelpers } from '../../../core/helpers/formHelpers';
+import { AuthState } from '../../../core/store/auth/slice';
 import { register } from '../../../core/store/auth/thunk';
-import links from '../../../router/links';
+import { closeRegistrationModal } from '../../../core/store/modalRegistration/slice';
 import FormButton from '../../UI/Buttons/FormButton/FormButton';
 import eye from '../img/eye.svg';
 import open_eye from '../img/eye_open.svg';
 import styles from './../../../SCSS/styles-ant.module.scss';
 import s from './Form.module.scss';
 
-const FormRegistration = ({ onClose }) => {
-  const navigate = useNavigate();
+const FormRegistration = () => {
   const dispatch = useDispatch();
   const [form] = Form.useForm();
-  const isSuccess = useSelector(selectAuthIsSuccess);
-  const isLoading = useSelector(selectAuthIsLoading);
+  const { isSuccess, isLoading, isError, authError } = useSelector(AuthState);
+  const handleRegistrationClose = () => {
+    dispatch(closeRegistrationModal());
+  };
   message.config({
     top: 400, // отступ от верхней части экрана (в пикселях)
     duration: 3, // время показа уведомления (в секундах)
     maxCount: 3, // максимальное количество одновременно отображаемых уведомлений
   });
 
-  const onFinish = async (values) => {
-    try {
-      const action = await dispatch(register(values));
-      if (register.fulfilled.match(action)) {
-        // message.success('Регистрация прошла успешно!');
-        isSuccess && navigate(links.home);
-        onClose();
-      } else {
-        throw new Error(action.payload.detail || 'Ошибка регистрации');
+  useEffect(() => {
+    if (isSuccess) {
+      handleRegistrationClose();
+    } else if (isError) {
+      formHelpers.setFormErrors(authError, form);
+      if (typeof authError === 'string') {
+        message.error(authError);
       }
-    } catch (error) {
-      message.error(error.message);
     }
+  }, [isSuccess, isError]);
+
+  const onFinish = async (values) => {
+    dispatch(register(values));
   };
 
   return (
@@ -48,12 +50,6 @@ const FormRegistration = ({ onClose }) => {
         },
         components: {
           Input: {
-            // colorPlaceholder: 'transparent',
-            // boxShadow: 'none',
-            // colorBgContainer: '#FFFFFF',
-            // colorBgContainerDisabled: '#FFFFFF',
-            // colorBgContainerHover: '#FFFFFF',
-            // colorBgContainerActive: '#FFFFFF',
             paddingBlock: 10,
             controlOutline: 1,
             lineWidth: 2,

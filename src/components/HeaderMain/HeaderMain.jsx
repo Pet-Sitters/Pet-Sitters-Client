@@ -1,12 +1,18 @@
 import { useEffect, useState } from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
+import { RoutePaths } from '../../core/constants/RoutePaths';
+import { AuthState } from '../../core/store/auth/slice';
 import { openModal } from '../../core/store/modalOrder/slice';
+import { openRegistrationModal } from '../../core/store/modalRegistration/slice';
 import s from './HeaderGrid.module.scss';
 
-export function Header_Main() {
+export function HeaderMain() {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+  const { token } = useSelector(AuthState);
+  const dispatch = useDispatch();
+
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 50);
@@ -18,10 +24,16 @@ export function Header_Main() {
       window.removeEventListener('scroll', handleScroll);
     };
   }, []);
-  const dispatch = useDispatch();
+
   const handleOpen = () => {
-    dispatch(openModal());
+    if (token) {
+      dispatch(openModal());
+    } else {
+      dispatch(openRegistrationModal());
+      //тут нам нужно открыть окно авторизации, если пользователь не авторизован, чтобы он авторизовался прежде чем заполнять короткую форму, но отсюда мы этого не можем сделать, нужно булевую переменную окно авторизации вынести в хранилище редакса
+    }
   };
+
   return (
     <header className={`${s.headerMain} ${scrolled ? s.scrolled : ''}`}>
       <nav className={s.menuClientPet}>
@@ -39,9 +51,9 @@ export function Header_Main() {
           </li>
         </ul>
       </nav>
-      <div className={s.logo}>
+      <Link to={RoutePaths.Root} className={s.logo}>
         <img src='/assets/images/logo.png' alt='logo' />
-      </div>
+      </Link>
       <nav className={s.menuClientSitter}>
         <ul className={s.list}>
           <li className={s.item}>

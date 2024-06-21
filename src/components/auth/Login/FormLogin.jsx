@@ -1,40 +1,38 @@
 import { Loading3QuartersOutlined } from '@ant-design/icons';
 import { ConfigProvider, Form, Input, message } from 'antd';
+import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { useNavigate } from 'react-router';
-import { selectAuthIsLoading, selectAuthIsSuccess } from '../../../core/store/auth/slice';
+import { AuthState, resetAuthState } from '../../../core/store/auth/slice';
 import { login } from '../../../core/store/auth/thunk';
-import links from '../../../router/links';
+import { closeLoginModal } from '../../../core/store/modalLogin/slice';
 import FormButton from '../../UI/Buttons/FormButton/FormButton';
 import eye from '../img/eye.svg';
 import open_eye from '../img/eye_open.svg';
 import s from './FormLogin.module.scss';
-const FormLogin = ({ onClose }) => {
-  const navigate = useNavigate();
+
+const FormLogin = () => {
   const dispatch = useDispatch();
-  const isLoading = useSelector(selectAuthIsLoading);
-  const isSuccess = useSelector(selectAuthIsSuccess);
-  const appPrefix = 'petSitterApp_';
-  message.config({
-    top: 400, // отступ от верхней части экрана (в пикселях)
-    duration: 3, // время показа уведомления (в секундах)
-    maxCount: 3, // максимальное количество одновременно отображаемых уведомлений
-  });
+  const [form] = Form.useForm();
+  const { isSuccess, isLoading, isError, authError } = useSelector(AuthState);
+
+  const handleLoginClose = () => {
+    dispatch(closeLoginModal());
+    dispatch(resetAuthState());
+  };
+
+  useEffect(() => {
+    if (isSuccess) {
+      handleLoginClose();
+    } else if (isError) {
+      formHelpers.setFormErrors(authError, form);
+      if (typeof authError === 'string') {
+        message.error(authError);
+      }
+    }
+  }, [isSuccess, isError, dispatch, form, authError]);
 
   const onFinish = async (values) => {
-    try {
-      const action = await dispatch(login(values));
-      if (login.fulfilled.match(action)) {
-        message.success('Вход выполнен успешно!');
-        localStorage.setItem(`${appPrefix}accessToken`, action.payload.auth_token);
-        isSuccess && navigate(links.account.base);
-        onClose();
-      } else {
-        throw new Error(action.payload.detail || 'Ошибка входа');
-      }
-    } catch (error) {
-      message.error(error.message);
-    }
+    dispatch(login(values));
   };
 
   return (

@@ -264,7 +264,18 @@ const CalculatorForm = ({ marks, prices, dogsCount, showWalks, info, initialValu
             </ConfigProvider>
             <p className={styles.pLabel}>Без других животных</p>
           </div>
-          <p className={styles.switchInfo}>Ваша собака будет единственной у ситтера</p>
+          { showWalks ? (
+            <div className={styles.switchInfo}>
+              <p>Ваша собака будет единственной у ситтера</p>
+            </div>
+          ) : (
+            <div className={styles.switchInfo}>
+              <p>Ваша кошка будет единственной у ситтера</p>
+            </div>
+          )
+
+            // <p className={styles.switchInfo}>Кот/кошка будет единственной у ситтера</p>
+          }
         </div>
       </div>
 

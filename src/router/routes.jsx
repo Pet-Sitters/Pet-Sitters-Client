@@ -3,7 +3,7 @@ import { createBrowserRouter } from 'react-router-dom';
 import { Account } from '../Layout/Account/Account';
 import { Layout } from '../Layout/layout';
 import { MyPets } from '../pages/Account/MyPets/MyPets';
-import { Orders } from '../pages/Account/Orders/Orders';
+import Orders from '../pages/Account/Orders/Orders';
 import PersonalData from '../pages/Account/PersonalData/PersonalData.jsx';
 import PetForm from '../pages/Account/PetForm/PetForm';
 import { Settings } from '../pages/Account/Settings/Settings';

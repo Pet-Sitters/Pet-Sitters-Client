@@ -3,6 +3,12 @@ import links from '../../router/links';
 import { TgButton } from '../UI/Buttons/TgButton/TgButton';
 import s from './Footer.module.scss';
 export function Footer() {
+  const handleLogoClick = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth',
+    });
+  };
   return (
     <div className={s.footer}>
       <div className={s.questions}>
@@ -27,7 +33,12 @@ export function Footer() {
       <div className={s.mainFooter}>
         <div className={s.linksContainer}>
           <div className={s.image}>
-            <img src='/assets/images/Home/logoFooter.png' alt='logo' />
+            <img
+              src='/assets/images/Home/logoFooter.png'
+              alt='logo'
+              onClick={handleLogoClick}
+              className={s.logo}
+            />
           </div>
           <div className={s.links}>
             <div className={s.linksPetsitter}>

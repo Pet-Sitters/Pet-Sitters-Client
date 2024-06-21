@@ -3,7 +3,8 @@ import { ConfigProvider, Form, Input, message } from 'antd';
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { formHelpers } from '../../../core/helpers/formHelpers';
-import { AuthState } from '../../../core/store/auth/slice';
+import { transformErrorMessage } from '../../../core/helpers/transformErrorMessage';
+import { AuthState, resetAuthState } from '../../../core/store/auth/slice';
 import { register } from '../../../core/store/auth/thunk';
 import { closeRegistrationModal } from '../../../core/store/modalRegistration/slice';
 import FormButton from '../../UI/Buttons/FormButton/FormButton';
@@ -27,21 +28,25 @@ const FormRegistration = () => {
   useEffect(() => {
     if (isSuccess) {
       message.success('Регистрация выполнена успешно!');
+      dispatch(resetAuthState());
       handleRegistrationClose();
     } else if (isError) {
       formHelpers.setFormErrors(authError, form);
       if (typeof authError === 'string') {
-        message.error(authError);
+        const transformedError = transformErrorMessage(authError);
+        message.error(transformedError);
       }
     }
-  }, [isSuccess, isError]);
+  }, [isSuccess, isError, form, authError, dispatch]);
 
   const onFinish = async (values) => {
-    form.setFieldsValue({
-      username: values.email,
-    });
-
-    dispatch(register({ ...values, username: values.email }));
+    //TODO: если поле username убрать - то использовать этот запрос
+    // form.setFieldsValue({
+    //   username: values.email,
+    // });
+    // dispatch(register({ ...values, username: values.email }));
+    //TODO: если поле username оставить - то использовать этот запрос
+    dispatch(register(values));
   };
 
   return (
@@ -65,14 +70,6 @@ const FormRegistration = () => {
             padding: '2px',
             boxShadow: '0 2px 8px rgba(0, 0, 0, 0.15)',
           },
-          Tooltip: {
-            colorBgDefault: '#FFFAE6',
-            colorText: '#333333',
-            borderRadius: '4px',
-            padding: '2px',
-            zIndexPopup: 1070,
-            boxShadow: '0 2px 8px rgba(0, 0, 0, 0.15)',
-          },
         },
       }}>
       <Form
@@ -80,16 +77,13 @@ const FormRegistration = () => {
         form={form}
         name='register'
         onFinish={onFinish}
-        style={{
-          maxWidth: 413,
-        }}
         scrollToFirstError>
-        {/* <Form.Item
+        <Form.Item
           className={s.formInput}
           name='username'
           tooltip={{
             title: 'Введите свое имя',
-            ClassName: styles.customTooltip,
+            ClassName: s.customTooltip,
           }}
           rules={[
             {
@@ -99,7 +93,7 @@ const FormRegistration = () => {
             },
           ]}>
           <Input placeholder='Имя' autoComplete='false' className={s.input} />
-        </Form.Item> */}
+        </Form.Item>
         <Form.Item
           name='email'
           rules={[

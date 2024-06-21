@@ -4,15 +4,14 @@
 }
 .form {
   margin-top: 24px;
-  height: 305px;
+  min-height: 305px;
+  width: 413px;
 }
 .input {
   border-radius: 18px;
-  // 	width: 413px !important;
-  // 	bottom: 18px !important;
   font-size: 20px;
-  // 	margin-bottom: 0px;
 }
+
 .buttonContainer {
   display: flex;
   justify-content: center;

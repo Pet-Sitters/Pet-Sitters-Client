@@ -13,6 +13,12 @@ export function HeaderMain() {
   const { token } = useSelector(AuthState);
   const dispatch = useDispatch();
 
+  const handleLogoClick = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth',
+    });
+  };
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 50);
@@ -52,7 +58,7 @@ export function HeaderMain() {
         </ul>
       </nav>
       <Link to={RoutePaths.Root} className={s.logo}>
-        <img src='/assets/images/logo.png' alt='logo' />
+        <img src='/assets/images/logo.png' alt='logo' onClick={handleLogoClick} />
       </Link>
       <nav className={s.menuClientSitter}>
         <ul className={s.list}>

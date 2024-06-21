@@ -31,8 +31,9 @@ export function App() {
 
   return (
     <div>
-      <RouterProvider router={router} />;{isLoginModalVisible && <Login />};
-      {isRegistrationModalVisible && <Registration />};
+      <RouterProvider router={router} />
+      {isLoginModalVisible && <Login />}
+      {isRegistrationModalVisible && <Registration />}
       {isShortFormModalVisible && <ShortForm />}
     </div>
   );

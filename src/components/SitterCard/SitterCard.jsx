@@ -1,7 +1,7 @@
 import s from './SitterCard.module.scss';
 export function SitterCard() {
   return (
-    <div className={s.sitterCard}>
+    <a className={s.sitterCard}>
       <div className={s.photoContainer}>
         <div className={s.starBlock}>
           <img src='/assets/icons/Sitters/Star.png' alt='star' />
@@ -18,6 +18,6 @@ export function SitterCard() {
         <p className={s.sitterName}>Светлана</p>
         <p className={s.sitterCity}>Москва</p>
       </div>
-    </div>
+    </a>
   );
 }

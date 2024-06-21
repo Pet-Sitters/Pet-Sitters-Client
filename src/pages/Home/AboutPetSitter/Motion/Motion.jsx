@@ -31,7 +31,7 @@ export function Motion() {
           className={s.paragraphOne}>
           У
           <img src='/assets/icons/Home/face.png' alt='face' />
-          есть любимый питомец
+          есть любимый питомец,
         </motion.p>
         <motion.p
           initial={'hiddenRight'}

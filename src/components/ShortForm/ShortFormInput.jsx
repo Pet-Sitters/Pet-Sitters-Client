@@ -36,7 +36,7 @@ const ShortFormInputs = () => {
   };
 
   const onFinishFailed = (errorInfo) => {
-    message.error('Форма не отправлена, проверте заполнение и отправте еще раз');
+    message.error('Форма не отправлена, проверте заполнение и отправьте еще раз');
   };
 
   return (

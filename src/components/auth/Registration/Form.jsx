@@ -9,7 +9,6 @@ import { closeRegistrationModal } from '../../../core/store/modalRegistration/sl
 import FormButton from '../../UI/Buttons/FormButton/FormButton';
 import eye from '../img/eye.svg';
 import open_eye from '../img/eye_open.svg';
-import styles from './../../../SCSS/styles-ant.module.scss';
 import s from './Form.module.scss';
 
 const FormRegistration = () => {
@@ -27,6 +26,7 @@ const FormRegistration = () => {
 
   useEffect(() => {
     if (isSuccess) {
+      message.success('Регистрация выполнена успешно!');
       handleRegistrationClose();
     } else if (isError) {
       formHelpers.setFormErrors(authError, form);
@@ -37,7 +37,11 @@ const FormRegistration = () => {
   }, [isSuccess, isError]);
 
   const onFinish = async (values) => {
-    dispatch(register(values));
+    form.setFieldsValue({
+      username: values.email,
+    });
+
+    dispatch(register({ ...values, username: values.email }));
   };
 
   return (
@@ -80,7 +84,7 @@ const FormRegistration = () => {
           maxWidth: 413,
         }}
         scrollToFirstError>
-        <Form.Item
+        {/* <Form.Item
           className={s.formInput}
           name='username'
           tooltip={{
@@ -95,7 +99,7 @@ const FormRegistration = () => {
             },
           ]}>
           <Input placeholder='Имя' autoComplete='false' className={s.input} />
-        </Form.Item>
+        </Form.Item> */}
         <Form.Item
           name='email'
           rules={[

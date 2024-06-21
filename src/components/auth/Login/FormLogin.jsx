@@ -71,7 +71,7 @@ const FormLogin = () => {
           rules={[
             {
               required: true,
-              message: 'Не верный Логин (email или номер телефона)',
+              message: 'Введите ваш E-mail',
             },
           ]}>
           <Input className={s.input} placeholder='Логин (email или номер телефона)' />
@@ -83,7 +83,7 @@ const FormLogin = () => {
           rules={[
             {
               required: true,
-              message: 'Не верный пароль',
+              message: 'Введите пароль',
             },
           ]}>
           <Input.Password

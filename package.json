@@ -17,6 +17,7 @@
     "axios": "^1.7.2",
     "dayjs": "^1.11.11",
     "framer-motion": "^11.2.10",
+    "lodash": "^4.17.21",
     "petrovich": "^0.2.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",

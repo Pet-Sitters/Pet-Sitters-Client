@@ -22,15 +22,15 @@ import {
     selectPetFormIsSuccess
 } from "../../../core/store/pet/slice.js";
 import {postPetForm} from "../../../core/store/pet/thunk.js";
-import links from "../../../router/links.js";
-import {useNavigate} from "react-router";
+
 import {useEffect} from "react";
+import detailInputFields from "./data/details/detailsRadio.js";
+import {DialogTitle} from "@headlessui/react";
+import detailInput from "./data/details/detailsInput.js";
 
 
-const PetForm = () => {
+const LForm = () => {
     const [form] = Form.useForm();
-
-    const navigate = useNavigate();
 
     const dispatch = useDispatch();
 
@@ -39,10 +39,9 @@ const PetForm = () => {
 
     useEffect(() => {
         if (isSuccess) {
-            navigate(`/${links.account.base}${links.account.myPets}`);
             dispatch(resetPetFormState());
         }
-    }, [isSuccess, navigate, dispatch]);
+    }, [isSuccess, dispatch]);
 
 
     const handleFinish = async (values) => {
@@ -66,7 +65,7 @@ const PetForm = () => {
             <FormRadio name='species' options={animalTypes}/>
 
             <Form.Item shouldUpdate={true}>
-                {({ getFieldValue }) => {
+                {({getFieldValue}) => {
                     const species = getFieldValue('species');
                     const fields =
                         species === 'CAT' ? catInputFields : species === 'DOG' ? dogInputFields : animalInputFields;
@@ -94,9 +93,6 @@ const PetForm = () => {
                                             type={input.type}
                                         />
                                     )
-                                    // <LForm.Item key={index} {...item.formItemProps}>
-                                    //     <Component {...item.fieldProps} />
-                                    // </LForm.Item>
                                 );
                             })}
                         </>
@@ -105,7 +101,7 @@ const PetForm = () => {
             </Form.Item>
 
             <Form.Item shouldUpdate={true}>
-                {({ getFieldValue }) => {
+                {({getFieldValue}) => {
                     const species = getFieldValue('species');
                     const fields =
                         species === 'CAT' ? catRadioFields : species === 'DOG' ? dogRadioFields : animalRadioFields;
@@ -113,7 +109,6 @@ const PetForm = () => {
                     return (
                         <>
                             {fields.map((group, index) => {
-                                // const Component = FormFieldComponentsByType[item.type];
 
                                 return (
                                     <FormRadio
@@ -131,30 +126,40 @@ const PetForm = () => {
             </Form.Item>
 
 
-      {/*<LForm.Item*/}
-      {/*  shouldUpdate={(prevValues, curValues) =>*/}
-      {/*    prevValues.isObserved !== curValues.isObserved*/}
-      {/*  }>*/}
-      {/*  {({ getFieldValue }) =>*/}
-      {/*    getFieldValue('isObserved') === 'yes' ? (*/}
-      {/*      <FormInput*/}
-      {/*        name='clinicInfo'*/}
-      {/*        placeholder='Введите информацию о клинике'*/}
-      {/*        rules={[{ required: true, message: 'Введите информацию о клинике' }]}*/}
-      {/*      />*/}
-      {/*    ) : null*/}
-      {/*  }*/}
-      {/*</LForm.Item>*/}
+            <DialogTitle>Теперь о деталях передержки</DialogTitle>
 
-      {/*<LForm.Item label='Другие важные особенности вашего питомца' name='additionalInfo'>*/}
-      {/*  <TextArea rows={4} />*/}
-      {/*</LForm.Item> *!/*/}
+            <p>Укажите даты передержки</p>
+            <>
+                {detailInput.map((input, index) => {
+                    // const Component = FormFieldComponentsByType[item.type];
 
-            {/* <LForm.Item label='Добавить фото питомца' name='photo'>
-        <Upload name='photo' listType='picture' beforeUpload={() => false}>
-          <Button icon={<UploadOutlined />}>Upload</Button>
-        </Upload>
-      </LForm.Item> */}
+                    return (
+                        <Form.Item
+                            key={input.name}
+                            name={input.name}
+                            rules={input.rules}
+                            label={input.placeholder}>
+                            <DatePicker/>
+                        </Form.Item>
+                    );
+                })}
+            </>
+
+
+            <>
+                {detailInputFields.map((group, index) => {
+
+                    return (
+                        <FormRadio
+                            key={index}
+                            name={group.name}
+                            label={group.label}
+                            options={group.options}
+                            rules={[{required: true, message: 'Введите один из вариантов'}]}
+                        />
+                    );
+                })}
+            </>
 
             <FormButton type='primary' htmlType='submit'>
                 Сохранить данные
@@ -163,4 +168,4 @@ const PetForm = () => {
     );
 };
 
-export default PetForm;
+export default LForm;

@@ -9,6 +9,7 @@ import shortFormReducer from './shortForm/slice';
 import sitterInfoReducer from './sitterInfo/slice';
 import keepListReducer from './keep/slice';
 import ownerInfoReducer from './ownerInfo/slice'
+import modalLongFormSliceReducer from "./modalLongForm/slice.js";
 export const store = configureStore({
   reducer: {
     auth: authReducer,
@@ -21,5 +22,6 @@ export const store = configureStore({
     modalRegistration: modalRegistrationReducer,
     keepList: keepListReducer,
     ownerInfo: ownerInfoReducer,
+    modalLongFormSlice: modalLongFormSliceReducer,
   },
 });

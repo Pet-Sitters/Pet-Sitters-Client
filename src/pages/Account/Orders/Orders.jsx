@@ -74,7 +74,10 @@ const Orders = () => {
                   ) : <NoOrders/>
           )
           }
-        <LongFormButton>Заказать ситтинг</LongFormButton>
+          <div className={s.button}>
+              <LongFormButton>Заказать ситтинг</LongFormButton>
+          </div>
+
       </div>
   );
 };

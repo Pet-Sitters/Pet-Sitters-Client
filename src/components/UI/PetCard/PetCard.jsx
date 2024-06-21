@@ -2,8 +2,8 @@ import React from 'react';
 import s from './PetCard.module.scss'
 import {CloseOutlined} from "@ant-design/icons";
 
-import catImg from '../../../pages/Account/MyPets/image/pets/cat.svg'
-import dogImg from '../../../pages/Account/MyPets/image/pets/dog.svg'
+import catImg from '../../../../public/assets/images/account/animals/pets/cat.svg'
+import dogImg from '../../../../public/assets/images/account/animals/pets/dog.svg'
 
 import {useDispatch} from "react-redux";
 import {deletePet} from "../../../core/store/pet/thunk.js";

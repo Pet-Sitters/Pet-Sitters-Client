@@ -1,0 +1,26 @@
+.noOrder{
+  display: flex;
+  flex-direction: column;
+  margin-top: 20px;
+
+  .titleContainer{
+    margin-left: 6px;
+    .title{
+      font-size: 36px;
+      font-weight: 500;
+      line-height: 40.14px;
+      letter-spacing: -0.02em;
+      text-align: left;
+    }
+  }
+
+  .imgContainer{
+    height: 310px;
+    margin: 45px 34px;
+
+    .animals{
+      height: 310px;
+      width: auto;
+    }
+  }
+}

@@ -72,6 +72,17 @@
           }
         }
 
+        .dogsCount {
+          span{
+            &:hover {
+              color: #C896FF;
+            }
+          }
+          &:checked{
+            border: solid 1px #C896FF;
+          }
+        }
+
         .inputNumber {
           height: 44px;
           border: solid 2px $black;

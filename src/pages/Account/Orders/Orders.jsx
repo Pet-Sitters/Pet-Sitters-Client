@@ -1,7 +1,7 @@
 import React from 'react';
 import s from './Orders.module.scss';
 import LongFormButton from "../../../components/UI/Buttons/LongFormButton/LongFormButton.jsx";
-import NoOrders from "../../../components/Orders/NoOrders/NoOrders.jsx";
+import NoOrders from "../../../components/OrdersComponents/NoOrders/NoOrders.jsx";
 
 
 const Orders = () => {

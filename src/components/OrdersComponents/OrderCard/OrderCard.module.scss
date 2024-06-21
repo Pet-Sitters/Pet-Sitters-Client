@@ -1,22 +1,68 @@
 @import '../../../SCSS/variables.scss';
 
-.order{
+.order {
   border: solid 2px $main-veryLight;
   width: 739px;
   height: 180px;
   padding: 21px 40px 21px 40px;
-  gap: 16px;
+  margin-bottom: 60px;
   border-radius: 24px;
 
-  display: flex;
+  display: grid;
+  grid-template-columns: 70% 30%;
 
-  &:hover{
+  transition: .5s;
+
+  &:hover {
     border-color: $border-order;
   }
 
-  .status{
-    font-size: 20px;
-    font-weight: 400;
-    line-height: 24px;
+  .infoContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+
+    .title {
+      font-size: 20px;
+      font-weight: 500;
+      line-height: 24px;
+    }
+
+    .info {
+      font-size: 20px;
+      font-weight: 400;
+      line-height: 24px;
+    }
+
+    .details {
+      font-size: 18px;
+      font-weight: 400;
+      line-height: 21.24px;
+      letter-spacing: -0.02em;
+      color: $detail-color;
+    }
+  }
+
+  .status {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    .statusImg {
+      height: 50px;
+      width: 50px;
+
+      img {
+        width: 80%;
+      }
+    }
+
+    .statusText {
+      font-size: 20px;
+      font-weight: 400;
+      line-height: 24px;
+      text-align: center;
+    }
   }
 }

@@ -13,6 +13,7 @@ export const postLongForm = createAsyncThunk(
     }
   }
 );
+
 export const getLongForm = createAsyncThunk('longForm/get', async (payload, thunkAPI) => {
   try {
     const response = await api.get('/long_form/long_form_crud/', payload);

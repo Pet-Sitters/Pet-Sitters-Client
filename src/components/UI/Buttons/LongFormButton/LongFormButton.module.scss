@@ -1,5 +1,13 @@
-.mainButton{
-  height: 57px;
-  width: auto;
-  padding: 6px 50px;
+.LongFormButton {
+  width: 214px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  span {
+    font-weight: 700;
+    font-size: 25px;
+    line-height: 46px;
+    letter-spacing: -0.04em;
+  }
 }

@@ -12,7 +12,14 @@
   transition: $transition;
   border-radius: 30px;
   text-decoration: none;
-  @include mainText24-500-primary;
+  color: $main-dark;
+
+  .social_title {
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 28px;
+  }
+  //@include mainText24-500-primary;
   &:hover {
     background-color: $light-green !important;
   }

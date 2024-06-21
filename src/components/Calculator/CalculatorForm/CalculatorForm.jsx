@@ -216,17 +216,28 @@ const CalculatorForm = ({ marks, prices, dogsCount, showWalks, info, initialValu
             </div>
 
             {showWalks && (
-              <div className={styles.dogsCount}>
-                <Form.Item name='animalsNumber'>
-                  <Radio.Group
-                    className={styles.radioGroup}
-                    options={dogsCount}
-                    optionType='button'
-                    onChange={handleRadioChange}
-                  />
-                </Form.Item>
-                <p className={styles.pLabel}>Количество собак</p>
-              </div>
+              <ConfigProvider
+                theme={{
+                  components: {
+                    Radio: {
+                      buttonColor: '#000000',
+                      colorPrimary: '#C896FF',
+                      }
+                    }
+                    }}
+                >
+                  <div className={styles.dogsCount}>
+                    <Form.Item name='animalsNumber'>
+                      <Radio.Group
+                        className={styles.radioGroup}
+                        options={dogsCount}
+                        optionType='button'
+                        onChange={handleRadioChange}
+                      />
+                    </Form.Item>
+                    <p className={styles.pLabel}>Количество собак</p>
+                  </div>
+                </ConfigProvider>
             )}
           </div>
         </div>
@@ -234,14 +245,14 @@ const CalculatorForm = ({ marks, prices, dogsCount, showWalks, info, initialValu
         <div className={styles.swithces}>
           <div className={styles.switchContainer}>
             <ConfigProvider
-              theme={{
-                components: {
-                  Switch: {
-                    colorPrimary: SECONDARY_COLOR,
-                    colorPrimaryHover: SECONDARY_COLOR,
+                theme={{
+                  components: {
+                    Switch: {
+                      colorPrimary: SECONDARY_COLOR,
+                      colorPrimaryHover: SECONDARY_COLOR,
+                    },
                   },
-                },
-              }}>
+                }}>
               <Form.Item name='firstMeet'>
                 <Switch onChange={handleFirstMeetChange} />
               </Form.Item>
@@ -264,7 +275,18 @@ const CalculatorForm = ({ marks, prices, dogsCount, showWalks, info, initialValu
             </ConfigProvider>
             <p className={styles.pLabel}>Без других животных</p>
           </div>
-          <p className={styles.switchInfo}>Ваша собака будет единственной у ситтера</p>
+          { showWalks ? (
+            <div className={styles.switchInfo}>
+              <p>Ваша собака будет единственной у ситтера</p>
+            </div>
+          ) : (
+            <div className={styles.switchInfo}>
+              <p>Ваша кошка будет единственной у ситтера</p>
+            </div>
+          )
+
+            // <p className={styles.switchInfo}>Кот/кошка будет единственной у ситтера</p>
+          }
         </div>
       </div>
 

@@ -6,6 +6,15 @@
     .radioGroup {
       .radio {
         border: none;
+        span{
+          &:hover {
+            color: #C896FF;
+          }
+        }
+
+        &:checked{
+          border: solid 1px #C896FF;
+        }
       }
 
       .secondRadio::after {

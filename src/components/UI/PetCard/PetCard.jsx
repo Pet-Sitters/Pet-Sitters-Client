@@ -1,24 +1,38 @@
 import React from 'react';
-import { Link } from 'react-router-dom'
-import { OrderButton } from '../OrderButton/OrderButton.jsx'
 import s from './PetCard.module.scss'
+import {CloseOutlined} from "@ant-design/icons";
 
-const PetCard = ({name}) => {
+import catImg from '../../../../public/assets/images/account/animals/pets/cat.svg'
+import dogImg from '../../../../public/assets/images/account/animals/pets/dog.svg'
+
+import {useDispatch} from "react-redux";
+import {deletePet} from "../../../core/store/pet/thunk.js";
+
+const PetCard = ({id, name, species}) => {
+	const dispatch = useDispatch();
+
+	const handleDelete = () => {
+		dispatch(deletePet(id));
+	}
+
 	return (
 		<div className={s.card}>
-			{/*{img ? (*/}
-			{/*	<img*/}
-			{/*		src='/assets/images/account/cat.png'*/}
-			{/*		alt='animal foto'*/}
-			{/*		className={s.img}*/}
-			{/*	/>*/}
-			{/*) : (*/}
-			{/*	<Link to={'/account/add-pets'} className={s.photoContainer}></Link>*/}
-			{/*)}*/}
+			<button className={s.delete} onClick={handleDelete}>
+				<CloseOutlined />
+			</button>
+			<div className={s.imgCont}>
+				{species === 'CAT'
+					? (
+						<img src={catImg} alt="cat" />
+					) : (
+						<img src={dogImg} alt="dog" />
+					)
+				}
+			</div>
 
 			<h3 className={s.title}>{name}</h3>
 			<div className={s.buttonContainer}>
-				<OrderButton textButton={'Заказать ситтинг'}/>
+				<button>Заказать ситтинг</button>
 			</div>
 		</div>
 	);

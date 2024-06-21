@@ -69,6 +69,8 @@ const CalculatorContainer = () => {
             components: {
               Radio: {
                 controlHeight: 50,
+                buttonColor: '#000000',
+                colorPrimary: '#C896FF',
               },
             },
           }}>
@@ -91,8 +93,8 @@ const CalculatorContainer = () => {
           </Radio.Group>
         </ConfigProvider>
         <p>
-          В стоимость одного дня передержки включено: кормление по расписанию, отчеты
-          хозяину в чат, игры
+          В стоимость  дня передержки включено: кормление, прогулка
+          в соответствии с регламентом, игра с питомцем и отчеты хозяину
         </p>
       </div>
 

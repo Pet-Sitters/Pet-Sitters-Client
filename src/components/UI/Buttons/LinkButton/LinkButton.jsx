@@ -18,6 +18,16 @@ const types = {
     main_color: SECONDARY_COLOR,
     hover_color: MAIN_COLOR,
   },
+  game1: {
+    style: 'game1',
+    main_color: SECONDARY_COLOR,
+    hover_color: COLOR,
+  },
+  game2: {
+    style: 'main',
+    main_color: COLOR,
+    hover_color: SECONDARY_COLOR,
+  },
   light: {
     style: 'light',
     main_color: MAIN_COLOR,

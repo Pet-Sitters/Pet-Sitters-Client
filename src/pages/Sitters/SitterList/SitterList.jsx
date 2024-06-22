@@ -1,9 +1,9 @@
 import { SitterCard } from '../../../components/SitterCard/SitterCard';
 import s from './SitterList.module.scss';
-export function SitterList() {
+export function SitterList({ sitterInfoData }) {
   return (
     <div className={s.sitterList}>
-      <SitterCard />
+      <SitterCard data={sitterInfoData} />
     </div>
   );
 }

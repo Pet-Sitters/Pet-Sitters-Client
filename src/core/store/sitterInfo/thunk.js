@@ -6,7 +6,7 @@ export const getSitterInfo = createAsyncThunk(
   'sitterInfo/get',
   async (payload, thunkAPI) => {
     try {
-      const response = await api.get('/sitter/sitter_crud/8/', payload);
+      const response = await api.get('/sitter/sitter_crud/', payload);
 
       return response.data;
     } catch (err) {

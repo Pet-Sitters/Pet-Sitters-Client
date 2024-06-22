@@ -28,7 +28,7 @@ export const router = createBrowserRouter([
         errorElement: <ErrorPage />,
       },
       {
-        path: links.sitter,
+        path: `/${links.sitter}/:id`,
         element: <SitterPage />,
         errorElement: <ErrorPage />,
       },

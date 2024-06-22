@@ -4,9 +4,9 @@ import { api } from '../../utils/mainRequest';
 
 export const getSitterInfo = createAsyncThunk(
   'sitterInfo/get',
-  async (payload, thunkAPI) => {
+  async ({ id }, thunkAPI) => {
     try {
-      const response = await api.get('/sitter/sitter_crud/', payload);
+      const response = await api.get(`/sitter/sitter_crud/${id}`);
 
       return response.data;
     } catch (err) {

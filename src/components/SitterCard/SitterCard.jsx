@@ -1,14 +1,19 @@
+import { Link } from 'react-router-dom';
 import { cityNames } from '../../core/constants/city';
+import links from '../../router/links';
 import s from './SitterCard.module.scss';
 import unnamed from './img/unnamed.jpg';
-
 export function SitterCard({ data }) {
+  console.log(data);
   const avatar = data.avatar ? avatar.data : unnamed;
 
   return (
     <>
       {data.map((sitter) => (
-        <a className={s.sitterCard} key={sitter.id}>
+        <Link
+          to={`/${links.sitter}/${sitter.id}`}
+          className={s.sitterCard}
+          key={sitter.id}>
           <div className={s.photoContainer}>
             <div className={s.starBlock}>
               <img src='/assets/icons/Sitters/Star.png' alt='star' />
@@ -21,7 +26,7 @@ export function SitterCard({ data }) {
             <p className={s.sitterName}>{sitter.first_name}</p>
             <p className={s.sitterCity}>{cityNames[sitter.city] || 'Город не найден'}</p>
           </div>
-        </a>
+        </Link>
       ))}
     </>
   );

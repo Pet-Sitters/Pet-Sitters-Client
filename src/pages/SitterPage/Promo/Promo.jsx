@@ -3,14 +3,6 @@ import { cityNames } from '../../../core/constants/city';
 import s from './Promo.module.scss';
 import unnamed from './img/unnamed.jpg';
 export function Promo({ data }) {
-  // const cityNames = {
-  //   EVN: 'Ереван',
-  //   DLN: 'Дилижан',
-  //   GMR: 'Гюмри',
-  //   MOW: 'Москва',
-  //   SPB: 'Санкт-Петербург',
-  //   OTH: 'Другое',
-  // };
   const homeTypes = {
     FLAT: 'в квартире',
     HOUS: 'в частном доме',

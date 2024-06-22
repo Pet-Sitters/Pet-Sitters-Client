@@ -2,6 +2,7 @@ import { Loading3QuartersOutlined } from '@ant-design/icons';
 import { ConfigProvider, Form, Input, message } from 'antd';
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { formHelpers } from '../../../core/helpers/formHelpers';
 import { AuthState, resetAuthState } from '../../../core/store/auth/slice';
 import { login } from '../../../core/store/auth/thunk';
 import { closeLoginModal } from '../../../core/store/modalLogin/slice';
@@ -21,7 +22,11 @@ const FormLogin = () => {
   };
 
   useEffect(() => {
+    console.log('isSuccess:', isSuccess);
+    console.log('isError:', isError);
+    console.log('authError:', authError);
     if (isSuccess) {
+      dispatch(resetAuthState());
       handleLoginClose();
     } else if (isError) {
       formHelpers.setFormErrors(authError, form);
@@ -38,18 +43,18 @@ const FormLogin = () => {
   return (
     <ConfigProvider
       theme={{
+        token: {
+          colorPrimary: '#C896FF',
+          colorBorder: '#C896FF',
+          colorPrimaryHover: '#8422E6',
+        },
         components: {
           Input: {
-            colorPlaceholder: 'transparent',
-            boxShadow: 'none',
-            colorBgContainer: '#FFFFFF',
-            colorBgContainerDisabled: '#FFFFFF',
-            colorBgContainerHover: '#FFFFFF',
-            colorBgContainerActive: '#FFFFFF',
             paddingBlock: 10,
+            controlOutline: 1,
+            lineWidth: 2,
           },
           Message: {
-            zIndexPopup: 20,
             colorBgDefault: '#FFFAE6',
             colorText: '#333333',
             borderRadius: '4px',

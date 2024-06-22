@@ -3,14 +3,10 @@
 .form {
   display: flex;
   flex-direction: column;
-  gap: 15px;
-  height: 240px;
 }
 .input {
-  margin-bottom: -15px !important;
   border-radius: 18px;
   width: 413px !important;
-  bottom: 18px !important;
   font-size: 18px;
   font-weight: 500;
   letter-spacing: -0.02em;
@@ -27,6 +23,7 @@
   }
 }
 .buttonContainer {
+  margin-top: 16px;
   display: flex;
   justify-content: center;
 }

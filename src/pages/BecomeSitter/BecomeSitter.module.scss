@@ -1,0 +1,35 @@
+@import './../../SCSS/variables.scss';
+.becomeSitter {
+  width: 100%;
+  margin-top: 104px;
+  padding: 37px 80px;
+  min-height: 100vh;
+  display: flex;
+  background-color: $bg-color_sec;
+}
+.avatarContainer {
+  width: 43%;
+}
+.formContainer {
+  width: 57%;
+}
+.button {
+  background-color: inherit;
+  border: none;
+  cursor: pointer;
+  font-family: $font-family-secondary;
+  font-size: 32px;
+  font-weight: 600;
+  line-height: 35.68px;
+  letter-spacing: -0.02em;
+  text-align: left;
+}
+.titleOrder {
+  margin-top: 125px;
+  margin-bottom: 33px;
+  font-family: $font-family-secondary;
+  font-size: 28px;
+  font-weight: 500;
+  line-height: 31.22px;
+  text-align: left;
+}

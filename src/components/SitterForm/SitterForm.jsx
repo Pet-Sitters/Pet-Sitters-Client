@@ -1,5 +1,5 @@
 import { PlusOutlined, UploadOutlined } from '@ant-design/icons';
-import { Button, Flex, Form, Upload } from 'antd';
+import { Button, ConfigProvider, Flex, Form, Upload } from 'antd';
 import _ from 'lodash';
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
@@ -10,6 +10,7 @@ import {
   putSitter,
 } from '../../core/store/sitterInfo/thunk.js';
 import FormButton from '../UI/Buttons/FormButton/FormButton.jsx';
+import s from './SitterForm.module.scss';
 import { sitterFormFields } from './sitterFormFields.js';
 
 const SitterForm = () => {
@@ -22,15 +23,16 @@ const SitterForm = () => {
     const data = _.cloneDeep(values);
     data.images = [{ image: null }];
 
-    const formData = new FormData();
-    formData.append('avatar', fileList[0].originFileObj);
-
     const createSitterResponse = await dispatch(createSitter(data)).unwrap();
     const sitterId = createSitterResponse.id;
 
+    // const formData = new FormData();
+    // formData.append('avatar', fileList[0].originFileObj);
+    const formData = fileList[0].originFileObj;
+
     const patchData = {
       id: sitterId,
-      formData,
+      avatar: formData,
     };
 
     console.log('Patch Data:', patchData);
@@ -48,7 +50,12 @@ const SitterForm = () => {
   };
 
   return (
-    <div style={{ marginTop: 100 }}>
+    <ConfigProvider
+      theme={{
+        token: {
+          borderRadius: 24,
+        },
+      }}>
       <Form
         form={form}
         layout='vertical'
@@ -59,7 +66,7 @@ const SitterForm = () => {
           const Component = FormFieldComponentsByType[item.type];
 
           return (
-            <Form.Item key={index} {...item.formItemProps}>
+            <Form.Item key={index} {...item.formItemProps} className={s.input}>
               <Component {...item.fieldProps} />
             </Form.Item>
           );
@@ -126,7 +133,7 @@ const SitterForm = () => {
           Сохранить данные
         </FormButton>
       </Form>
-    </div>
+    </ConfigProvider>
   );
 };
 

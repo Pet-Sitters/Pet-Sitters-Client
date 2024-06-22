@@ -1,0 +1,28 @@
+@import './../../SCSS/variables.scss';
+.input {
+  width: 100%;
+  input,
+  .ant-select-selector {
+    // border-radius: 24px;
+    height: 74px;
+    padding: 10px 40px 10px 40px;
+    border: 2px solid #8b4ece;
+    font-family: $font-family-primary;
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 24px;
+    text-align: left;
+    color: #352656;
+
+    .ant-form-item-explain-error {
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 18.88px;
+      letter-spacing: -0.02em;
+      text-align: left;
+    }
+  }
+}
+.select-single-item-height-lg {
+  height: 74px !important;
+}

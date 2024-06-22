@@ -58,7 +58,7 @@ export const putSitter = createAsyncThunk(
     try {
       const token = localStorage.getItem(LocalStorageItems.AuthorizationToken) ?? '';
 
-      const response = await api.patch(`/sitter/sitter_crud/${id}/`, values, {
+      const response = await api.put(`/sitter/sitter_crud/${id}/`, values, {
         headers: {
           Authorization: `Token ${token}`,
           'Content-Type': 'multipart/form-data',

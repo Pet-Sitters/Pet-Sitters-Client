@@ -2,7 +2,6 @@ import { createBrowserRouter } from 'react-router-dom';
 
 import { Account } from '../Layout/Account/Account';
 import { Layout } from '../Layout/layout';
-import SitterForm from '../components/SitterForm/SitterForm.jsx';
 import { MyPets } from '../pages/Account/MyPets/MyPets';
 import Orders from '../pages/Account/Orders/Orders';
 import PersonalData from '../pages/Account/PersonalData/PersonalData.jsx';
@@ -14,6 +13,7 @@ import { SitterPage } from '../pages/SitterPage/SitterPage.jsx';
 import { SittersList } from '../pages/Sitters/Sitters';
 import ErrorPage from '../pages/error-pages';
 
+import { BecomeSitter } from '../pages/BecomeSitter/BecomeSitter';
 import links from './links.js';
 
 export const router = createBrowserRouter([
@@ -39,7 +39,7 @@ export const router = createBrowserRouter([
       },
       {
         path: links.becameSitter,
-        element: <SitterForm />,
+        element: <BecomeSitter />,
         errorElement: <ErrorPage />,
       },
       {

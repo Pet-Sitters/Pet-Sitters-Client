@@ -76,7 +76,7 @@ export function HowWork() {
           <div className={s.buttons}>
             <OrderButton />
 
-            <LinkButton buttonType='light' to={links.account.myOrders}>
+            <LinkButton buttonType='light' to={links.becameSitter}>
               Стать ситтером
             </LinkButton>
           </div>

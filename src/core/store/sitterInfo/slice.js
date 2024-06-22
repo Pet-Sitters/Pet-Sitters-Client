@@ -32,6 +32,7 @@ const sitterInfo = createSlice({
       });
   },
 });
+export const SitterState = (state) => state.sitterInfo;
 export const selectSitterInfoIsLoading = (state) => state.sitterInfo.isLoading;
 export const selectSitterInfoIsError = (state) => state.sitterInfo.isError;
 export const selectSitterInfoIsSuccess = (state) => state.sitterInfo.isSuccess;

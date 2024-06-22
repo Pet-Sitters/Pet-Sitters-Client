@@ -1,5 +1,8 @@
-import { useSelector } from 'react-redux';
-import { selectSitterInfoData } from '../../core/store/sitterInfo/slice';
+import { Loading3QuartersOutlined } from '@ant-design/icons';
+import { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { SitterState } from '../../core/store/sitterInfo/slice';
+import { getSitterInfo } from '../../core/store/sitterInfo/thunk';
 import { AboutSitter } from './AboutSitter/AboutSitter';
 import { Apartments } from './Apartments/Apartments';
 import FeedbackSitter from './Feedback/Feedback';
@@ -7,15 +10,30 @@ import { MapSitter } from './MapSitter/MapSitter';
 import { Promo } from './Promo/Promo';
 import s from './SitterPage.module.scss';
 export function SitterPage() {
-  const sitterInfoData = useSelector(selectSitterInfoData);
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(getSitterInfo());
+  }, [dispatch]);
+  const { isSuccess, isLoading, isError, sitterInfoData } = useSelector(SitterState);
 
-  return (
-    <section className={s.sitterPage}>
-      <Promo />
-      <AboutSitter />
-      <Apartments />
-      <MapSitter />
-      <FeedbackSitter />
-    </section>
-  );
+  if (isLoading) {
+    return (
+      <div className={s.loadingContainer}>
+        <Loading3QuartersOutlined spin />
+      </div>
+    );
+  }
+
+  if (isSuccess) {
+    return (
+      <section className={s.sitterPage}>
+        <Promo data={sitterInfoData} />
+
+        <AboutSitter data={sitterInfoData} />
+        <Apartments data={sitterInfoData} />
+        <MapSitter data={sitterInfoData} />
+        <FeedbackSitter data={sitterInfoData} />
+      </section>
+    );
+  }
 }

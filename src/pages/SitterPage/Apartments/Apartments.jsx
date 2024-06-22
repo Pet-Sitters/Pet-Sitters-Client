@@ -1,15 +1,12 @@
 import petrovich from 'petrovich';
 import { useState } from 'react';
-import { sitterInfoData } from '../data';
 import s from './Apartments.module.scss';
 
-export function Apartments() {
-  const data = sitterInfoData;
-
+export function Apartments({ data }) {
   const person = {
-    first: data.user.first_name,
-    middle: data.user.patronym,
-    last: data.user.last_name,
+    first: data.first_name,
+    middle: data.patronym,
+    last: data.last_name,
   };
   const nameSitter = petrovich(person, 'genitive');
 

@@ -17,7 +17,7 @@ const SitterForm = () => {
     const data = _.cloneDeep(values);
     data.images = [{ image: null }];
     dispatch(createSitter(data));
-    // dispatch(patchSitter({images:values.images}));
+    dispatch(patchSitter({ images: values.images }));
   };
 
   const onFinishFailed = (errorInfo) => {

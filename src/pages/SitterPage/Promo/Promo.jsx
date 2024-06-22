@@ -1,8 +1,7 @@
 import FormButton from '../../../components/UI/Buttons/FormButton/FormButton';
-import { sitterInfoData } from '../data';
 import s from './Promo.module.scss';
-export function Promo() {
-  const data = sitterInfoData;
+
+export function Promo({ data }) {
   const cityNames = {
     EVN: 'Ереван',
     DLN: 'Дилижан',
@@ -21,7 +20,7 @@ export function Promo() {
     OTH: 'Другое',
     NO: 'Нет',
   };
-  const cityName = cityNames[data.user.city] || 'Город не найден';
+  const cityName = cityNames[data.city] || 'Город не найден';
   const homeType = homeTypes[data.home] || 'Тип жилья не найден';
   const animal = animals[data.animals] || 'Тип животного не найден';
   //pins

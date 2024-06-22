@@ -6,7 +6,7 @@ export const getSitterInfo = createAsyncThunk(
   'sitterInfo/get',
   async (payload, thunkAPI) => {
     try {
-      const response = await api.get('/sitter/sitter_crud/{id}/', payload);
+      const response = await api.get('/sitter/sitter_crud/8/', payload);
 
       return response.data;
     } catch (err) {
@@ -16,7 +16,7 @@ export const getSitterInfo = createAsyncThunk(
 );
 
 export const createSitter = createAsyncThunk(
-  'sitterInfo/get',
+  'sitterInfo/post',
   async (payload, thunkAPI) => {
     try {
       const token = localStorage.getItem(LocalStorageItems.AuthorizationToken) ?? '';
@@ -34,7 +34,7 @@ export const createSitter = createAsyncThunk(
 );
 
 export const patchSitter = createAsyncThunk(
-  'sitterInfo/get',
+  'sitterInfo/patch',
   async (payload, thunkAPI) => {
     try {
       const token = localStorage.getItem(LocalStorageItems.AuthorizationToken) ?? '';

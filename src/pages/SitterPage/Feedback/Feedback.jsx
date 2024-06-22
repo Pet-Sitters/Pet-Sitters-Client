@@ -33,7 +33,7 @@ const FeedbackSitter = () => (
         <img src='/assets/icons/Home/stars.png' alt='stars' />
       </div>
       <div className={s.balls}>
-        <span className={s.counterText}>средний балл: 5 из 5</span>
+        <span className={s.counterText}>средний балл: 4.9 из 5</span>
       </div>
       <div>
         <LinkButton buttonType='green' to={links.account.myOrders}>

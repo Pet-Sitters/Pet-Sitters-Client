@@ -4,242 +4,209 @@ export const sitterFormFields = [
   {
     type: FormFieldType.Input,
     formItemProps: {
-      name: ['user', 'username'],
-      label: 'email',
-      // rules: [{ required: true, message: '' }],
+      name: 'first_name',
     },
     fieldProps: {
-      placeholder: 'email',
-      // options: [
-      //   { label: 'Мальчик', value: 'MAL' },
-      //   { label: 'Девочка', value: 'FEM' },
-      // ],
+      placeholder: 'Имя',
     },
   },
   {
-    type: FormFieldType.InputNumber,
+    type: FormFieldType.Input,
     formItemProps: {
-      name: ['passport', 'pass_num'],
-      // label: 'pass_num',
+      name: 'last_name',
     },
     fieldProps: {
-      placeholder: 'pass_num',
+      placeholder: 'Фамилия',
+    },
+  },
+  {
+    type: FormFieldType.Input,
+    formItemProps: {
+      name: 'patronym',
+    },
+    fieldProps: {
+      placeholder: 'Отчество',
+    },
+  },
+  {
+    type: FormFieldType.Input,
+    formItemProps: {
+      name: ['user', 'username'],
+    },
+    fieldProps: {
+      placeholder: 'email',
+    },
+  },
+  {
+    type: FormFieldType.Input,
+    formItemProps: {
+      name: 'phone_num',
+    },
+    fieldProps: {
+      placeholder: 'Номер телефона',
+    },
+  },
+  {
+    type: FormFieldType.Input,
+    formItemProps: {
+      name: 'tg_nick',
+    },
+    fieldProps: {
+      placeholder: 'Ваш ник в Telegram',
+    },
+  },
+  {
+    type: FormFieldType.Input,
+    formItemProps: {
+      name: 'social',
+    },
+    fieldProps: {
+      placeholder: 'Ссылка на соц сеть',
+    },
+  },
+  {
+    type: FormFieldType.Select,
+    formItemProps: {
+      name: 'city',
+    },
+    fieldProps: {
+      placeholder: 'Город',
+      options: [
+        { label: 'Ереван', value: 'EVN' },
+        { label: 'Дилижан', value: 'DLN' },
+        { label: 'Гюмри', value: 'GMR' },
+        { label: 'Москва', value: 'MOW' },
+        { label: 'Санкт-Петербург', value: 'SPB' },
+        { label: 'Другое', value: 'OTH' },
+      ],
+    },
+  },
+  {
+    type: FormFieldType.Input,
+    formItemProps: {
+      name: 'address',
+    },
+    fieldProps: {
+      placeholder: 'address',
+    },
+  },
+  {
+    type: FormFieldType.Select,
+    formItemProps: {
+      name: 'animals',
+    },
+    fieldProps: {
+      placeholder: 'Животные дома',
+      options: [
+        { label: 'Кошка', value: 'CAT' },
+        { label: 'Собака', value: 'DOG' },
+        { label: 'Другое', value: 'OTH' },
+        { label: 'Нет', value: 'NO' },
+      ],
+    },
+  },
+  {
+    type: FormFieldType.Select,
+    formItemProps: {
+      name: 'home',
+    },
+    fieldProps: {
+      placeholder: 'Тип жилья',
+      options: [
+        { label: 'Квартира', value: 'FLAT' },
+        { label: 'Частный дом', value: 'HOUS' },
+      ],
+    },
+  },
+
+  {
+    type: FormFieldType.Input,
+    formItemProps: {
+      name: ['passport', 'pass_num'],
+    },
+    fieldProps: {
+      placeholder: 'Серия и номер паспорта',
     },
   },
   {
     type: FormFieldType.Input,
     formItemProps: {
       name: ['passport', 'given_dt'],
-      // label: 'given_dt',
     },
     fieldProps: {
-      placeholder: 'given_dt',
+      placeholder: 'Дата выдачи',
     },
   },
   {
     type: FormFieldType.InputNumber,
     formItemProps: {
       name: ['passport', 'given_code'],
-      // label: 'given_code',
     },
     fieldProps: {
-      placeholder: 'given_code',
+      placeholder: 'Код подразделения',
     },
   },
   {
     type: FormFieldType.Input,
     formItemProps: {
       name: ['passport', 'given_nm'],
-      // label: 'given_nm',
     },
     fieldProps: {
-      placeholder: 'given_nm',
+      placeholder: 'Наименование подразделения',
     },
   },
   {
     type: FormFieldType.Input,
     formItemProps: {
       name: ['passport', 'first_nm'],
-      // label: 'first_nm',
     },
     fieldProps: {
-      placeholder: 'first_nm',
+      placeholder: 'Имя владельца',
     },
   },
   {
     type: FormFieldType.Input,
     formItemProps: {
       name: ['passport', 'second_nm'],
-      // label: 'second_nm',
     },
     fieldProps: {
-      placeholder: 'second_nm',
+      placeholder: 'Фамилия владельца',
     },
   },
   {
     type: FormFieldType.Input,
     formItemProps: {
       name: ['passport', 'sur_nm'],
-      // label: 'sur_nm',
     },
     fieldProps: {
-      placeholder: 'sur_nm',
+      placeholder: 'Отчество владельца',
     },
   },
   {
     type: FormFieldType.Input,
     formItemProps: {
       name: ['passport', 'birth_dt'],
-      // label: 'birth_dt',
     },
     fieldProps: {
-      placeholder: 'birth_dt',
+      placeholder: 'Дата рождения',
     },
   },
   {
     type: FormFieldType.Input,
     formItemProps: {
       name: ['passport', 'addr_nm'],
-      // label: 'addr_nm',
     },
     fieldProps: {
-      placeholder: 'addr_nm',
+      placeholder: 'Адрес прописки',
     },
   },
-  // {
-  //   type: FormFieldType.Input,
-  //   formItemProps: {
-  //     name: ['passport', 'pic_1'],
-  //     // label: 'pic_1',
-  //   },
-  //   fieldProps: {
-  //     placeholder: 'pic_1',
-  //   },
-  // },
-  // {
-  //   type: FormFieldType.Input,
-  //   formItemProps: {
-  //     name: ['passport', 'pic_2'],
-  //     // label: 'pic_1',
-  //   },
-  //   fieldProps: {
-  //     placeholder: 'pic_2',
-  //   },
-  // },
   {
     type: FormFieldType.Input,
     formItemProps: {
-      name: 'first_name',
-      // label: 'first_name',
+      name: 'about',
     },
     fieldProps: {
-      placeholder: 'first_name',
+      placeholder: 'О себе',
     },
   },
-  // {
-  //   type: FormFieldType.Input,
-  //   formItemProps: {
-  //     name: 'last_name',
-  //     // label: 'last_name',
-  //   },
-  //   fieldProps: {
-  //     placeholder: 'last_name',
-  //   },
-  // },
-  // {
-  //   type: FormFieldType.Input,
-  //   formItemProps: {
-  //     name: 'patronym',
-  //     // label: 'patronym',
-  //   },
-  //   fieldProps: {
-  //     placeholder: 'patronym',
-  //   },
-  // },
-  // {
-  //   type: FormFieldType.Input,
-  //   formItemProps: {
-  //     name: 'tg_nick',
-  //     // label: 'tg_nick',
-  //   },
-  //   fieldProps: {
-  //     placeholder: 'tg_nick',
-  //   },
-  // },
-  // {
-  //   type: FormFieldType.Input,
-  //   formItemProps: {
-  //     name: 'phone_num',
-  //     // label: 'phone_num',
-  //   },
-  //   fieldProps: {
-  //     placeholder: 'phone_num',
-  //   },
-  // },
-  // // {
-  // //   type: FormFieldType.Input,
-  // //   formItemProps: {
-  // //     name: 'city',
-  // //     // label: 'city',
-  // //   },
-  // //   fieldProps: {
-  // //     placeholder: 'city',
-  // //   },
-  // // },
-  // {
-  //   type: FormFieldType.Input,
-  //   formItemProps: {
-  //     name: 'address',
-  //     // label: 'address',
-  //   },
-  //   fieldProps: {
-  //     placeholder: 'address',
-  //   },
-  // },
-  // {
-  //   type: FormFieldType.Input,
-  //   formItemProps: {
-  //     name: 'birth_date',
-  //     // label: 'birth_date',
-  //   },
-  //   fieldProps: {
-  //     placeholder: 'birth_date',
-  //   },
-  // },
-  // // {
-  // //   type: FormFieldType.Input,
-  // //   formItemProps: {
-  // //     name: 'social',
-  // //     // label: 'social',
-  // //   },
-  // //   fieldProps: {
-  // //     placeholder: 'social',
-  // //   },
-  // // },
-  // {
-  //   type: FormFieldType.Input,
-  //   formItemProps: {
-  //     name: 'about',
-  //     // label: 'about',
-  //   },
-  //   fieldProps: {
-  //     placeholder: 'about',
-  //   },
-  // },
-
-  // // {
-  // //   type: FormFieldType.Input,
-  // //   formItemProps: {
-  // //     name: 'tg_nick',
-  // //     label: 'tg_nick',
-  // //     // rules: [{ required: true, message: '' }],
-  // //   },
-  // //   fieldProps: {
-  // //     placeholder: 'tg_nick',
-  // //     // options: [
-  // //     //   { label: 'Мальчик', value: 'MAL' },
-  // //     //   { label: 'Девочка', value: 'FEM' },
-  // //     // ],
-  // //   },
-  // // },
 ];

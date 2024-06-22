@@ -30,7 +30,7 @@ export function Game() {
           <LinkButton buttonType='game1' to={links.account.myOrders}>
             начать игру
           </LinkButton>
-          <LinkButton buttonType='game2' to={links.account.myOrders}>
+          <LinkButton buttonType='game2' to={links.becameSitter}>
             Стать ситтером
           </LinkButton>
         </div>

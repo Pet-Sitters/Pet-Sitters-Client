@@ -35,11 +35,30 @@ export const createSitter = createAsyncThunk(
 
 export const patchSitter = createAsyncThunk(
   'sitterInfo/patch',
-  async (payload, thunkAPI) => {
+  async ({ id, values }, thunkAPI) => {
     try {
       const token = localStorage.getItem(LocalStorageItems.AuthorizationToken) ?? '';
 
-      const response = await api.patch('/sitter/sitter_crud/3', payload, {
+      const response = await api.patch(`/sitter/sitter_crud/${id}/`, values, {
+        headers: {
+          Authorization: `Token ${token}`,
+          'Content-Type': 'multipart/form-data',
+        },
+      });
+
+      return response.data;
+    } catch (err) {
+      return thunkAPI.rejectWithValue(err.response.data);
+    }
+  }
+);
+export const putSitter = createAsyncThunk(
+  'sitterInfo/put',
+  async ({ id, values }, thunkAPI) => {
+    try {
+      const token = localStorage.getItem(LocalStorageItems.AuthorizationToken) ?? '';
+
+      const response = await api.patch(`/sitter/sitter_crud/${id}/`, values, {
         headers: {
           Authorization: `Token ${token}`,
           'Content-Type': 'multipart/form-data',

@@ -12,7 +12,7 @@ export function SittersList() {
     dispatch(getSitterList());
   }, [dispatch]);
   const { isSuccess, isLoading, isError, sitterListData } = useSelector(SittersListState);
-  console.log(isSuccess, isLoading, isError, sitterListData);
+
   if (isLoading) {
     return (
       <div className={s.loadingContainer}>

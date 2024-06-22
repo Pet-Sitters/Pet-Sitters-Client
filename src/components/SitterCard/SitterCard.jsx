@@ -4,8 +4,8 @@ import links from '../../router/links';
 import s from './SitterCard.module.scss';
 import unnamed from './img/unnamed.jpg';
 export function SitterCard({ data }) {
-  console.log(data);
   const avatar = data.avatar ? avatar.data : unnamed;
+  // const avatar = data.images.image ? data.images.image : unnamed;
 
   return (
     <>

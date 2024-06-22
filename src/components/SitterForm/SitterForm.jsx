@@ -1,23 +1,45 @@
 import { PlusOutlined, UploadOutlined } from '@ant-design/icons';
 import { Button, Flex, Form, Upload } from 'antd';
 import _ from 'lodash';
+import { useState } from 'react';
 import { useDispatch } from 'react-redux';
-
 import { FormFieldComponentsByType } from '../../core/constants/fieldTypes.js';
-import { createSitter } from '../../core/store/sitterInfo/thunk.js';
+import {
+  createSitter,
+  patchSitter,
+  putSitter,
+} from '../../core/store/sitterInfo/thunk.js';
 import FormButton from '../UI/Buttons/FormButton/FormButton.jsx';
 import { sitterFormFields } from './sitterFormFields.js';
 
 const SitterForm = () => {
   const [form] = Form.useForm();
-
+  const [fileList, setFileList] = useState([]);
+  console.log('fileList', fileList);
   const dispatch = useDispatch();
 
   const handleFinish = async (values) => {
     const data = _.cloneDeep(values);
     data.images = [{ image: null }];
-    dispatch(createSitter(data));
-    dispatch(patchSitter({ images: values.images }));
+
+    const formData = new FormData();
+    formData.append('avatar', fileList[0].originFileObj);
+
+    const createSitterResponse = await dispatch(createSitter(data)).unwrap();
+    const sitterId = createSitterResponse.id;
+
+    const patchData = {
+      id: sitterId,
+      formData,
+    };
+
+    console.log('Patch Data:', patchData);
+
+    dispatch(putSitter(patchData));
+    dispatch(patchSitter(patchData));
+  };
+  const handleFileChange = ({ fileList }) => {
+    setFileList(fileList);
   };
 
   const onFinishFailed = (errorInfo) => {
@@ -43,6 +65,17 @@ const SitterForm = () => {
           );
         })}
 
+        <div style={{ marginTop: 20 }}>
+          <Upload
+            name='avatar'
+            listType='picture'
+            fileList={fileList}
+            onChange={handleFileChange}
+            beforeUpload={() => false} // Отменяем автоматическую загрузку
+          >
+            <Button icon={<UploadOutlined />}>Выбрать файл</Button>
+          </Upload>
+        </div>
         <Form.List name={'images'}>
           {(fields, { add, remove }) => {
             return (
@@ -60,11 +93,16 @@ const SitterForm = () => {
                     }}>
                     <Form.Item
                       label='Добавить фото'
-                      name={[idx, 'image']}
+                      name={'avatar'}
                       valuePropName='fileList'
                       getValueFromEvent={(e) => e && e.fileList}>
                       {/* <input type='file' onChange={(e) => setFile(e.target.files[0])} /> */}
-                      <Upload name='image' listType='picture' beforeUpload={() => false}>
+                      <Upload
+                        name='avatar'
+                        listType='picture'
+                        beforeUpload={() => false}
+                        fileList={fileList}
+                        onChange={handleFileChange}>
                         <Button icon={<UploadOutlined />}>Upload</Button>
                       </Upload>
                     </Form.Item>

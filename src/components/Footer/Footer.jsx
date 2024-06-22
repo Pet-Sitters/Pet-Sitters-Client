@@ -2,6 +2,8 @@ import { Link } from 'react-router-dom';
 import links from '../../router/links';
 import { TgButton } from '../UI/Buttons/TgButton/TgButton';
 import s from './Footer.module.scss';
+import catImg from '../../../public/assets/images/Home/FatCat.png'
+import decorImg from '../../../public/assets/images/Home/decorEl.png'
 export function Footer() {
   const handleLogoClick = () => {
     window.scrollTo({
@@ -24,10 +26,10 @@ export function Footer() {
           <TgButton />
         </div>
         <div className={s.fatCat}>
-          <img src='assets/images/Home/FatCat.png' alt='cat' />
+          <img src={catImg} alt='cat' />
         </div>
         <div className={s.decorEl}>
-          <img src='assets/images/Home/decorEl.png' alt='cat' />
+          <img src={decorImg} alt='cat' />
         </div>
       </div>
       <div className={s.mainFooter}>

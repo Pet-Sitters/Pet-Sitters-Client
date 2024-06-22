@@ -20,14 +20,14 @@
 }
 
 .modal {
-  background-color: white;
-  padding: 20px;
+  padding: 60px 108px;
   border-radius: 8px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  max-width: 600px;
+  max-width: 1120px;
   width: 100%;
   margin: 20px auto;
   position: relative;
+  background-color: $bg-color_long_form;
 }
 
 .button {
@@ -45,9 +45,13 @@
 }
 
 .title {
-  font-size: 24px;
-  font-weight: bold;
+  font-size: 48px;
+  font-weight: 500;
   margin-bottom: 16px;
+  text-align: center;
+
+  line-height: 70px;
+  letter-spacing: -0.02em;
 }
 
 .subTitle {

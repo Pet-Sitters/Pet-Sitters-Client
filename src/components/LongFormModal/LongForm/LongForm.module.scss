@@ -1,0 +1,94 @@
+@import '../../../SCSS/variables.scss';
+
+.longForm {
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+
+  label {
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 24px;
+    letter-spacing: -0.02em;
+  }
+
+  span {
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 24px;
+    text-align: left;
+  }
+
+  .pet {
+
+  }
+
+  .details {
+    .title {
+      font-size: 48px;
+      font-weight: 500;
+      margin-bottom: 16px;
+      text-align: center;
+
+      line-height: 70px;
+      letter-spacing: -0.02em;
+    }
+
+    .datesTitle{
+      font-size: 20px;
+      font-weight: 500;
+      line-height: 24px;
+      letter-spacing: -0.02em;
+    }
+
+    .dates {
+      //display: flex;
+      //gap: 43px;
+      //height: 57px;
+      .ant-form-item-control-input-content {
+        display: flex;
+        .dateContainer {
+          display: flex;
+          gap: 20px;
+          height: 57px;
+
+          p {
+            align-self: center;
+          }
+      }
+      }
+    }
+  }
+
+  .date {
+    width: 240px;
+    height: 57px;
+    border: solid 2px $main-veryLight;
+    border-radius: 24px;
+    font-size: 20px;
+    padding-left: 40px;
+
+    &:hover {
+      border: solid 2px $main-light;
+    }
+
+    input::placeholder {
+      font-size: 20px;
+      font-weight: 400;
+      line-height: 24px;
+    }
+  }
+
+  .submitButton {
+    //width: 344px;
+    height: 57px;
+    border-radius: 18px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+
+
+

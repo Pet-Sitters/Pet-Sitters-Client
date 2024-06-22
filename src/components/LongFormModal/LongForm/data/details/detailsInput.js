@@ -1,12 +1,14 @@
 const detailInput = [
     {
-        placeholder: 'С',
+        label: 'С',
+        placeholder: 'ДД. ММ. ГГГГ',
         name: 'from_date',
         rules: [{ required: true, message: 'Введите дату' }],
         type: 'year',
     },
     {
-        placeholder: 'По',
+        label: 'По',
+        placeholder: 'ДД. ММ. ГГГГ',
         name: 'to_date',
         rules: [{ required: true, message: 'Введите дату' }],
         type: 'year',

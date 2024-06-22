@@ -9,7 +9,7 @@ const PersonalData = () => {
   const [form] = Form.useForm();
 
   const handleFinish = (values) => {
-    console.log('LForm values:', values);
+    console.log('LongForm values:', values);
   };
 
   const onFinishFailed = (errorInfo) => {

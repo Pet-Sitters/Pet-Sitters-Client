@@ -25,6 +25,7 @@ import {postPetForm} from "../../../core/store/pet/thunk.js";
 import links from "../../../router/links.js";
 import {useNavigate} from "react-router";
 import {useEffect} from "react";
+import s from "./PetForm.module.scss";
 
 
 const PetForm = () => {
@@ -82,8 +83,11 @@ const PetForm = () => {
                                             key={input.name}
                                             name={input.name}
                                             rules={input.rules}
-                                            label={input.placeholder}>
-                                            <DatePicker/>
+                                        >
+                                            <DatePicker
+                                                placeholder={input.placeholder}
+                                                className={s.date}
+                                            />
                                         </Form.Item>
                                     ) : (
                                         <FormInput
@@ -94,9 +98,9 @@ const PetForm = () => {
                                             type={input.type}
                                         />
                                     )
-                                    // <LForm.Item key={index} {...item.formItemProps}>
+                                    // <LongForm.Item key={index} {...item.formItemProps}>
                                     //     <Component {...item.fieldProps} />
-                                    // </LForm.Item>
+                                    // </LongForm.Item>
                                 );
                             })}
                         </>
@@ -131,7 +135,7 @@ const PetForm = () => {
             </Form.Item>
 
 
-      {/*<LForm.Item*/}
+      {/*<LongForm.Item*/}
       {/*  shouldUpdate={(prevValues, curValues) =>*/}
       {/*    prevValues.isObserved !== curValues.isObserved*/}
       {/*  }>*/}
@@ -144,17 +148,17 @@ const PetForm = () => {
       {/*      />*/}
       {/*    ) : null*/}
       {/*  }*/}
-      {/*</LForm.Item>*/}
+      {/*</LongForm.Item>*/}
 
-      {/*<LForm.Item label='Другие важные особенности вашего питомца' name='additionalInfo'>*/}
+      {/*<LongForm.Item label='Другие важные особенности вашего питомца' name='additionalInfo'>*/}
       {/*  <TextArea rows={4} />*/}
-      {/*</LForm.Item> *!/*/}
+      {/*</LongForm.Item> *!/*/}
 
-            {/* <LForm.Item label='Добавить фото питомца' name='photo'>
+            {/* <LongForm.Item label='Добавить фото питомца' name='photo'>
         <Upload name='photo' listType='picture' beforeUpload={() => false}>
           <Button icon={<UploadOutlined />}>Upload</Button>
         </Upload>
-      </LForm.Item> */}
+      </LongForm.Item> */}
 
             <FormButton type='primary' htmlType='submit'>
                 Сохранить данные

@@ -10,9 +10,9 @@ const animalInputFields = [
         rules: [{ required: true, message: 'Введите породу' }],
     },
     {
-        placeholder: 'Год рождения',
+        placeholder: 'Дата рождения',
         name: 'birth_year',
-        rules: [{ required: true, message: 'Введите год рождения' }],
+        rules: [{ required: true, message: 'Введите дату рождения' }],
         type: 'year',
     },
     {

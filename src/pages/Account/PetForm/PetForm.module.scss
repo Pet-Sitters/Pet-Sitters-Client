@@ -1,6 +1,26 @@
+@import '../../../SCSS/variables.scss';
+
 .submitButton{
   width: 344px;
   height: 57px;
   border-radius: 18px;
 }
 
+.date {
+  width: 240px;
+  height: 57px;
+  border: solid 2px $main-veryLight;
+  border-radius: 24px;
+  font-size: 20px;
+  padding-left: 40px;
+
+  &:hover {
+    border: solid 2px $main-light;
+  }
+
+  input::placeholder {
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 24px;
+  }
+}

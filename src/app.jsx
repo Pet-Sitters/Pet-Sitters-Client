@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { RouterProvider } from 'react-router-dom';
 import { ShortForm } from './components/ShortForm/ShortForm.jsx';
-import { LongForm } from './components/LongForm/LongForm.jsx';
+import { LongFormModal } from './components/LongFormModal/LongFormModal.jsx';
 import { Login } from './components/auth/Login/Login.jsx';
 import { Registration } from './components/auth/Registration/Registration.jsx';
 import { useCheckAuthorization } from './core/hooks/useCheckAuthorization.js';
@@ -39,7 +39,7 @@ export function App() {
       {isLoginModalVisible && <Login />}
       {isRegistrationModalVisible && <Registration />}
       {isShortFormModalVisible && <ShortForm />}
-      {isLongFormModalVisible && <LongForm />}
+      {isLongFormModalVisible && <LongFormModal />}
     </div>
   );
 }

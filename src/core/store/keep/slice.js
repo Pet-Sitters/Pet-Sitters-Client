@@ -1,5 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { getKeep } from './thunk';
+import {deleteKeep, getKeep} from './thunk';
 
 const initialState = {
   isLoading: false,
@@ -11,6 +11,13 @@ const initialState = {
 const keepList = createSlice({
   name: 'keepList',
   initialState,
+  reducers: {
+    resetKeepListState: (state) => {
+      state.isLoading = false;
+      state.isError = false;
+      state.isSuccess = false;
+    }
+  },
   extraReducers: (builder) => {
     builder
       //POST
@@ -44,11 +51,30 @@ const keepList = createSlice({
         state.isError = true;
         state.keepsData = null;
         state.isSuccess = false;
+      })
+      // DELETE
+      .addCase(deleteKeep.pending, (state) => {
+        state.isLoading = true;
+        state.isSuccess = false;
+        state.isError = false;
+        })
+      .addCase(deleteKeep.fulfilled, (state, action) => {
+        state.isLoading = false;
+        state.isSuccess = true;
+        state.isError = false;
+        state.keepsData = null
+        })
+      .addCase(deleteKeep.rejected, (state) => {
+        state.isLoading = false;
+        state.isSuccess = false;
+        state.isError = true;
       });
   },
 });
-export const selectKeepIsLoading = (state) => state.keepList.isLoading;
-export const selectKeepIsError = (state) => state.keepList.isError;
+
+export const {resetKeepListState} = keepList.actions
+export const selectKeepDataIsLoading = (state) => state.keepList.isLoading;
+export const selectKeepDataIsError = (state) => state.keepList.isError;
 export const selectKeepData = (state) => state.keepList.keepsData;
 export const selectKeepDataIsSuccess = (state) => state.keepList.isSuccess;
 

@@ -10,6 +10,7 @@ const OrderList = ({keeps}) => {
                 keeps.map((keep) => <OrderCard
                     key={keep.id}
                     status={keep.status}
+                    id={keep.id}
                 />)
             }
         </div>

@@ -1,30 +1,40 @@
 import React, {useEffect} from 'react';
 import s from './OrderCard.module.scss';
+import {useDispatch} from "react-redux";
+import {CloseOutlined} from "@ant-design/icons";
 
 import clockImg from '../../../../public/assets/images/account/status/clock-Light.svg'
 import confirmImg from '../../../../public/assets/images/account/status/check-circle-Light.svg'
+
+import {deleteKeep} from "../../../core/store/keep/thunk.js";
+
 
 // const options = [
 //     { status: 'new', image: '' },
 //     { status: 'active', image: confirmImg },
 //     { status: 'in_process', image: clockImg },
+//     { status: 'done', image: '' },
 // ];
 
-const OrderCard = ({status}) => {
+const OrderCard = ({status, id}) => {
+    const dispatch = useDispatch();
 
-    useEffect(() => {
-        console.log(status)
-    }, [status])
+    const handleDelete = () => {
+        dispatch(deleteKeep(id));
+    }
 
     return (
         <div className={s.order}>
+            <button className={s.delete} onClick={handleDelete}>
+                <CloseOutlined/>
+            </button>
             <div className={s.infoContainer}>
                 <h1 className={s.title}>Передержка вид животного + Кличка</h1>
                 <p className={s.info}>Даты: </p>
                 <p className={s.info}>Ситтер: </p>
                 <p className={s.details}>Cмотреть детали заказа</p>
             </div>
-            <div>
+            <div className={s.rightSide}>
                 {
                     status === 'new' ? '' : status === 'active' ? (
                         <div className={s.status}>

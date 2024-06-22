@@ -6,23 +6,20 @@ import OrderList from "../../../components/OrdersComponents/OrderList/OrderList.
 import {Space} from "antd";
 import {LoadingOutlined} from "@ant-design/icons";
 import {useDispatch, useSelector} from "react-redux";
-import {selectKeepData, selectKeepDataIsSuccess, selectKeepIsLoading} from "../../../core/store/keep/slice.js";
-import {selectAuthIsSuccess, selectCurrentUser} from "../../../core/store/auth/slice.js";
-import {selectOwnerInfoData, selectOwnerInfoIsSuccess} from "../../../core/store/ownerInfo/slice.js";
+import {selectKeepData, selectKeepDataIsSuccess, resetKeepListState} from "../../../core/store/keep/slice.js";
+import {selectCurrentUser} from "../../../core/store/auth/slice.js";
+import {selectOwnerInfoData} from "../../../core/store/ownerInfo/slice.js";
 import {getKeep} from "../../../core/store/keep/thunk.js";
-import {getOwnerInfo} from "../../../core/store/ownerInfo/thunk.js";
+import {getOwnerInfo} from "../../../core/store/ownerInfo/thunk";
 
 
 const Orders = () => {
     const dispatch = useDispatch();
 
     const keepData = useSelector(selectKeepData);
-    // const isLoading = useSelector(selectKeepIsLoading);
     const userData = useSelector(selectCurrentUser)
     const ownerData = useSelector(selectOwnerInfoData);
-
-    // const isOwnerDataSuccess = useSelector(selectOwnerInfoIsSuccess);
-    // const isKeepDataIsSuccess = useSelector(selectKeepDataIsSuccess);
+    const isSuccess = useSelector(selectKeepDataIsSuccess)
 
     const [keeps, setKeeps] = useState([]);
     const [ownerId, setOwnerId] = useState(null);
@@ -59,9 +56,22 @@ const Orders = () => {
 
     useEffect(() => {
         if(keeps && ownerId && userId){
-            setLoading(false)
+            setLoading(false);
         }
     }, [keeps, ownerId, userId]);
+
+    useEffect(() => {
+        if (isSuccess) {
+            dispatch(resetKeepListState());
+        }
+    }, [keepData, dispatch]);
+
+    useEffect(() => {
+        if (!keepData && isSuccess){
+            setLoading(true);
+            dispatch(getKeep());
+        }
+    }, [keepData, isSuccess, dispatch])
 
     return (
       <div className={s.orders}>

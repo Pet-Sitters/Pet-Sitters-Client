@@ -42,26 +42,42 @@
     }
   }
 
-  .status {
+  .rightSide{
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
 
-    .statusImg {
-      height: 50px;
-      width: 50px;
+    .status {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
 
-      img {
-        width: 80%;
+      .statusImg {
+        height: 50px;
+        width: 50px;
+
+        img {
+          width: 80%;
+        }
+      }
+
+      .statusText {
+        font-size: 20px;
+        font-weight: 400;
+        line-height: 24px;
+        text-align: center;
       }
     }
+  }
 
-    .statusText {
-      font-size: 20px;
-      font-weight: 400;
-      line-height: 24px;
-      text-align: center;
-    }
+  .delete{
+    position: absolute;
+    align-self: start;
+    justify-self: end;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
   }
 }

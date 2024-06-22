@@ -25,3 +25,15 @@ export const getKeep = createAsyncThunk(
         }
     }
 );
+
+export const deleteKeep = createAsyncThunk(
+    'keepList/delete',
+    async (id, thunkAPI) => {
+        try {
+            const response = await api.delete(`/keep/keep_crud/${id}`);
+            return response.data;
+        } catch (err) {
+            return thunkAPI.rejectWithValue(err.response.data.errors);
+        }
+    }
+);

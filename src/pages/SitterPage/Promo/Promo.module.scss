@@ -8,6 +8,14 @@
   gap: 60px;
   margin-top: 104px;
 }
+.avatarContainer {
+  width: 362px;
+  height: 482px;
+  object-fit: cover;
+}
+.avatar {
+  width: 100%;
+}
 .ratingContainer {
   width: 100%;
   display: grid;

@@ -1,6 +1,6 @@
-import FormButton from '../../../components/UI/Buttons/FormButton/FormButton';
+import { OrderButton } from '../../../components/UI/OrderButton/OrderButton';
 import s from './Promo.module.scss';
-
+import unnamed from './img/unnamed.jpg';
 export function Promo({ data }) {
   const cityNames = {
     EVN: 'Ереван',
@@ -11,8 +11,8 @@ export function Promo({ data }) {
     OTH: 'Другое',
   };
   const homeTypes = {
-    FLAT: 'Квартира',
-    HOUS: 'Частный дом',
+    FLAT: 'в квартире',
+    HOUS: 'в частном доме',
   };
   const animals = {
     CAT: 'Кошка',
@@ -31,11 +31,11 @@ export function Promo({ data }) {
     doctor: '/assets/icons/Sitter/doctor.png',
     verification: '/assets/icons/Sitter/verification.png',
   };
-
+  const avatar = data.avatar ? avatar.data : unnamed;
   return (
     <article className={s.promoSitter}>
       <div className={s.avatarContainer}>
-        <img src={data.avatar} alt='avatar' />
+        <img src={avatar} alt='avatar' className={s.avatar} />
       </div>
       <div className={s.ratingContainer}>
         <div className={s.oldSkill}>
@@ -62,10 +62,10 @@ export function Promo({ data }) {
           <p className={s.typeSitterText}>Догситтер</p>
         </div>
         <div className={s.firstNameSitter}>
-          <p className={s.firstNameSitterText}>{data.user.first_name}</p>
+          <p className={s.firstNameSitterText}>{data.first_name}</p>
         </div>
         <div className={s.lastNameSitter}>
-          <p className={s.lastNameSitterText}>{data.user.last_name}</p>
+          <p className={s.lastNameSitterText}>{data.last_name}</p>
         </div>
         <div className={s.citySitter}>
           <p className={s.citySitterText}>{cityName}</p>
@@ -80,14 +80,7 @@ export function Promo({ data }) {
             Передержка: <span>{homeType}</span>
           </p>
         </div>
-
-        <FormButton
-          type='primary'
-          htmlType='submit'
-          className={s.button}
-          onClick={() => openShortFormModal(true)}>
-          Оформить заказ
-        </FormButton>
+        <OrderButton />
       </div>
       <div className={s.pinContainer}>
         {dataPins.pin.map((pin) => (

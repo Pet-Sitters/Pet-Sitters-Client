@@ -1,7 +1,7 @@
 import petrovich from 'petrovich';
 import { useState } from 'react';
 import s from './Apartments.module.scss';
-
+import nophoto from './img/nophoto.png';
 export function Apartments({ data }) {
   const person = {
     first: data.first_name,
@@ -14,7 +14,7 @@ export function Apartments({ data }) {
   const handleImageClick = (image) => {
     setExpandedImage(expandedImage === image ? null : image);
   };
-
+  const photo = data.image ? data.image : nophoto;
   return (
     <article className={s.apartments}>
       <h4 className={s.title}>
@@ -26,7 +26,7 @@ export function Apartments({ data }) {
         {data.images.slice(0, 4).map((img, index) => (
           <img
             key={index}
-            src={img.image}
+            src={photo}
             alt='photo'
             className={expandedImage === img.image ? s.expandedImage : s.image}
             onClick={() => handleImageClick(img.image)}

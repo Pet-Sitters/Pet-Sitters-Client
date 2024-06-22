@@ -1,14 +1,11 @@
 import petrovich from 'petrovich';
-import { sitterInfoData } from '../data';
 import s from './MapSitter.module.scss';
 
-export function MapSitter() {
-  const data = sitterInfoData;
-
+export function MapSitter({ data }) {
   const person = {
-    first: data.user.first_name,
-    middle: data.user.patronym,
-    last: data.user.last_name,
+    first: data.first_name,
+    middle: data.patronym,
+    last: data.last_name,
   };
   const nameSitter = petrovich(person, 'genitive');
 

@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { RoutePaths } from '../../core/constants/RoutePaths';
 import { AuthState } from '../../core/store/auth/slice';
 import { openModal } from '../../core/store/modalOrder/slice';
@@ -13,6 +13,11 @@ export function HeaderMain() {
   const [menuOpen, setMenuOpen] = useState(false);
   const { token } = useSelector(AuthState);
   const dispatch = useDispatch();
+  const navigate = useNavigate();
+
+  const handleNavigate = () => {
+    navigate('/#game');
+  };
 
   const handleLogoClick = () => {
     window.scrollTo({
@@ -64,12 +69,12 @@ export function HeaderMain() {
       <nav className={s.menuClientSitter}>
         <ul className={s.list}>
           <li className={s.item}>
-            <Link className={s.link} to={links.sitter}>
+            <Link className={s.link} to={links.sitters}>
               Ситтеры
             </Link>
-            <a href='#game' className={s.link} to={links.becameSitter}>
+            <button onClick={handleNavigate} className={s.link} to={links.becameSitter}>
               Стать ситтером
-            </a>
+            </button>
             <button onClick={handleOpen} className={s.headerButton}>
               Оформить заказ
             </button>

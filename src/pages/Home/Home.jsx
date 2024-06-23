@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import { AboutPetSitter } from './AboutPetSitter/AboutPetSitter';
 import CalculatorArea from './CalculatorArea/CalculatorArea.jsx';
 import FaqArea from './FAQArea/FaqArea.jsx';
@@ -12,6 +13,15 @@ import { Skills } from './Skills/Skills';
 import SwiperArea from './SwiperArea/SwiperArea.jsx';
 
 export function Home() {
+  useEffect(() => {
+    const hash = window.location.hash;
+    if (hash) {
+      const element = document.querySelector(hash);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+  }, []);
   return (
     <section className={s.home}>
       <Promo />

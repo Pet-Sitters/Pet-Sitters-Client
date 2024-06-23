@@ -40,13 +40,13 @@ const FormRegistration = () => {
   }, [isSuccess, isError, form, authError, dispatch]);
 
   const onFinish = async (values) => {
-    //TODO: если поле username убрать - то использовать этот запрос
-    // form.setFieldsValue({
-    //   username: values.email,
-    // });
-    // dispatch(register({ ...values, username: values.email }));
+    // TODO: если поле username убрать - то использовать этот запрос
+    form.setFieldsValue({
+      email: values.username,
+    });
+    dispatch(register({ ...values, email: values.username }));
     //TODO: если поле username оставить - то использовать этот запрос
-    dispatch(register(values));
+    // dispatch(register(values));
   };
 
   return (
@@ -82,19 +82,19 @@ const FormRegistration = () => {
           className={s.formInput}
           name='username'
           tooltip={{
-            title: 'Введите свое имя',
+            title: 'Введите свой Email',
             ClassName: s.customTooltip,
           }}
           rules={[
             {
               required: true,
-              message: 'Введите свое имя!',
+              message: 'Введите свой Email!',
               whitespace: true,
             },
           ]}>
-          <Input placeholder='Имя' autoComplete='false' className={s.input} />
+          <Input placeholder='Email' autoComplete='false' className={s.input} />
         </Form.Item>
-        <Form.Item
+        {/* <Form.Item
           name='email'
           rules={[
             {
@@ -107,7 +107,7 @@ const FormRegistration = () => {
             },
           ]}>
           <Input placeholder='Email' className={s.input} />
-        </Form.Item>
+        </Form.Item> */}
         <Form.Item
           name='password'
           rules={[

@@ -143,7 +143,7 @@ const LongForm = () => {
                             // const Component = FormFieldComponentsByType[item.type];
 
                             return (
-                                <div className={s.dateContainer}>
+                                <div key={input.label} className={s.dateContainer}>
                                     <p>{input.label}</p>
                                     <Form.Item
                                         key={input.name}

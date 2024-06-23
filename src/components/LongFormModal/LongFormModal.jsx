@@ -9,7 +9,7 @@ import LongForm from "./LongForm/LongForm.jsx";
 
 export function LongFormModal() {
     const dispatch = useDispatch();
-    const isOpen = useSelector((state) => state.modalLongFormSlice.isLongFormModalVisible);
+    const isOpen = useSelector((state) => state.modalLongForm.isLongFormModalVisible);
 
     const handleClose = () => {
         dispatch(closeModal());

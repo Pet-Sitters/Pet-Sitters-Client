@@ -1,0 +1,77 @@
+@import '../../../SCSS/variables.scss';
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px 0;
+  gap: 15px;
+  height: 233px;
+  width: 206px;
+  border: 2px solid $main-veryLight;
+  border-radius: 24px;
+  background-color: #ffffff;
+
+  .photoContainer {
+    position: relative;
+    width: 140px;
+    height: 140px;
+    border-radius: 100%;
+    border: none;
+    background-color: #bbbbbb;
+    cursor: pointer;
+    &:after {
+      position: absolute;
+      content: ' ';
+      display: block;
+      top: 70px;
+      left: 40px;
+      width: 60px;
+      height: 1px;
+      background-color: #6a6a6a;
+    }
+    &::before {
+      rotate: 90deg;
+      position: absolute;
+      content: ' ';
+      display: block;
+      top: 70px;
+      left: 40px;
+      width: 60px;
+      height: 1px;
+      background-color: #6a6a6a;
+    }
+  }
+  .img {
+    z-index: 3;
+    width: 140px;
+    height: 140px;
+    top: 0px;
+    left: 0px;
+    margin-bottom: 13px;
+    object-fit: cover;
+    border-radius: 100%;
+  }
+  .par{
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 22px;
+    letter-spacing: -0.02em;
+    text-align: center;
+    color: #BBBBBB;
+  ;
+  }
+  .title {
+    font-size: 20px;
+    text-align: center;
+    font-weight: 500;
+    line-height: 22.3px;
+    letter-spacing: -0.02em;
+    margin-bottom: 15px;
+  }
+  .buttonContainer {
+    width: 214px;
+    height: 57px;
+    border-radius: 18px;
+  }
+}
+

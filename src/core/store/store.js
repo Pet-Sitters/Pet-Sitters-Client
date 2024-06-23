@@ -11,6 +11,7 @@ import petFormReducer from './pet/slice';
 import shortFormReducer from './shortForm/slice';
 import sitterInfoReducer from './sitterInfo/slice';
 import sitterListReducer from './sitterList/slice';
+import modalChoosePetReducer from './modalChoosePet/slice';
 
 export const store = configureStore({
   reducer: {
@@ -25,6 +26,7 @@ export const store = configureStore({
     modalRegistration: modalRegistrationReducer,
     keepList: keepListReducer,
     ownerInfo: ownerInfoReducer,
-    modalLongFormSlice: modalLongFormSliceReducer,
+    modalLongForm: modalLongFormSliceReducer,
+    modalChoosePet: modalChoosePetReducer,
   },
 });

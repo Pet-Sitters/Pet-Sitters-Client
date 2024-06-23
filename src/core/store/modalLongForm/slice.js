@@ -1,9 +1,9 @@
 import { createSlice } from '@reduxjs/toolkit';
 
-export const modalLongFormSlice = createSlice({
+export const modalLongForm = createSlice({
     name: 'modalLongForm',
     initialState: {
-        isShortFormModalVisible: false,
+        isLongFormModalVisible: false,
     },
     reducers: {
         openModal: (state) => {
@@ -15,6 +15,6 @@ export const modalLongFormSlice = createSlice({
     },
 });
 
-export const { openModal, closeModal } = modalLongFormSlice.actions;
+export const { openModal, closeModal } = modalLongForm.actions;
 
-export default modalLongFormSlice.reducer;
+export default modalLongForm.reducer;

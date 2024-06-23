@@ -5,6 +5,7 @@ import { RoutePaths } from '../../core/constants/RoutePaths';
 import { AuthState } from '../../core/store/auth/slice';
 import { openModal } from '../../core/store/modalOrder/slice';
 import { openRegistrationModal } from '../../core/store/modalRegistration/slice';
+import links from '../../router/links';
 import s from './HeaderGrid.module.scss';
 
 export function HeaderMain() {
@@ -48,12 +49,12 @@ export function HeaderMain() {
             <Link className={s.link} to='/about'>
               О сервисе
             </Link>
-            <Link className={s.link} to='/dogs'>
+            <a href='#calculator' className={s.link}>
               Передержка собак
-            </Link>
-            <Link className={s.link} to='/cats'>
+            </a>
+            <a href='#calculator' className={s.link}>
               Передержка кошек
-            </Link>
+            </a>
           </li>
         </ul>
       </nav>
@@ -63,15 +64,19 @@ export function HeaderMain() {
       <nav className={s.menuClientSitter}>
         <ul className={s.list}>
           <li className={s.item}>
-            <Link className={s.link} to='/sitters'>
+            <Link className={s.link} to={links.sitter}>
               Ситтеры
             </Link>
-            <Link className={s.link} to='/become-sitter'>
+            <a href='#game' className={s.link} to={links.becameSitter}>
               Стать ситтером
-            </Link>
+            </a>
             <button onClick={handleOpen} className={s.headerButton}>
               Оформить заказ
             </button>
+            <Link to={links.account.base} className={s.buttonProfile}>
+              <img src='/assets/icons/profile.png' alt='profile' />
+              Профиль
+            </Link>
           </li>
         </ul>
       </nav>

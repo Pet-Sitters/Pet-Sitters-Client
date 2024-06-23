@@ -4,7 +4,7 @@ import s from './Game.module.scss';
 
 export function Game() {
   return (
-    <article className={s.game}>
+    <article id='game' className={s.game}>
       <img src='/assets/images/Home/dogs.png' alt='dogs' className={s.image} />
       <div className={s.textContent}>
         <h3 className={s.title}>
@@ -27,9 +27,9 @@ export function Game() {
           подсветит что необходимо изучить
         </p>
         <div className={s.buttons}>
-          <LinkButton buttonType='game1' to={links.account.myOrders}>
+          <a href='https://petgame.esoraine.online/' className={s.linkGame}>
             начать игру
-          </LinkButton>
+          </a>
           <LinkButton buttonType='game2' to={links.becameSitter}>
             Стать ситтером
           </LinkButton>

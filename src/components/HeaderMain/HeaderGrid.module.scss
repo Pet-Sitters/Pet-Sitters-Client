@@ -33,7 +33,7 @@
     .list {
       .item {
         display: grid;
-        grid-template-columns: repeat(3, auto);
+        grid-template-columns: repeat(4, auto);
         align-items: center;
         gap: 40px;
 
@@ -55,6 +55,23 @@
           border-radius: $border-radius-button;
           border: 2px solid $yellow;
           cursor: pointer;
+        }
+        .buttonProfile {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          color: #000001;
+          gap: 0;
+          font-size: 14px;
+          font-weight: 500;
+          line-height: 16.52px;
+          text-align: center;
+          cursor: pointer;
+          img {
+            width: 20px;
+            height: 20px;
+          }
         }
       }
     }

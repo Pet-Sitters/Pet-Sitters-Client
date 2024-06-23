@@ -45,3 +45,27 @@
   justify-content: space-between;
   width: 600px;
 }
+.linkGame {
+  width: 290px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  text-decoration: none;
+  color: $main-dark;
+  font-size: 24px;
+  font-style: italic;
+  font-weight: 500;
+  line-height: 28.32px;
+  text-align: center;
+  background-color: $light-green;
+  border-radius: 30px;
+  cursor: pointer;
+  text-transform: uppercase;
+  transition: $transition;
+  &:hover {
+    background-color: $main-dark;
+    color: $white;
+  }
+}

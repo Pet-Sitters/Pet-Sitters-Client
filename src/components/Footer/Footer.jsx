@@ -2,8 +2,9 @@ import { Link } from 'react-router-dom';
 import links from '../../router/links';
 import { TgButton } from '../UI/Buttons/TgButton/TgButton';
 import s from './Footer.module.scss';
-import catImg from '../../../public/assets/images/Home/FatCat.png'
-import decorImg from '../../../public/assets/images/Home/decorEl.png'
+import catImg from '/assets/images/Home/FatCat.png'
+import decorImg from '/assets/images/Home/decorEl.png'
+
 export function Footer() {
   const handleLogoClick = () => {
     window.scrollTo({

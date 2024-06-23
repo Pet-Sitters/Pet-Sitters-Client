@@ -137,26 +137,29 @@ const LongForm = () => {
             <div className={s.details}>
                 <DialogTitle className={s.title}>Теперь о деталях передержки</DialogTitle>
 
-                <Form.Item className={s.dates} label='Укажите даты передержки'>
-                    {detailInput.map((input, index) => {
-                        // const Component = FormFieldComponentsByType[item.type];
+                <Form.Item label='Укажите даты передержки'>
+                    <div className={s.dates}>
+                        {detailInput.map((input, index) => {
+                            // const Component = FormFieldComponentsByType[item.type];
 
-                        return (
-                            <div className={s.dateContainer}>
-                                <p>{input.label}</p>
-                                <Form.Item
-                                    key={input.name}
-                                    name={input.name}
-                                    rules={input.rules}
-                                >
-                                    <DatePicker
-                                        placeholder={input.placeholder}
-                                        className={s.date}
-                                    />
-                                </Form.Item>
-                            </div>
-                        );
-                    })}
+                            return (
+                                <div className={s.dateContainer}>
+                                    <p>{input.label}</p>
+                                    <Form.Item
+                                        key={input.name}
+                                        name={input.name}
+                                        rules={input.rules}
+                                    >
+                                        <DatePicker
+                                            placeholder={input.placeholder}
+                                            className={s.date}
+                                        />
+                                    </Form.Item>
+                                </div>
+                            );
+                        })}
+                    </div>
+
                 </Form.Item>
 
 

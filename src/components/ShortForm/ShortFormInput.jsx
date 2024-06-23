@@ -15,6 +15,7 @@ import {shortFormInputs} from './ShortFormData';
 import s from './ShortFormInput.module.scss';
 
 import {openChooseModal} from "../../core/store/modalChoosePet/slice";
+import {setOrderInfo} from "../../core/store/orderInfo/slice.js";
 
 const ShortFormInputs = () => {
     const [form] = Form.useForm();
@@ -33,17 +34,23 @@ const ShortFormInputs = () => {
 
     useEffect(() => {
         if (isSuccess) {
-            console.log('yes');
             dispatch(closeModal());
-            console.log('yes');
             dispatch(openChooseModal());
         }
     }, [isSuccess, dispatch]);
 
     const handleFinish = (values) => {
         const orderData = {...values, phone_num: parseInt(values.phone_num, 10), user: id};
-        console.log(orderData);
-        dispatch(postShortForm(orderData));
+        dispatch(postShortForm(orderData))
+            .then((response) => {
+                if (response.meta.requestStatus === 'fulfilled') {
+                    console.log('Response:', response.payload);
+                    dispatch(setOrderInfo(response.payload))
+                }
+            })
+            .catch((error) => {
+                console.log('Error:', error);
+            });;
     };
 
     const onFinishFailed = (errorInfo) => {

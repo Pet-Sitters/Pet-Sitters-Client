@@ -1,15 +1,24 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import {useDispatch, useSelector} from "react-redux";
 import {Dialog, DialogPanel, DialogTitle} from "@headlessui/react";
 import s from './LongFormModal.module.scss';
 
 import {closeModal} from "../../core/store/modalLongForm/slice";
 import LongForm from "./LongForm/LongForm.jsx";
+import {selectOrderInfo} from "../../core/store/orderInfo/slice.js";
 
 
 export function LongFormModal() {
     const dispatch = useDispatch();
     const isOpen = useSelector((state) => state.modalLongForm.isLongFormModalVisible);
+    const orderInfo = useSelector(selectOrderInfo);
+    const [keepId, setKeepId] = useState(null);
+
+    useEffect(() => {
+        if (orderInfo){
+            setKeepId(orderInfo.keep)
+        }
+    }, [orderInfo])
 
     const handleClose = () => {
         dispatch(closeModal());
@@ -26,13 +35,7 @@ export function LongFormModal() {
 
                         <DialogTitle className={s.title}>Расскажите нам о своём питомце подробнее</DialogTitle>
 
-                        <LongForm />
-                        {/*<Form form={form} layout='vertical' onFinishFailed={onFinishFailed} onFinish={handleFinish}>*/}
-
-                        {/*    <FormButton type='primary' htmlType='submit' className={s.formButton}>*/}
-                        {/*        Отправить*/}
-                        {/*    </FormButton>*/}
-                        {/*</Form>*/}
+                        <LongForm keepId={keepId} />
                     </DialogPanel>
                 </div>
             </Dialog>

@@ -31,7 +31,7 @@ import detailInput from "./data/details/detailsInput.js";
 import s from './LongForm.module.scss'
 
 
-const LongForm = () => {
+const LongForm = (keepId) => {
     const [form] = Form.useForm();
 
     const dispatch = useDispatch();

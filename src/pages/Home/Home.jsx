@@ -22,6 +22,7 @@ export function Home() {
       }
     }
   }, []);
+
   return (
     <section className={s.home}>
       <Promo />

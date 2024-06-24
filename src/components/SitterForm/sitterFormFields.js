@@ -144,6 +144,7 @@ export const sitterFormFields = [
     },
     fieldProps: {
       placeholder: 'Код подразделения',
+      style: { width: '100%' },
     },
   },
   {

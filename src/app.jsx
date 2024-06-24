@@ -1,6 +1,7 @@
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { RouterProvider } from 'react-router-dom';
+import { ChoosePetModal } from './components/ChoosePetModal/ChoosePetModal.jsx';
 import { LongFormModal } from './components/LongFormModal/LongFormModal.jsx';
 import { ShortForm } from './components/ShortForm/ShortForm.jsx';
 import { Login } from './components/auth/Login/Login.jsx';
@@ -9,7 +10,6 @@ import { useCheckAuthorization } from './core/hooks/useCheckAuthorization.js';
 import { getCurrentUser } from './core/store/auth/thunk';
 import { router } from './router/routes.jsx';
 import './style.scss';
-import {ChoosePetModal} from "./components/ChoosePetModal/ChoosePetModal.jsx";
 
 export function App() {
   const dispatch = useDispatch();
@@ -28,8 +28,8 @@ export function App() {
     (state) => state.modalLongForm.isLongFormModalVisible
   );
   const isChooseModalVisible = useSelector(
-      (state) => state.modalChoosePet.isModalPetChooseVisible
-  )
+    (state) => state.modalChoosePet.isModalPetChooseVisible
+  );
 
   useEffect(() => {
     if (isUserAuthorized) {

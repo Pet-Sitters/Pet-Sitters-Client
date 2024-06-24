@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import links from '../../router/links';
+import ScrollLink from '../UI/Buttons/LinkButton/ScrollLink';
 import { TgButton } from '../UI/Buttons/TgButton/TgButton';
 import s from './Footer.module.scss';
 import catImg from '/assets/images/Home/FatCat.png';
@@ -44,32 +45,21 @@ export function Footer() {
           </div>
           <div className={s.links}>
             <div className={s.linksPetsitter}>
-              <Link
-                to={`${links.home}#about`}
-                reloadDocument
-                className={s.link}
-              >
+              <Link to={`${links.home}#howWork`} reloadDocument className={s.link}>
                 О сервисе
               </Link>
-              <Link
-                to={`${links.home}#calculator`}
-                reloadDocument
-                className={s.link}
-              >
+              <Link to={`${links.home}#calculator`} reloadDocument className={s.link}>
                 Передержка кошек
               </Link>
-              <Link
-                to={`${links.home}#calculator`}
-                reloadDocument
-                className={s.link}
-              >
+              <Link to={`${links.home}#calculator`} reloadDocument className={s.link}>
                 Передержка собак
               </Link>
             </div>
             <div className={s.linksSitter}>
-              <Link to={links.sitters} className={s.link}>
+              <ScrollLink to={links.sitters} className={s.link}>
+                {' '}
                 Ситтеры
-              </Link>
+              </ScrollLink>
               <Link to={`${links.home}#game`} reloadDocument className={s.link}>
                 Стать ситтером
               </Link>

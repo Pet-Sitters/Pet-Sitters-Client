@@ -1,7 +1,6 @@
 import { Button, ConfigProvider } from 'antd';
-import { Link } from 'react-router-dom';
-
 import styles from './LinkButton.module.scss';
+import ScrollLink from './ScrollLink';
 
 const MAIN_COLOR = '#C896FF';
 const SECONDARY_COLOR = '#DBEF98';
@@ -48,13 +47,13 @@ const LinkButton = ({ children, buttonType, to }) => {
           },
         },
       }}>
-      <Link to={to} className={styles.link}>
+      <ScrollLink to={to} className={styles.link}>
         <Button
           className={`${styles.mainButton} ${styles[types[buttonType].style]}`}
           type='primary'>
           {children}
         </Button>
-      </Link>
+      </ScrollLink>
     </ConfigProvider>
   );
 };

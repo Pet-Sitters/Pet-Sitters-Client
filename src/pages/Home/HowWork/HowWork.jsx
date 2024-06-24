@@ -5,7 +5,7 @@ import s from './HowWork.module.scss';
 
 export function HowWork() {
   return (
-    <article className={s.howWork}>
+    <article id='howWork' className={s.howWork}>
       <div className={s.content}>
         <div className={s.header}>
           <h3 className={s.title}>

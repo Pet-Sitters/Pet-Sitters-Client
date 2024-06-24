@@ -6,6 +6,7 @@ import { AuthState } from '../../core/store/auth/slice';
 import { openModal } from '../../core/store/modalOrder/slice';
 import { openRegistrationModal } from '../../core/store/modalRegistration/slice';
 import links from '../../router/links';
+import ScrollLink from '../UI/Buttons/LinkButton/ScrollLink';
 import s from './HeaderGrid.module.scss';
 
 export function HeaderMain() {
@@ -62,42 +63,27 @@ export function HeaderMain() {
       <nav className={s.menuClientPet}>
         <ul className={s.list}>
           <li className={s.item}>
-            {/* <button onClick={handleNavigateAbout} className={s.link}>
-              О сервисе
-            </button> */}
-            <Link className={s.link} to={`${links.home}#about`} reloadDocument>
+            <Link className={s.link} to={`${links.home}#howWork`} reloadDocument>
               О сервисе
             </Link>
-            <Link
-              className={s.link}
-              to={`${links.home}#calculator`}
-              reloadDocument
-            >
+            <Link className={s.link} to={`${links.home}#calculator`} reloadDocument>
               Передержка собак
             </Link>
-            <Link
-              className={s.link}
-              to={`${links.home}#calculator`}
-              reloadDocument
-            >
+            <Link className={s.link} to={`${links.home}#calculator`} reloadDocument>
               Передержка кошек
             </Link>
           </li>
         </ul>
       </nav>
       <Link to={RoutePaths.Root} className={s.logo}>
-        <img
-          src='/assets/images/logo.png'
-          alt='logo'
-          onClick={handleLogoClick}
-        />
+        <img src='/assets/images/logo.png' alt='logo' onClick={handleLogoClick} />
       </Link>
       <nav className={s.menuClientSitter}>
         <ul className={s.list}>
           <li className={s.item}>
-            <Link className={s.link} to={links.sitters}>
+            <ScrollLink className={s.link} to={links.sitters}>
               Ситтеры
-            </Link>
+            </ScrollLink>
             <Link className={s.link} to={`${links.home}#game`} reloadDocument>
               Стать ситтером
             </Link>
@@ -105,10 +91,9 @@ export function HeaderMain() {
               Оформить заказ
             </button>
             {token && (
-              <Link to={links.account.base} className={s.buttonProfile}>
-                <img src='/assets/icons/profile.png' alt='profile' />
-                Профиль
-              </Link>
+              <ScrollLink to={links.account.base} className={s.buttonProfile}>
+                <img src='/assets/icons/profile.png' alt='profile' /> Профиль
+              </ScrollLink>
             )}
           </li>
         </ul>

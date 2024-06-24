@@ -17,7 +17,7 @@ const ProfileSidebar = () => {
           <Link to={'/account/my-pets'} className={styles.link}>
             Мои питомцы{' '}
           </Link>
-          <Link to={'/account/my-order'} className={styles.link}>
+          <Link to={'/account/my-orderInfo'} className={styles.link}>
             Мои заказы{' '}
           </Link>
           <Link to={'/account/my-sitter'} className={styles.link}>

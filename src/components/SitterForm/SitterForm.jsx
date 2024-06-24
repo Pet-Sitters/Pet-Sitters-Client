@@ -52,6 +52,11 @@ const SitterForm = () => {
   return (
     <ConfigProvider
       theme={{
+        components:{
+          Select: {
+            controlHeight:74
+          }
+        },
         token: {
           borderRadius: 24,
         },
@@ -72,7 +77,7 @@ const SitterForm = () => {
           );
         })}
 
-        <div style={{ marginTop: 20 }}>
+        {/* <div style={{ marginTop: 20 }}>
           <Upload
             name='avatar'
             listType='picture'
@@ -82,8 +87,8 @@ const SitterForm = () => {
           >
             <Button icon={<UploadOutlined />}>Выбрать файл</Button>
           </Upload>
-        </div>
-        <Form.List name={'images'}>
+        </div> */}
+        {/* <Form.List name={'images'}>
           {(fields, { add, remove }) => {
             return (
               <>
@@ -103,7 +108,6 @@ const SitterForm = () => {
                       name={'avatar'}
                       valuePropName='fileList'
                       getValueFromEvent={(e) => e && e.fileList}>
-                      {/* <input type='file' onChange={(e) => setFile(e.target.files[0])} /> */}
                       <Upload
                         name='avatar'
                         listType='picture'
@@ -127,7 +131,7 @@ const SitterForm = () => {
               </>
             );
           }}
-        </Form.List>
+        </Form.List> */}
 
         <FormButton type='primary' htmlType='submit'>
           Сохранить данные

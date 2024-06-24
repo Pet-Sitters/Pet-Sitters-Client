@@ -16,7 +16,18 @@ export function HeaderMain() {
   const navigate = useNavigate();
 
   const handleNavigate = () => {
-    navigate('/#game');
+    navigate('/');
+    window.scrollTo({
+      top: 6800,
+      behavior: 'smooth',
+    });
+  };
+  const handleNavigateAbout = () => {
+    navigate('/');
+    window.scrollTo({
+      top: 4200,
+      behavior: 'smooth',
+    });
   };
 
   const handleLogoClick = () => {
@@ -51,7 +62,7 @@ export function HeaderMain() {
       <nav className={s.menuClientPet}>
         <ul className={s.list}>
           <li className={s.item}>
-            <Link className={s.link} to='/about'>
+            <Link onClick={handleNavigateAbout} className={s.link}>
               О сервисе
             </Link>
             <Link
@@ -90,10 +101,12 @@ export function HeaderMain() {
             <button onClick={handleOpen} className={s.headerButton}>
               Оформить заказ
             </button>
-            <Link to={links.account.base} className={s.buttonProfile}>
-              <img src='/assets/icons/profile.png' alt='profile' />
-              Профиль
-            </Link>
+            {token && (
+              <Link to={links.account.base} className={s.buttonProfile}>
+                <img src='/assets/icons/profile.png' alt='profile' />
+                Профиль
+              </Link>
+            )}
           </li>
         </ul>
       </nav>

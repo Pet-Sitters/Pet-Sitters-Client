@@ -54,17 +54,29 @@ export function HeaderMain() {
             <Link className={s.link} to='/about'>
               О сервисе
             </Link>
-            <a href='#calculator' className={s.link}>
+            <Link
+              className={s.link}
+              to={`${links.home}#calculator`}
+              reloadDocument
+            >
               Передержка собак
-            </a>
-            <a href='#calculator' className={s.link}>
+            </Link>
+            <Link
+              className={s.link}
+              to={`${links.home}#calculator`}
+              reloadDocument
+            >
               Передержка кошек
-            </a>
+            </Link>
           </li>
         </ul>
       </nav>
       <Link to={RoutePaths.Root} className={s.logo}>
-        <img src='/assets/images/logo.png' alt='logo' onClick={handleLogoClick} />
+        <img
+          src='/assets/images/logo.png'
+          alt='logo'
+          onClick={handleLogoClick}
+        />
       </Link>
       <nav className={s.menuClientSitter}>
         <ul className={s.list}>
@@ -72,9 +84,9 @@ export function HeaderMain() {
             <Link className={s.link} to={links.sitters}>
               Ситтеры
             </Link>
-            <button onClick={handleNavigate} className={s.link} to={links.becameSitter}>
+            <Link className={s.link} to={`${links.home}#game`} reloadDocument>
               Стать ситтером
-            </button>
+            </Link>
             <button onClick={handleOpen} className={s.headerButton}>
               Оформить заказ
             </button>

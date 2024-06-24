@@ -3,7 +3,7 @@ import styles from './CalculatorArea.module.scss';
 
 const CalculatorArea = () => {
   return (
-    <article id='#calculator' className={styles.area}>
+    <article id='calculator' className={styles.area}>
       <div className={styles.areaHeader}>
         <h1>Калькулятор</h1>
         <p className={styles.petsitter}>
@@ -13,7 +13,10 @@ const CalculatorArea = () => {
           <p className={styles.title}>Стоимость</p>
           <p className={styles.title}>домашней передержки</p>
         </div>
-        <p>Мы создали онлайн-калькулятор, чтобы вы рассчитали стоимость передержки</p>
+        <p>
+          Мы создали онлайн-калькулятор, чтобы вы рассчитали стоимость
+          передержки
+        </p>
       </div>
       <CalculatorContainer />
     </article>

@@ -1,0 +1,39 @@
+@import '../../../SCSS/variables.scss';
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 16px;
+  height: 233px;
+  width: 206px;
+  border: 2px solid $main-veryLight;
+  border-radius: 24px;
+
+  .imgCont{
+    height: 144px;
+    width: auto;
+
+  }
+  .title {
+    font-size: 20px;
+    text-align: center;
+    font-weight: 500;
+    line-height: 22.3px;
+    letter-spacing: -0.02em;
+    margin-top: 13px;
+  }
+  .buttonContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+    width: 214px;
+    height: 57px;
+    border-radius: 18px;
+    background-color: $main-light;
+
+    &:hover{
+      background-color: $main-veryLight;
+    }
+  }
+}

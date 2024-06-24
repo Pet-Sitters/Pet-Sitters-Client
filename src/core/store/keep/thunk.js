@@ -1,19 +1,6 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import { api } from '../../utils/mainRequest';
 
-// export const postLongForm = createAsyncThunk(
-//   'longForm/post',
-//   async (payload, thunkAPI) => {
-//     try {
-//       const response = await api.post('/long_form/long_form_crud/', payload);
-//
-//       return response.data;
-//     } catch (err) {
-//       return thunkAPI.rejectWithValue(err.response.data.errors);
-//     }
-//   }
-// );
-
 export const getKeep = createAsyncThunk(
     'keepList/get',
     async (_, thunkAPI) => {
@@ -31,6 +18,18 @@ export const deleteKeep = createAsyncThunk(
     async (id, thunkAPI) => {
         try {
             const response = await api.delete(`/keep/keep_crud/${id}`);
+            return response.data;
+        } catch (err) {
+            return thunkAPI.rejectWithValue(err.response.data.errors);
+        }
+    }
+);
+
+export const updateKeep = createAsyncThunk(
+    'keepList/update',
+    async ({ id, data }, thunkAPI) => {
+        try {
+            const response = await api.patch(`/keep/keep_crud/${id}/`, data);
             return response.data;
         } catch (err) {
             return thunkAPI.rejectWithValue(err.response.data.errors);

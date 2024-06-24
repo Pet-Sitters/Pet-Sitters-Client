@@ -11,10 +11,13 @@ import {selectCurrentUser} from "../../../core/store/auth/slice.js";
 import {selectOwnerInfoData} from "../../../core/store/ownerInfo/slice.js";
 import {getKeep} from "../../../core/store/keep/thunk.js";
 import {getOwnerInfo} from "../../../core/store/ownerInfo/thunk";
+import {openChooseModal} from "../../../core/store/modalChoosePet/slice.js";
 
 
 const Orders = () => {
     const dispatch = useDispatch();
+
+    const isOpen = useSelector((state) => state.modalChoosePet.isModalPetChooseVisible);
 
     const keepData = useSelector(selectKeepData);
     const userData = useSelector(selectCurrentUser)
@@ -73,6 +76,11 @@ const Orders = () => {
         }
     }, [keepData, isSuccess, dispatch])
 
+    const buttonClick = () => {
+        dispatch(openChooseModal());
+        console.log(isOpen)
+    };
+
     return (
       <div className={s.orders}>
           {loading ? (
@@ -86,6 +94,9 @@ const Orders = () => {
           }
           <div className={s.button}>
               <LongFormButton>Заказать ситтинг</LongFormButton>
+          </div>
+          <div className={s.button}>
+              <button onClick={buttonClick}>Pet Choose</button>
           </div>
 
       </div>

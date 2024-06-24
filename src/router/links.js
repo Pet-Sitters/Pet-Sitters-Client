@@ -8,7 +8,7 @@ const links = {
     personal: 'personal/',
     myPets: 'my-pets/',
     addPets: 'add-pets/',
-    myOrders: 'my-order/',
+    myOrders: 'my-orderInfo/',
     mySitters: 'my-sitter/',
     settings: 'settings/',
   },

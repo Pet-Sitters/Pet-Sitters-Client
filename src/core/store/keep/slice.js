@@ -1,5 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
-import {deleteKeep, getKeep} from './thunk';
+import {deleteKeep, getKeep, updateKeep} from './thunk';
 
 const initialState = {
   isLoading: false,
@@ -68,7 +68,27 @@ const keepList = createSlice({
         state.isLoading = false;
         state.isSuccess = false;
         state.isError = true;
-      });
+      })
+        // PATCH
+        .addCase(updateKeep.pending, (state) => {
+          state.isLoading = true;
+          state.isSuccess = false;
+          state.isError = false;
+        })
+        .addCase(updateKeep.fulfilled, (state, action) => {
+          state.isLoading = false;
+          state.isSuccess = true;
+          state.isError = false;
+          state.keepsData = state.keepsData.map(keep =>
+              keep.id === action.payload.id ? action.payload : keep
+          );  // Update the keepsData with the response
+        })
+        .addCase(updateKeep.rejected, (state) => {
+          state.isLoading = false;
+          state.isSuccess = false;
+          state.isError = true;
+        });
+
   },
 });
 

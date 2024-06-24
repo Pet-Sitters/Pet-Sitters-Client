@@ -9,6 +9,7 @@ import { useCheckAuthorization } from './core/hooks/useCheckAuthorization.js';
 import { getCurrentUser } from './core/store/auth/thunk';
 import { router } from './router/routes.jsx';
 import './style.scss';
+import {ChoosePetModal} from "./components/ChoosePetModal/ChoosePetModal.jsx";
 
 export function App() {
   const dispatch = useDispatch();
@@ -24,8 +25,11 @@ export function App() {
     (state) => state.modalOrder.isShortFormModalVisible
   );
   const isLongFormModalVisible = useSelector(
-    (state) => state.modalLongFormSlice.isLongFormModalVisible
+    (state) => state.modalLongForm.isLongFormModalVisible
   );
+  const isChooseModalVisible = useSelector(
+      (state) => state.modalChoosePet.isModalPetChooseVisible
+  )
 
   useEffect(() => {
     if (isUserAuthorized) {
@@ -40,6 +44,7 @@ export function App() {
       {isRegistrationModalVisible && <Registration />}
       {isShortFormModalVisible && <ShortForm />}
       {isLongFormModalVisible && <LongFormModal />}
+      {isChooseModalVisible && <ChoosePetModal />}
     </div>
   );
 }

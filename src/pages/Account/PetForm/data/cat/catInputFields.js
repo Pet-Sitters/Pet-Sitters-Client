@@ -4,7 +4,7 @@ const catInputFields = [
     ...animalInputFields,
     {
         placeholder: 'Дерет мебель?',
-        name: 'Дерет мебель?',
+        name: 'scratch',
         rules: [{ required: true, message: 'Введите вес' }],
     },
 ]

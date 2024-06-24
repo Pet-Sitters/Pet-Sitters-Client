@@ -7,6 +7,7 @@ import clockImg from '../../../../public/assets/images/account/status/clock-Ligh
 import confirmImg from '../../../../public/assets/images/account/status/check-circle-Light.svg'
 
 import {deleteKeep} from "../../../core/store/keep/thunk.js";
+import {getPet} from "../../../core/store/pet/thunk.js";
 
 
 // const options = [
@@ -16,12 +17,14 @@ import {deleteKeep} from "../../../core/store/keep/thunk.js";
 //     { status: 'done', image: '' },
 // ];
 
-const OrderCard = ({status, id}) => {
+const OrderCard = ({id, status, from_date, to_date}) => {
+    const [petInfo, setPetInfo] = React.useState([]);
     const dispatch = useDispatch();
 
     const handleDelete = () => {
         dispatch(deleteKeep(id));
     }
+
 
     return (
         <div className={s.order}>
@@ -30,7 +33,7 @@ const OrderCard = ({status, id}) => {
             </button>
             <div className={s.infoContainer}>
                 <h1 className={s.title}>Передержка вид животного + Кличка</h1>
-                <p className={s.info}>Даты: </p>
+                <p className={s.info}>Даты: {from_date} - {to_date}</p>
                 <p className={s.info}>Ситтер: </p>
                 <p className={s.details}>Cмотреть детали заказа</p>
             </div>

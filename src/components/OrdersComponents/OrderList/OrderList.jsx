@@ -11,6 +11,8 @@ const OrderList = ({keeps}) => {
                     key={keep.id}
                     status={keep.status}
                     id={keep.id}
+                    from_date={keep.from_date}
+                    to_date={keep.to_date}
                 />)
             }
         </div>

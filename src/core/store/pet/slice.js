@@ -1,11 +1,12 @@
 import {createSlice} from '@reduxjs/toolkit';
-import {deletePet, getPetForm, postPetForm} from './thunk';
+import {deletePet, getPetForm, postPetForm, getPet} from './thunk';
 
 const initialState = {
     isLoading: false,
     isError: false,
     isSuccess: false,
     petsData: null,
+    petData: null,
 };
 
 const petForm = createSlice({
@@ -55,6 +56,25 @@ const petForm = createSlice({
                 state.isError = true;
                 state.petsData = null;
             })
+            //GET
+            .addCase(getPet.pending, (state) => {
+                state.isLoading = true;
+                state.isSuccess = false;
+                state.isError = false;
+                state.petData = null;
+            })
+            .addCase(getPet.fulfilled, (state, action) => {
+                state.isLoading = false;
+                state.isSuccess = true;
+                state.isError = false;
+                state.petData = action.payload;
+            })
+            .addCase(getPet.rejected, (state) => {
+                state.isLoading = false;
+                state.isSuccess = false;
+                state.isError = true;
+                state.petData = null;
+            })
             // DELETE
             .addCase(deletePet.pending, (state) => {
                 state.isLoading = true;
@@ -80,5 +100,6 @@ export const selectPetFormIsLoading = (state) => state.petForm.isLoading;
 export const selectPetFormIsSuccess = (state) => state.petForm.isSuccess;
 export const selectPetFormIsError = (state) => state.petForm.isError;
 export const selectPetsData = (state) => state.petForm.petsData;
+export const selectPetData = (state) => state.petForm.petData;
 
 export default petForm.reducer;

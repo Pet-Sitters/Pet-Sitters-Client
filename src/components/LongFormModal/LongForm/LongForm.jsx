@@ -21,7 +21,7 @@ import {
     selectPetFormIsError,
     selectPetFormIsSuccess
 } from "../../../core/store/pet/slice.js";
-import {postPetForm} from "../../../core/store/pet/thunk.js";
+import {getPetForm, postPetForm} from "../../../core/store/pet/thunk.js";
 
 import {useEffect} from "react";
 import detailInputFields from "./data/details/detailsRadio.js";
@@ -29,9 +29,11 @@ import {DialogTitle} from "@headlessui/react";
 import detailInput from "./data/details/detailsInput.js";
 
 import s from './LongForm.module.scss'
+import {updateKeep} from "../../../core/store/keep/thunk.js";
+import detailFields from "./data/details/detailFields.js";
+import {closeModal} from "../../../core/store/modalLongForm/slice.js";
 
-
-const LongForm = (keepId) => {
+const LongForm = ({keepId, userId}) => {
     const [form] = Form.useForm();
 
     const dispatch = useDispatch();
@@ -39,16 +41,49 @@ const LongForm = (keepId) => {
     const isSuccess = useSelector(selectPetFormIsSuccess)
     const isError = useSelector(selectPetFormIsError)
 
-    useEffect(() => {
-        if (isSuccess) {
-            dispatch(resetPetFormState());
-        }
-    }, [isSuccess, dispatch]);
+
+    // useEffect(() => {
+    //     if (isSuccess) {
+    //         dispatch(resetPetFormState());
+    //     }
+    // }, [isSuccess, dispatch]);
 
 
     const handleFinish = async (values) => {
         values.birth_year = dayjs(values.birth_year).format('YYYY-MM-DD');
-        dispatch(postPetForm(values))
+        values.from_date = dayjs(values.from_date).format('YYYY-MM-DD');
+        values.to_date = dayjs(values.to_date).format('YYYY-MM-DD');
+
+        const animalValues = {};
+        const detailValues = {};
+
+        Object.keys(values).forEach((key) => {
+            if (detailFields.includes(key)) {
+                detailValues[key] = values[key];
+            } else {
+                animalValues[key] = values[key];
+            }
+        })
+
+        console.log(values, animalValues, detailValues);
+        console.log(`keepID: ${keepId} userId: ${userId}`);
+
+        try {
+            const petResponse = await dispatch(postPetForm(animalValues)).unwrap();
+
+            await dispatch(resetPetFormState());
+            const petsInfo = await dispatch(getPetForm()).unwrap();
+            const lastPet = petsInfo[petsInfo.length - 1];
+            console.log('Response:', petResponse, petsInfo, lastPet, lastPet.owner, lastPet.id);
+
+            const updateData = { id: keepId, data: {id: keepId, pet: lastPet.id, owner: lastPet.owner, status: "active", ...detailValues }};
+            console.log(updateData);
+            await dispatch(updateKeep(updateData));
+            await dispatch(closeModal());
+        } catch (error) {
+            console.log('Error:', error);
+            await dispatch(closeModal());
+        }
     }
 
     const onFinishFailed = (errorInfo) => {

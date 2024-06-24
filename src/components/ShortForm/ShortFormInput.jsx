@@ -50,7 +50,7 @@ const ShortFormInputs = () => {
             })
             .catch((error) => {
                 console.log('Error:', error);
-            });;
+            });
     };
 
     const onFinishFailed = (errorInfo) => {

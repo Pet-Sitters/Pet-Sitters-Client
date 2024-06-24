@@ -9,7 +9,6 @@ const initialFormState = {
     vet_ppt: true,
     diseases: "Нет",
     outside_lb: "NO",
-    scratch: "string",
     pulls: "NO",
     picks: "NO",
     take: "YES",

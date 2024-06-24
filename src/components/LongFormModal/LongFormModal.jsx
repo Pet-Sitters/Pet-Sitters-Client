@@ -13,12 +13,15 @@ export function LongFormModal() {
     const isOpen = useSelector((state) => state.modalLongForm.isLongFormModalVisible);
     const orderInfo = useSelector(selectOrderInfo);
     const [keepId, setKeepId] = useState(null);
+    const [userId, setUserId] = useState(null);
 
     useEffect(() => {
         if (orderInfo){
+            console.log(orderInfo)
             setKeepId(orderInfo.keep)
+            setUserId(orderInfo.user)
         }
-    }, [orderInfo])
+    }, [orderInfo, dispatch])
 
     const handleClose = () => {
         dispatch(closeModal());
@@ -35,7 +38,7 @@ export function LongFormModal() {
 
                         <DialogTitle className={s.title}>Расскажите нам о своём питомце подробнее</DialogTitle>
 
-                        <LongForm keepId={keepId} />
+                        <LongForm keepId={keepId} userId={userId}/>
                     </DialogPanel>
                 </div>
             </Dialog>

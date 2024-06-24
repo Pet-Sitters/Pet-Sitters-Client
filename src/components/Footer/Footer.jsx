@@ -2,9 +2,8 @@ import { Link } from 'react-router-dom';
 import links from '../../router/links';
 import { TgButton } from '../UI/Buttons/TgButton/TgButton';
 import s from './Footer.module.scss';
-import catImg from '/assets/images/Home/FatCat.png'
-import decorImg from '/assets/images/Home/decorEl.png'
-
+import catImg from '/assets/images/Home/FatCat.png';
+import decorImg from '/assets/images/Home/decorEl.png';
 export function Footer() {
   const handleLogoClick = () => {
     window.scrollTo({
@@ -45,13 +44,25 @@ export function Footer() {
           </div>
           <div className={s.links}>
             <div className={s.linksPetsitter}>
-              <Link to={'/'} className={s.link}>
+              <Link
+                to={`${links.home}#about`}
+                reloadDocument
+                className={s.link}
+              >
                 О сервисе
               </Link>
-              <Link to={'/'} className={s.link}>
+              <Link
+                to={`${links.home}#calculator`}
+                reloadDocument
+                className={s.link}
+              >
                 Передержка кошек
               </Link>
-              <Link to={'/'} className={s.link}>
+              <Link
+                to={`${links.home}#calculator`}
+                reloadDocument
+                className={s.link}
+              >
                 Передержка собак
               </Link>
             </div>
@@ -59,10 +70,10 @@ export function Footer() {
               <Link to={links.sitters} className={s.link}>
                 Ситтеры
               </Link>
-              <Link to={'/'} className={s.link}>
+              <Link to={`${links.home}#game`} reloadDocument className={s.link}>
                 Стать ситтером
               </Link>
-              <Link to={'/'} className={s.link}>
+              <Link to={`${links.home}#game`} reloadDocument className={s.link}>
                 Начать ИГРУ
               </Link>
             </div>

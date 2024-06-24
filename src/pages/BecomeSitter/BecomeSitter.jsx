@@ -9,7 +9,7 @@ export function BecomeSitter() {
   };
 
   return (
-    <div className={s.becomeSitter}>
+    <div id='beecome' className={s.becomeSitter}>
       <div className={s.avatarContainer}>
         <div className={s.buttonBack}>
           <button onClick={handleGoBack} className={s.button}>

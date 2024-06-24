@@ -62,7 +62,10 @@ export function HeaderMain() {
       <nav className={s.menuClientPet}>
         <ul className={s.list}>
           <li className={s.item}>
-            <Link onClick={handleNavigateAbout} className={s.link}>
+            {/* <button onClick={handleNavigateAbout} className={s.link}>
+              О сервисе
+            </button> */}
+            <Link className={s.link} to={`${links.home}#about`} reloadDocument>
               О сервисе
             </Link>
             <Link

@@ -5,7 +5,11 @@ import s from './Game.module.scss';
 export function Game() {
   return (
     <article id='game' className={s.game}>
-      <img src='/assets/images/Home/gameFon.png' alt='dogs' className={s.image} />
+      <img
+        src='/assets/images/Home/gameFon.png'
+        alt='dogs'
+        className={s.image}
+      />
       <div className={s.textContent}>
         <h3 className={s.title}>
           Хотите стать ситтером <span className={s.accent}>Пройдите ИГРУ</span>{' '}
@@ -31,10 +35,11 @@ export function Game() {
             href='https://petgame.esoraine.online/'
             target='_blank'
             className={s.linkGame}
-            rel='noreferrer'>
+            rel='noreferrer'
+          >
             начать игру
           </a>
-          <LinkButton buttonType='game2' to={links.becameSitter}>
+          <LinkButton buttonType='game2' to={`${links.becameSitter}#beecome`}>
             Стать ситтером
           </LinkButton>
         </div>

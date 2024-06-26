@@ -2,7 +2,7 @@ import s from './ThButton.module.scss';
 export function TgButton() {
   return (
     <a
-      href='https://t.me/petsitter_online'
+      href='https://t.me/to_do_1_bot'
       target='_blank'
       rel='noopener noreferrer'
       className={s.social}>

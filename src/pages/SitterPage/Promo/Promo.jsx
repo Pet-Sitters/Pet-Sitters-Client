@@ -1,7 +1,11 @@
 import { OrderButton } from '../../../components/UI/OrderButton/OrderButton';
 import { cityNames } from '../../../core/constants/city';
 import s from './Promo.module.scss';
+// import img3 from './img/2feec733963b0a1db32775e7842d1137.jpeg';
+import img2 from './img/8284e9c658fe88202da0c90ad81858f0.jpeg';
+// import img1 from './img/91667d9a42c89f1d58a47bddc9849a87.png';
 import unnamed from './img/unnamed.jpg';
+
 export function Promo({ data }) {
   const homeTypes = {
     FLAT: 'в квартире',
@@ -25,10 +29,11 @@ export function Promo({ data }) {
     verification: '/assets/icons/Sitter/verification.png',
   };
   const avatar = data.avatar ? avatar.data : unnamed;
+
   return (
     <article className={s.promoSitter}>
       <div className={s.avatarContainer}>
-        <img src={avatar} alt='avatar' className={s.avatar} />
+        <img src={img2 || avatar} alt='avatar' className={s.avatar} />
       </div>
       <div className={s.ratingContainer}>
         <div className={s.oldSkill}>

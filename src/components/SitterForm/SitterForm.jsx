@@ -28,17 +28,17 @@ const SitterForm = () => {
 
     // const formData = new FormData();
     // formData.append('avatar', fileList[0].originFileObj);
-    const formData = fileList[0].originFileObj;
+    // const formData = fileList[0].originFileObj;
 
-    const patchData = {
-      id: sitterId,
-      avatar: formData,
-    };
+    // const patchData = {
+    //   id: sitterId,
+    //   avatar: formData,
+    // };
 
-    console.log('Patch Data:', patchData);
+    // console.log('Patch Data:', patchData);
 
-    dispatch(putSitter(patchData));
-    dispatch(patchSitter(patchData));
+    // dispatch(putSitter(patchData));
+    // dispatch(patchSitter(patchData));
   };
   const handleFileChange = ({ fileList }) => {
     setFileList(fileList);

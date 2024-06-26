@@ -70,6 +70,4 @@ Pet-Sitters-Client
 
 ## :envelope: Контакты
 
-По всем вопросам пишите в [Telegram](https://t.me/Natalli_gf)
-По всем вопросам пишите в [Telegram](https://t.me/kirill_dorokh)
-По всем вопросам пишите в [Telegram](https://t.me/Sergey310583)
+По всем вопросам пишите в [Telegram Наталье](https://t.me/Natalli_gf),в [Telegram Кириллу](https://t.me/kirill_dorokh) или в [Telegram Сергею](https://t.me/Sergey310583)

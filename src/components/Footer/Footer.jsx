@@ -5,12 +5,15 @@ import { TgButton } from '../UI/Buttons/TgButton/TgButton';
 import s from './Footer.module.scss';
 import catImg from '/assets/images/Home/FatCat.png';
 import decorImg from '/assets/images/Home/decorEl.png';
+import {useNavigate} from "react-router";
 export function Footer() {
+  const navigate = useNavigate();
   const handleLogoClick = () => {
     window.scrollTo({
       top: 0,
       behavior: 'smooth',
     });
+    navigate(links.home)
   };
   return (
     <div className={s.footer}>

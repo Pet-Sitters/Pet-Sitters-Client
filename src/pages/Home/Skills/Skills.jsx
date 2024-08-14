@@ -6,11 +6,11 @@ export function Skills() {
         <div className={s.skillsDog}>
           <img src='/assets/images/Home/skillsDog.png' alt='skills' className={s.photo} />
           <div className={s.wrapDog}>
-            <img
-              src='/assets/images/Home/pinkArrow.png'
-              alt='arrow'
-              className={s.arrowPink}
-            />
+            {/*<img*/}
+            {/*  src='/assets/images/Home/pinkArrow.png'*/}
+            {/*  alt='arrow'*/}
+            {/*  className={s.arrowPink}*/}
+            {/*/>*/}
             <h3 className={s.title}>
               Навыки <span className={s.accent_dog}>ДОГСИТТЕРА</span>
             </h3>
@@ -40,18 +40,18 @@ export function Skills() {
         <div className={s.skillsCat}>
           <img src='/assets/images/Home/skillsCat.png' alt='skills' className={s.photo} />
           <div className={s.wrapCat}>
-            <img
-              src='/assets/images/Home/orangeLine.png'
-              alt='arrow'
-              className={s.arrowOrange}
-            />
-            <img
-              src='/assets/images/Home/fly.png'
-              alt='Fly'
-              className={s.arrowOrangefly}
-            />
+            {/*<img*/}
+            {/*  src='/assets/images/Home/orangeLine.png'*/}
+            {/*  alt='arrow'*/}
+            {/*  className={s.arrowOrange}*/}
+            {/*/>*/}
+            {/*<img*/}
+            {/*  src='/assets/images/Home/fly.png'*/}
+            {/*  alt='Fly'*/}
+            {/*  className={s.arrowOrangefly}*/}
+            {/*/>*/}
             <h3 className={s.title}>
-              Навыки <span className={s.accent_cat}>КЕТСИТТЕРА</span>
+              Навыки <span className={s.accent_cat}>КЭТСИТТЕРА</span>
             </h3>
             <p className={s.itemText}>
               Обеспечит <span className={s.accentSkill}>комплексный уход</span>,
@@ -65,7 +65,7 @@ export function Skills() {
               котом/кошкой
             </p>
             <p className={s.itemText}>
-              Знают <span className={s.accentSkill}>язык тела</span> кошки
+              Понимают <span className={s.accentSkill}>язык тела</span> кошки
             </p>
             <p className={s.itemText}>
               <span className={s.accentSkill}>Знают что делать</span>, если кошке

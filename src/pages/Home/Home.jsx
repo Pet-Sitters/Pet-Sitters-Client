@@ -29,7 +29,7 @@ export function Home() {
       <CalculatorArea />
       <AboutPetSitter />
       <HowWork />
-      <History />
+      {/*<History />*/}
       <SwiperArea />
       <Skills />
       <Game />

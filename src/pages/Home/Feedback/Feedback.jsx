@@ -7,7 +7,7 @@ const Feedback = () => (
   <article className={s.feedbackContainer}>
     <div className={s.header}>
       <div className={s.titleWrapper}>
-        <h3 className={s.title}>Отзывы любимых клиентов о </h3>{' '}
+        <h3 className={s.title}>Отзывы клиентов о </h3>{' '}
         <img
           src='/assets/icons/Home/textGreen.png'
           alt='petsitter'
